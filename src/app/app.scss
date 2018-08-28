@@ -1,0 +1,128 @@
+// http://ionicframework.com/docs/theming/
+
+
+// App Global Sass
+// --------------------------------------------------
+// Put style rules here that you want to apply globally. These
+// styles are for the entire app and not just one component.
+// Additionally, this file can be also used as an entry point
+// to import other Sass files to be included in the output CSS.
+//
+// Shared Sass variables, which can be used to adjust Ionic's
+// default Sass variables, belong in "theme/variables.scss".
+//
+// To declare rules for a specific mode, create a child rule
+// for the .md, .ios, or .wp mode classes. The mode class is
+// automatically applied to the <body> element in the app.
+body{
+  font-family: 'Roboto', sans-serif;
+}
+// header start
+
+.header-md::after, .tabs-md[tabsPlacement="top"] > .tabbar::after, .footer-md::before, .tabs-md[tabsPlacement="bottom"] > .tabbar::before {
+  left: 0;
+  bottom: -5px;
+  background-position: left 0 top -2px;
+  position: absolute;
+  width: 100%;
+  background: none;
+  height: 5px;
+  /* background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAHBAMAAADzDtBxAAAAD1BMV…h/TXEAAAAaSURBVAjXYxCEAgY4UIICBmMogMsgFLtAAQCNSwXZKOdPxgAAAABJRU5ErkJggg==); */
+  background-repeat: repeat-x;
+  content: "";
+}
+.toolbar-background-md {
+  border-color: !important;
+  background: #f7faff;
+}
+// header end
+.header-img{
+  height: 5vh !important;
+  width: auto !important;
+  align-items: center;
+  margin-left: auto;
+  margin-right: auto;
+  display: block;
+ }
+ ion-content{
+  background-image: url(../assets/imgs/all-bg.jpg);
+  background-size: cover;
+ }
+ .bar-button-menutoggle-md {
+  /* margin: 0 6px; */
+  /* padding: 0 2px; */
+  -webkit-box-ordinal-group: 2;
+  -webkit-order: 1;
+  -ms-flex-order: 1;
+  order: 1;
+  /* min-width: 44px; */
+}
+.trai-menu{
+  width: 24px;
+  padding-top: 5px;
+  margin-left: 0px;
+}
+.trai-logout{
+  width: 26px;
+  padding-top: 5px;
+  margin-right: 10px;
+}
+h1, h2, h3, h4, h5, h6 {
+  margin-top: 1.6rem;
+  margin-bottom: 1rem;
+  font-weight: 300;
+  line-height: 1.2;
+  font-weight: 300 !important;
+}
+.rk-menu{
+  width: 90%;
+  background: #FFF;
+  margin-left: 5%;
+}
+.rk-my-btn{
+  font-weight: 300;
+  border-bottom: 1px solid #f5f5f5;
+}
+// All page header
+.trai-my-head{
+  margin-top: 7%;
+  width: 90%;
+}
+.trai-pref-head{
+  width: 100%;
+  height: 140px;
+  background: #fff;
+  border-radius: 5px;
+  box-shadow: 0px 0px 5px lightgrey;
+  position: relative;
+}
+.trai-head-img{
+ width: 70px;
+ height: 70px;
+ background: #72a4ff;
+ padding: 10px;
+ border-radius: 5px;
+ margin-left: auto;
+ margin-right: auto;
+ display: block;
+ position: absolute;
+ left: 0;
+ right: 0;
+ top: -28%;
+ margin: auto;
+ -webkit-box-shadow: 0px 0px 5px lightgrey;
+ box-shadow: 0px 0px 5px lightgrey;
+}
+.trai-line{
+  width: 100%;
+  height: 1px;
+  background: #e8e8e8bf ;
+  margin-top: 4%;
+}
+.trai-head-text{
+  text-align: center;
+  font-size: 18px;
+  font-weight: 300;
+  color: #72a4ff;
+  margin-top: 13%;
+}

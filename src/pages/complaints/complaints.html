@@ -1,0 +1,236 @@
+<!--
+  Generated template for the ConplaintsstatusPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar>
+    <button ion-button menuToggle>
+      <img class="trai-menu" menuToggle src="assets/icon/menu.png" alt="">
+    </button>
+    <!-- <ion-icon name="menu"><img menuToggle src="assets/icon/menu.png" alt=""></ion-icon> -->
+
+    <ion-title>
+      <img class="header-img" alt="" src="assets/icon/header-logo.png">
+    </ion-title>
+
+    <ion-buttons end>
+      <button ion-button icon-only (click)="logout()">
+        <img class="trai-logout" menuToggle src="assets/icon/logout.png" alt="">
+      </button>
+    </ion-buttons>
+  </ion-navbar>
+
+</ion-header>
+
+<ion-content padding-top>
+  <!-- Header start -->
+  <ion-grid padding-0 class="trai-my-head">
+    <ion-row>
+      <ion-col col-12 class="trai-pref-head" no-padding>
+        <div class="trai-head-img" style="background: #72a4ff;">
+          <img src="assets/icon/complaints.png" />
+        </div>
+        <div class="trai-head-text">
+          <span style="color: #72a4ff;">Complaints</span>
+        </div>
+        <div class="trai-line"></div>
+        <ion-grid>
+          <ion-row class="trai-pref-c">
+            <ion-col col-12>
+              <div class="dnd-head">
+                <span class="trai-my-head-a" text-center style="color: #747577;">
+                  <span (click)="callLog()">Report Calls</span> |
+                  <span (click)="smsLog()">Report SMS</span>
+                </span>
+              </div>
+
+            </ion-col>
+
+          </ion-row>
+        </ion-grid>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+  <!-- Header end -->
+  <ion-grid class="trai-my-comp-s">
+    <ion-grid class="trai-cal-cont">
+      <ion-toolbar padding color="light" mode="md" class="tool-custom" style=" margin-top: 15px;   border-radius: 35px;
+      background: #fff; padding: 0;min-height:0;">
+        <ion-segment color="dark" mode="md" [(ngModel)]="section">
+          <ion-segment-button active value="one" (click)="callLog()" id="pills-home-tab">
+            Call
+          </ion-segment-button>
+          <ion-segment-button value="two" (click)="smsLog()">
+            SMS
+          </ion-segment-button>
+        </ion-segment>
+      </ion-toolbar>
+
+
+
+      <ion-card>
+
+        <ion-card-content no-padding>
+          <!-- Add card content here! -->
+          <div [ngSwitch]="section">
+            <ion-list *ngSwitchCase="'one'" inset>
+              <ion-item ion-item class="trai-cal-data-a" *ngFor="let d of mobileId">
+                <ion-row>
+                  <ion-col col-6>
+                    <small>
+                      <ion-icon class="icon-default-color" name="ios-call-outline"></ion-icon>&nbsp;+91 {{d.phoneNumber}}</small>
+                  </ion-col>
+                  <ion-col col-6 text-right>
+                    <small>
+                      <ion-icon class="icon-default-color" name="ios-trending-up-outline"></ion-icon>&nbsp;{{d.callDuration}}</small>
+                  </ion-col>
+                </ion-row>
+                <ion-row class="trai-cont-set">
+                  <ion-col col-4>
+                    <small>
+                      <img style="width: 10px; display: inline;" src="assets/icon/outgoing.svg" alt="">&nbsp;{{d.type}}</small>
+                  </ion-col>
+                  <ion-col col-4>
+                    <small>
+                      <ion-icon class="icon-default-color" name="ios-clock-outline"></ion-icon>&nbsp;{{d.date | date:'dd/MM/yyyy'}}</small>
+                  </ion-col>
+                  <ion-col col-4 text-right (click)="reportCall(d.phoneNumber,d.date,d.callDuration,d.type)">
+                    <small>
+                      <ion-icon style=" color: #15488a;" ios="ios-paper" md="md-paper"></ion-icon>&nbsp;Report</small>
+                  </ion-col>
+
+                </ion-row>
+              </ion-item>
+              
+
+            </ion-list>
+
+            <ion-list *ngSwitchCase="'two'" inset>
+              <ion-item ion-item *ngFor="let x of messages">
+                <ion-row>
+                  <ion-col style="font-size: 12px;">
+                     {{x.address}}
+                  </ion-col>
+                </ion-row>
+
+                <ion-row style="font-size:14px;">
+                  <ion-col col-6>
+                    <small>
+                      <ion-icon class="icon-default-color" ios="ios-text" md="md-text"></ion-icon>&nbsp;{{(x.body | slice:0:22)+"..."}}</small>
+                  </ion-col>
+                  <ion-col col-3 (click)="reportSms(x.address)">
+                    <small>
+                      <ion-icon style=" color: #15488a;" ios="ios-paper" md="md-paper" ></ion-icon>&nbsp;Report</small>
+                  </ion-col>
+                  <ion-col col-3>
+                    <small>
+                      <ion-icon class="icon-default-color" name="ios-clock-outline"></ion-icon>&nbsp;{{x.date | date:'dd/MM/yyyy'}}</small>
+                  </ion-col>
+
+                </ion-row>
+              </ion-item>              
+
+            </ion-list>
+          </div>
+        </ion-card-content>
+
+      </ion-card>
+    </ion-grid>
+    <!-- <ion-searchbar padding-top class="trai-my-search" [(ngModel)]="searchTerm" (ionInput)="setFilteredItems()"></ion-searchbar> -->
+
+
+    <!-- <ion-card *ngFor="let item of items">
+
+        <ion-card-content (click)="getuserInfo(item.title)">
+          <ion-grid>
+            <ion-row>
+              <ion-col col-12> <ion-icon class="icon-default-color" name="ios-call-outline"></ion-icon>&nbsp;&nbsp;&nbsp;&nbsp;{{item.title}}</ion-col>
+            </ion-row>
+            <ion-row>
+              <ion-col col-6><ion-icon class="icon-default-color" name="ios-calendar-outline"></ion-icon>&nbsp;&nbsp;&nbsp;&nbsp;{{item.date}}</ion-col>
+              <ion-col col-6 text-right>{{item.log}}</ion-col>
+            </ion-row>
+          </ion-grid>
+        </ion-card-content>
+      </ion-card> -->
+
+    <!-- Ion card comment start -->
+    <!-- <ion-card class="card card-md" *ngFor="let item of items">
+      <ion-item ion-item class="trai-cal-data-a" (click)="getuserInfo(item.title)">
+        <ion-row>
+          <ion-col col-12>
+            <small>
+              <ion-icon class="icon-default-color" name="ios-call-outline"></ion-icon>&nbsp;+91 7273099884
+            </small>
+          </ion-col>
+        </ion-row>
+        <ion-row class="trai-cont-set">
+          <ion-col col-4>
+            <small>
+              <ion-icon class="icon-default-color" name="ios-calendar-outline"></ion-icon>&nbsp;&nbsp;&nbsp;&nbsp;05-08-2018
+            </small>
+          </ion-col>
+          <ion-col col-4>
+            <small>
+              Duration:
+              <span>5 min</span>
+            </small>
+          </ion-col>
+          <ion-col col-4 text-right>
+            <small>
+              <ion-icon style=" color: #15488a;" ios="ios-paper" md="md-paper"></ion-icon>&nbsp;Report
+            </small>
+          </ion-col>
+        </ion-row>
+      </ion-item>
+      <ion-item ion-item class="trai-cal-data-a" (click)="getuserInfo(item.title)">
+        <ion-row>
+          <ion-col col-6>
+            <small>
+              <ion-icon class="icon-default-color" name="ios-call-outline"></ion-icon>&nbsp;+91 7273099884</small>
+          </ion-col>
+          <ion-col col-6 text-right>
+            <small>
+              <ion-icon class="icon-default-color" name="ios-trending-up-outline"></ion-icon>&nbsp;1:30m</small>
+          </ion-col>
+        </ion-row>
+        <ion-row class="trai-cont-set">
+          <ion-col col-4>
+            <small>
+              <img style="width: 10px; display: inline;" src="assets/icon/outgoing.svg" alt="">&nbsp;Outgoing</small>
+          </ion-col>
+          <ion-col col-4>
+            <small>
+              <ion-icon class="icon-default-color" name="ios-clock-outline"></ion-icon>&nbsp;20-08-2018</small>
+          </ion-col>
+          <ion-col col-4 text-right>
+            <small>
+              <ion-icon style=" color: #15488a;" ios="ios-paper" md="md-paper"></ion-icon>&nbsp;Report</small>
+          </ion-col>
+
+        </ion-row>
+      </ion-item>
+      <ion-grid class="trai-cal-cont">
+        <ion-toolbar padding color="light" mode="md" class="tool-custom" style=" margin-top: 15px;   border-radius: 35px;
+          background: #fff; padding: 0;min-height:0;">
+          <ion-segment color="dark" mode="md" [(ngModel)]="section">
+            <ion-segment-button active value="one" (click)="callLog()">
+              Call
+            </ion-segment-button>
+            <ion-segment-button value="two" (click)="smsLog()">
+              SMS
+            </ion-segment-button>
+          </ion-segment>
+        </ion-toolbar>
+      </ion-grid>
+
+    </ion-card> -->
+
+    <!-- comment ion card -->
+
+  </ion-grid>
+
+</ion-content>

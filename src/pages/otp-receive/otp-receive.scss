@@ -1,0 +1,78 @@
+page-otp-receive {
+    .trai-my-otp {
+        margin: 0px auto;
+        width: 100%;
+    }
+    .trai-my-otp img {
+        width: 50%;
+        margin-right: auto;
+        margin-left: auto;
+        display: block;
+    }
+    .trai-otp-head {
+        font-weight: 300;
+        font-size: 14px;
+        color: #525b6c;
+        text-align: center;
+    }
+    .trai-otp-head ion-title {
+        font-size: 12px;
+        color: #15488a;
+        font-weight: 300;
+    }
+    .trai-otp-head p {
+        color: #818284;
+        font-weight: 300;
+    }
+    .trai-resend {
+        text-align: center;
+    }
+    .trai-resend span {
+        text-align: center;
+        color: #15488a;
+    }
+    .trai-resend p {
+        color: #818284;
+        font-weight: 300;
+    }
+    .trai-form-otp form {
+        width: 50%;
+        margin: 0px auto;
+        text-align: center;
+    }
+    .trai-form-otp form ion-input.placeholder {
+        text-align: center;
+    }
+    .trai-form-otp .item-md.item-block .item-inner {
+    padding-right: 8px;
+    border-bottom: none;
+    }
+    .trai-form-otp input{
+    border: 1px solid lightgray;
+    padding: 7px;
+    border-radius: 3px;
+    }
+    .trai-form-otp .item-md.item-block .item-inner {
+    padding-right: 8px;
+    border: none;
+    }
+    .trai-form-otp .item-md.item-input.ng-invalid.ng-touched:not(.input-has-focus):not(.item-input-has-focus) .item-inner {
+    border-bottom-color: none;
+    -webkit-box-shadow: none;
+    box-shadow: none;
+}
+.trai-form-otp .item-md.item-input.ng-valid.item-input-has-value:not(.input-has-focus):not(.item-input-has-focus) .item-inner, .item-md.item-input.ng-valid.input-has-value:not(.input-has-focus):not(.item-input-has-focus) .item-inner {
+    border-bottom-color: none;
+    -webkit-box-shadow: none;
+    box-shadow: none;
+}
+    .trai-right-inp button {
+        width: 45px;
+        /* height: 45px; */
+        border-radius: 50%;
+        font-size: 34px;
+        padding: 24px;
+        margin: 0px auto;
+        padding-top: 10erm;
+    }
+}

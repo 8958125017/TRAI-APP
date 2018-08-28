@@ -1,0 +1,105 @@
+page-complaintsstatus {
+  .scroll-content {
+    padding: 29px 16px !important;
+  }
+  ion-content{
+    background-image: url(../assets/imgs/all-bg.jpg);
+    background-size: cover;
+   }
+   hr {
+    height: 1px;
+    background-color: rgba(0, 0, 0, 0.07) !important;
+    width: 95% !important;
+  }
+  .searchbar{
+    background: none !important;
+    border-bottom: none !important;
+    padding: 5px 8px 15px !important;
+  }
+  .searchbar .searchbar-search-icon{
+    top: 11px !important;
+    background-size: 20px !important;
+    right: 26px !important;
+    width: 21px !important;
+    height: 18px !important;
+    left: initial !important;
+  }
+  .searchbar-input {
+    // padding: 21px 28px !important;
+    box-shadow: none !important;
+    -webkit-box-shadow: none !important;
+    border-radius: 25px !important;
+  }
+  .icon-default-color{
+    color: #15488a !important;
+  }
+  .font-default-color{
+    color: #15488a !important;
+  }
+  .card {
+    -webkit-box-shadow: none !important;
+    box-shadow: none !important;
+  }
+  .card-content {
+    padding: 2px 16px 2px !important;
+  }
+  .searchbar .searchbar-clear-icon {
+    right: 52px !important;
+  }
+  .trai-dash {
+    width: 100%;
+  }
+  .trai-dash .toolbar-title-md {
+    padding: 0 12px;
+    font-weight: 300;
+    color: #15488a;
+    font-size: 16px;
+    text-transform: uppercase;
+    font-weight: 300 !important;
+    border-bottom: 1px solid #dee6f0;
+  }
+  .searchbar-md .searchbar-input {
+    padding: 6px 30px;
+    border-radius: none;
+    background-position: left 8px center;
+    height: auto;
+    font-size: 1.6rem;
+    font-weight: 400;
+    line-height: 3rem;
+    color: #141414;
+    background-color: #fff;
+    -webkit-box-shadow:none;
+    box-shadow:none;
+}
+.trai-my-head{
+  margin-top: 7%;
+  width: 95%;
+}
+.trai-cal-data-a .label-md {
+  margin: 8px 8px 8px 0;
+}
+.trai-cal-data-a{
+  border-bottom: 1px solid #f1f1f1;
+}
+.trai-my-head-a{
+  font-size: 16px;
+  color: #7f828c;
+  font-weight: 300;
+  }
+  .trai-my-head-b{
+    display: block;
+    text-align: center!important;
+    font-weight: 500;
+  }
+  .dnd-head{
+    width: 100%;
+    text-align: center!important;
+  }
+  .trai-my-search{
+    padding-top: 16px !important;
+  }
+}
+/*
+icon color: #15488a;
+font color: #7f828c;
+*/

@@ -1,0 +1,62 @@
+page-dnd {
+  .trai-dash {
+    width: 100%;
+  }
+  .trai-dash .toolbar-title-md {
+    padding: 0 12px;
+    font-weight: 300;
+    color: #15488a;
+    font-size: 16px;
+    text-transform: uppercase;
+    font-weight: 300 !important;
+    border-bottom: 1px solid #dee6f0;
+  }
+  .trai-dnd-text-a{
+    color: #4de9c9;
+  }
+  .dnd-head {
+    width: 100%;
+    margin-top: 4.5%;
+  }
+
+  .dnd-head .trai-my-head-a {
+    font-size: 14px;
+    color: #7f828c;
+    margin-left: 3%;
+    font-weight: 300;
+}
+  .dnd-head .trai-my-head-b{
+    color: #7f828c;
+    margin-left: 3%;
+    font-weight: 300;
+  }
+  .trai-dnd-content {
+    margin-top: 3%;
+    width: 90%;
+    background: #fff;
+    border-radius: 3px;
+    -webkit-box-shadow: 0px 0px 5px lightgrey;
+    box-shadow: 0px 0px 5px lightgrey;
+  }
+.trai-my-btn button{
+  width: 75px;
+  height: 75px;
+  border-radius: 50%;
+
+}
+
+  // This one is used for large screens (iPhone 6)
+
+// @media screen and (min-height : 600px) and (max-height : 700px) {
+//     .Landing-formContainer{
+//         padding-top: 35px;
+//     }
+// }
+  //This one is used for small screens (like iPhone 5s)
+
+// @media screen and (min-height : 320px) and (max-height : 500px) {
+//     .Landing .slider-pager {
+//         top: 195px !important;
+//     }
+// }
+}

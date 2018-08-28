@@ -1,0 +1,85 @@
+<!--
+  Generated template for the ComplaintsPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar>
+    <button ion-button menuToggle>
+      <img class="trai-menu" menuToggle src="assets/icon/menu.png" alt="">
+    </button>
+    <!-- <ion-icon name="menu"><img menuToggle src="assets/icon/menu.png" alt=""></ion-icon> -->
+
+    <ion-title>
+      <img class="header-img" alt="" src="assets/icon/header-logo.png">
+    </ion-title>
+
+    
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding-top>
+
+  <!-- Header start -->
+  <ion-grid padding-0 class="trai-my-head">
+    <ion-row>
+      <ion-col col-12 class="trai-pref-head" no-padding>
+        <div class="trai-head-img" style="background: #8b72ff;">
+          <img src="assets/icon/complaints-status.png" />
+        </div>
+        <div class="trai-head-text">
+          <span style="color: #8b72ff;">Complaints Status</span>
+        </div>
+        <div class="trai-line"></div>
+        <ion-grid>
+          <ion-row class="trai-pref-c">
+            <ion-col col-6>
+              <div class="dnd-head">
+                <span class="trai-my-head-a" text-center style="color: #747577;"> Total Complaints</span>
+                <span class="trai-my-head-b">{{complaintsLength}}</span>
+              </div>
+            </ion-col>
+            <ion-col col-6>
+                <div class="dnd-head">
+                  <span class="trai-my-head-a" text-center style="color: #747577;"> Pending Complaints</span>
+                  <span class="trai-my-head-b">{{pending}}</span>
+                </div>
+              </ion-col>
+          </ion-row>
+        </ion-grid>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+  <!-- Header end -->
+<!--   <ion-searchbar padding-top class="trai-my-search"></ion-searchbar> -->
+  <ion-card>
+    <ion-item ion-item class="trai-cal-data-a" *ngFor="let status of complaintsStatus">
+      <ion-row>
+        <ion-col col-12>
+          <small>
+            <ion-icon class="icon-default-color" name="ios-call-outline"></ion-icon>&nbsp; {{status.to}}</small>
+        </ion-col>
+
+      </ion-row>
+      <ion-row class="trai-cont-set">
+        <ion-col col-6>
+          <small>
+            <ion-icon class="icon-default-color" name="ios-calendar-outline"></ion-icon>&nbsp;&nbsp;&nbsp;&nbsp;{{status.date | date:'dd/MM/yyyy'}}</small>
+        </ion-col>
+        <ion-col col-6>
+          <small>
+              Status:<span>{{status.status}}</span>
+          </small>
+        </ion-col>
+      </ion-row>
+    </ion-item>
+    
+  </ion-card>
+
+
+
+</ion-content>

@@ -1,0 +1,106 @@
+page-register {
+  #rounded {
+        width: 100%;
+        height: 100px;
+        -moz-border-radius: 50px;
+        -webkit-border-radius: 50px;
+        border-radius: 10px;
+        margin-bottom: 10px;
+    }
+
+    #container {
+        width: 300px;
+        margin-left:auto;
+        margin-right: auto;
+    }
+}
+.r-bg{
+  background-image: url(../assets/imgs/login-page.jpg);
+  background-size: cover;
+}
+.trai-logo{
+  height: 15vh !important;
+  width: auto !important;
+  align-items: center;
+  margin-left: auto;
+  margin-right: auto;
+  display: block;
+}
+.trai-wel{
+  text-align: center;
+  text-transform: uppercase;
+  font-weight: 500!important;
+  color: #243559!important;
+  padding-top: 15px;
+}
+.trai-title .toolbar-title-md {
+  padding: 0 12px;
+  font-size: 2rem;
+  font-weight: 500!important;
+  color: #243559!important;
+}
+.item-md p {
+  margin: 0 0 2px;
+  overflow: inherit;
+  font-size: 1.2rem;
+  line-height: normal;
+  text-overflow: inherit;
+  color: #666;
+  font-weight: 300!important;
+  text-transform: capitalize;
+}
+.trai-f .list-md .item-input:last-child {
+  border-bottom: none;
+}
+.item-md{
+  background: none;
+}
+.trai-left-inp{
+  width: 77%;
+  float: left;
+  margin-left: 5px;
+}
+.trai-left-inp ion-input{
+
+  border-radius: 2px;
+  background: white;
+  color: #a3a3a3;
+  height: 40px;
+  border: 1px solid #f1f1f1;
+}
+.trai-right-btn{
+  width: 18%;
+  float: right;
+}
+.trai-right-inp img{
+  width: 40px;
+  margin-left: 25px;
+}
+.list-md .item-block .item-inner {
+  border-bottom: none;
+}
+
+
+::-webkit-input-placeholder { /* Chrome/Opera/Safari */
+  color: pink;
+  font-family: 'Roboto', sans-serif;
+  font-weight: 300!important;
+}
+::-moz-placeholder { /* Firefox 19+ */
+  color: pink;
+  font-family: 'Roboto', sans-serif;
+  font-weight: 300!important;
+}
+:-ms-input-placeholder { /* IE 10+ */
+  color: pink;
+  font-family: 'Roboto', sans-serif;
+  font-weight: 300!important;
+}
+:-moz-placeholder { /* Firefox 18- */
+  color: pink;
+  font-family: 'Roboto', sans-serif;
+  font-weight: 300!important;
+}
+.trai-i{
+  margin-top: 15px;
+}

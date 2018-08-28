@@ -1,0 +1,23 @@
+page-myprofile {
+  .card {
+    -webkit-box-shadow: none !important;
+    box-shadow: none !important;
+  }
+  ion-app.md [padding] {
+    padding: 7px;
+  }
+  .rk-menu {
+    width: 95%;
+    background: #FFF;
+    margin: 0px auto;
+    border-radius: 3px;
+    padding: 0.5% 4%;
+    -webkit-box-shadow: 0px 0px 3px lightgrey;
+  box-shadow: 0px 0px 3px lightgrey;
+  }
+  .product-history-card {
+    padding: 7px;
+    font-weight: 300;
+  }
+
+}

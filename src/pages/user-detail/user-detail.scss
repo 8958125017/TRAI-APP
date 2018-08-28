@@ -1,0 +1,32 @@
+page-user-detail {
+  ion-content{
+    background: #f7faff !important;
+  }
+  .icon-default-color{
+    color: #15488a !important;
+  }
+  .font-default-color{
+    color: #15488a !important;
+  }
+  .content-ios hr {
+    height: 0.55px;
+    width: 95% !important;
+  }
+  .card {
+    -webkit-box-shadow: none !important;
+    box-shadow: none !important;
+  }
+  .trai-my-comp-s{
+    width: 90%;
+    margin: 0px auto;
+    margin-top: 3.5%;
+  }
+  .trai-my-comp-s small {
+    font-size: 11px!important;
+}
+.trai-user-d{
+  width: 90%;
+  margin: 0px auto;
+  margin-top: 5%;
+}
+}

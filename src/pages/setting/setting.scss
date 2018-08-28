@@ -1,0 +1,64 @@
+page-setting {
+  // ion-content{
+  //   background: #f7faff !important;
+  // }
+  ion-content{
+    background-image: url(../assets/imgs/all-bg.jpg);
+    background-size: cover;
+   }
+  .icon-default-color{
+    color: #15488a !important;
+  }
+  .font-default-color{
+    color: #15488a !important;
+  }
+  .content hr {
+    height: 0.55px;
+    width: 90% !important;
+  }
+
+  .list[inset] {
+    border-bottom: 1px solid #e8e8e8bf !important;
+  }
+  .card {
+    -webkit-box-shadow: none !important;
+    box-shadow: none !important;
+  }
+  .toggle .toggle-inner {
+    left: 6px !important;
+    top: 2px;
+    border-radius: 14px;
+    position: absolute;
+    width: 20px !important;
+    height: 21px !important;
+    background-color: #0572ff !important;
+  }
+  .toggle-md .toggle-icon {
+    right: 0px !important;
+  }
+  .toggle-md {
+    padding: 0 !important;
+  }
+  .toggle {
+    width: 49px !important;
+    height: 25px !important;
+  }
+  .toggle.toggle-disabled, .item.item-toggle-disabled ion-label {
+    opacity: 1 !important;
+  }
+  .toggle .toggle-icon::before {
+    background-color: #00369c !important;
+  }
+  .rk-menu{
+    width: 90%;
+    background: #FFF;
+    margin-left: 5%;
+  }
+  .rk-my-btn{
+    font-weight: 300;
+    border-bottom: 1px solid #f5f5f5;
+  }
+  .ion-card-content{
+    font-weight: 300;
+  }
+}

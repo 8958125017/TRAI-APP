@@ -1,0 +1,61 @@
+{
+  "_from": "io.adc.plugin.callreceiver",
+  "_id": "io.adc.plugin.callreceiver@0.0.1",
+  "_inBundle": false,
+  "_integrity": "sha512-PecfzRpV2qZdu0WLtBK6pDa0xD0+RTy02r/RgnTbHfg6d6fecuRTzKg0y74jEE0rawcu4JVW63sVDkoCrFAR1g==",
+  "_location": "/io.adc.plugin.callreceiver",
+  "_phantomChildren": {},
+  "_requested": {
+    "type": "tag",
+    "registry": true,
+    "raw": "io.adc.plugin.callreceiver",
+    "name": "io.adc.plugin.callreceiver",
+    "escapedName": "io.adc.plugin.callreceiver",
+    "rawSpec": "",
+    "saveSpec": null,
+    "fetchSpec": "latest"
+  },
+  "_requiredBy": [
+    "#USER",
+    "/"
+  ],
+  "_resolved": "https://registry.npmjs.org/io.adc.plugin.callreceiver/-/io.adc.plugin.callreceiver-0.0.1.tgz",
+  "_shasum": "891d501a4e1f03e535b61bcded938c5a8724528a",
+  "_spec": "io.adc.plugin.callreceiver",
+  "_where": "/home/pankaj/Pennyproject/Ionic/traiFrontEnd/traibackup/2-13-08-2018",
+  "author": {
+    "name": "Ahmed CHTARA"
+  },
+  "bugs": {
+    "url": "https://github.com/ahmedb49/io.adc.plugin.callreceiver/issues"
+  },
+  "bundleDependencies": false,
+  "cordova": {
+    "id": "io.adc.plugin.callreceiver",
+    "platforms": [
+      "android"
+    ]
+  },
+  "deprecated": false,
+  "description": "A phone call receiver (BETA VERSION)",
+  "homepage": "https://github.com/ahmedb49/io.adc.plugin.callreceiver#readme",
+  "keywords": [
+    "phonegap",
+    "calendar",
+    "phone",
+    "call",
+    "phone-call",
+    "ringing",
+    "phone-state",
+    "call-state",
+    "ecosystem:cordova",
+    "cordova-android"
+  ],
+  "license": "MIT",
+  "name": "io.adc.plugin.callreceiver",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ahmedb49/io.adc.plugin.callreceiver.git"
+  },
+  "version": "0.0.1"
+}

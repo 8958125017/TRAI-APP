@@ -1,0 +1,80 @@
+{
+  "_from": "cordova-plugin-call-directory",
+  "_id": "cordova-plugin-call-directory@1.2.0",
+  "_inBundle": false,
+  "_integrity": "sha1-IOAFXGKCZuRVXfwYjwatz6BqPNc=",
+  "_location": "/cordova-plugin-call-directory",
+  "_phantomChildren": {},
+  "_requested": {
+    "type": "tag",
+    "registry": true,
+    "raw": "cordova-plugin-call-directory",
+    "name": "cordova-plugin-call-directory",
+    "escapedName": "cordova-plugin-call-directory",
+    "rawSpec": "",
+    "saveSpec": null,
+    "fetchSpec": "latest"
+  },
+  "_requiredBy": [
+    "#USER",
+    "/"
+  ],
+  "_resolved": "https://registry.npmjs.org/cordova-plugin-call-directory/-/cordova-plugin-call-directory-1.2.0.tgz",
+  "_shasum": "20e0055c628266e4555dfc188f06adcfa06a3cd7",
+  "_spec": "cordova-plugin-call-directory",
+  "_where": "/home/pankaj/Pennyproject/Ionic/traiFrontEnd/trai",
+  "author": {
+    "name": "GEDYS IntraWare"
+  },
+  "bugs": {
+    "url": "https://github.com/GEDYSIntraWare/cordova-plugin-call-directory/issues"
+  },
+  "bundleDependencies": false,
+  "contributors": [
+    {
+      "name": "Niklas Merz"
+    }
+  ],
+  "cordova": {
+    "id": "cordova-plugin-call-directory",
+    "platforms": [
+      "ios"
+    ]
+  },
+  "dependencies": {
+    "cordova-plugin-add-swift-support": "^1.7.1",
+    "file-system": "^2.2.2",
+    "path": "^0.12.7",
+    "plist": "^2.1.0",
+    "xcode": "git+https://github.com/apache/cordova-node-xcode.git"
+  },
+  "deprecated": false,
+  "description": "Cordova plugin to build an iOS Call Directory extension",
+  "devDependencies": {
+    "cordova-paramedic": "git+https://github.com/apache/cordova-paramedic.git",
+    "cordova-plugin-xml": "^0.1.2",
+    "eslint": "^4.14.0",
+    "jasmine": "^2.8.0"
+  },
+  "homepage": "https://github.com/GEDYSIntraWare/cordova-plugin-call-directory#readme",
+  "keywords": [
+    "cordova",
+    "plugin",
+    "calldirectory",
+    "call-id",
+    "ecosystem:cordova",
+    "cordova-ios",
+    "ios"
+  ],
+  "license": "MIT",
+  "name": "cordova-plugin-call-directory",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/GEDYSIntraWare/cordova-plugin-call-directory.git"
+  },
+  "scripts": {
+    "plugin-version": "cordova-plugin-xml setVersion",
+    "test": "./node_modules/cordova-paramedic/main.js --plugin . --platform"
+  },
+  "version": "1.2.0"
+}

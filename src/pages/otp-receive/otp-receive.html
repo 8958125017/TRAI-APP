@@ -1,0 +1,62 @@
+<!--
+  Generated template for the OtpReceivePage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-content padding>
+    <ion-row>
+        <ion-col col-12 style="margin: 0px auto;">
+            <div class="trai-my-otp">
+                <img src="assets/icon/otp-sms.svg">
+            </div>
+        </ion-col>
+    </ion-row>
+    <ion-row>
+        <ion-col col-12>
+            <div class="trai-otp-head">
+                <ion-title>Enter OTP</ion-title>
+                <p>We have sent you access code
+                    <br>Via SMS for mobile number verification</p>
+            </div>
+        </ion-col>
+    </ion-row>
+    <ion-row>
+        <ion-col class="trai-form-otp">
+            <form [formGroup]="otpForm">
+                <ion-item>
+                    <!-- <ion-label floating>Enter OTP</ion-label> -->
+                    <ion-input [(ngModel)]="otpVerifyDetail.otp" formControlName="otp" type="number" required placeholder="1   2   3   4   5   6"></ion-input>
+                    <!-- </div> -->
+                </ion-item>
+                <ion-item *ngIf="otpForm.controls.otp.hasError('required') && otpForm.controls.otp.dirty">
+                    <p style="color:red;">OTP is required!</p>
+                </ion-item>
+                <!--  <ion-item *ngIf="otpForm.controls.email.hasError('required') && otpForm.controls.email.dirty">
+             <p style="color:red;">Otp is required!</p>
+        </ion-item> -->
+                <!-- <button class="button-backcolor" ion-button (click)="verifyOTP()" [disabled]="!otpForm.valid" type="submit" block>Verify</button> -->
+                <!-- <button ion-button (click)="checkPermission()">Receive SMS</button> -->
+            </form>
+        </ion-col>
+    </ion-row>
+    <ion-row>
+        <ion-col col-12 padding-top>
+            <div class="trai-right-inp">
+                <button class="button-backcolor" ion-button (click)="verifyOTP()" [disabled]="!otpForm.valid" type="submit" block>
+                    <small>
+                  <ion-icon class="icon-default-color" name="arrow-round-forward"></ion-icon></small>
+                </button>
+            </div>
+        </ion-col>
+    </ion-row>
+    <ion-row>
+        <ion-col col-12>
+            <div class="trai-resend">
+                <p>Didn't Recevice the OTP?</p>
+                <span><a (click)="login()"> Resend Code</a></span>
+            </div>
+        </ion-col>
+    </ion-row>
+    <p *ngIf="hidevalue==false"> {{maxTime}}</p>
+</ion-content>

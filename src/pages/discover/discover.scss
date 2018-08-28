@@ -1,0 +1,75 @@
+page-discover {
+  .trai-dash {
+    width: 100%;
+  }
+  .trai-dash .toolbar-title-md {
+    padding: 0 12px;
+    font-weight: 300;
+    color: #15488a;
+    font-size: 16px;
+    text-transform: uppercase;
+    font-weight: 300 !important;
+    border-bottom: 1px solid #dee6f0;
+  }
+  .trai-my-disc {
+    width: 90%;
+    margin: 0px auto;
+  }
+  .searchbar {
+    background: none !important;
+    border-bottom: none !important;
+    padding: 0px 8px 15px !important;
+  }
+  .searchbar .searchbar-search-icon {
+    top: 11px !important;
+    background-size: 20px !important;
+    right: 26px !important;
+    width: 21px !important;
+    height: 18px !important;
+    left: initial !important;
+  }
+  .searchbar-input {
+    // padding: 21px 28px !important;
+    box-shadow: none !important;
+    -webkit-box-shadow: none !important;
+    border-radius: 25px !important;
+  }
+  .searchbar .searchbar-clear-icon {
+    right: 52px !important;
+  }
+  .searchbar-md .searchbar-input {
+    padding: 6px 30px;
+    border-radius: none;
+    background-position: left 8px center;
+    height: auto;
+    font-size: 1.6rem;
+    font-weight: 400;
+    line-height: 3rem;
+    color: #141414;
+    background-color: #fff;
+    -webkit-box-shadow: none;
+    box-shadow: none;
+  }
+  .trai-disc-search {
+    padding-top: none;
+  }
+  .trai-disc-search .searchbar-input-container {
+    position: relative;
+    display: block;
+    -webkit-flex-shrink: 1;
+    -ms-flex-negative: 1;
+    flex-shrink: 1;
+    width: 100%;
+    border: 1px solid lightgray;
+    border-radius: 25px;
+}
+.trai-pref-head {
+  width: 100%;
+  height: 146px;
+  background: #fff;
+  border-radius: 5px;
+  -webkit-box-shadow: 0px 0px 5px lightgrey;
+  box-shadow: 0px 0px 5px lightgrey;
+  position: relative;
+}
+}

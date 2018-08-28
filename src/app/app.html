@@ -1,0 +1,65 @@
+<ion-menu class="mymenu" [content]="content" style="background: #f7faff;">
+  <ion-header>
+    <ion-toolbar>
+      <ion-title style="color: #fff; padding: 0 20px 1px;" text-left>
+        <ion-avatar item-start class="myphoto">
+          <!-- <img src={{userProfileImg}}  style="height: 70px; width: 71px;border-radius: 50%; font-size: 4.2em;   margin-left: 83px;"> -->
+        </ion-avatar>
+        <br>
+        <ion-row>
+          <ion-col col-12>
+            <img src="assets/icon/header-logo.png" alt="" class="header-img">
+          </ion-col>
+        </ion-row>
+      </ion-title>
+    </ion-toolbar>
+  </ion-header>
+  <ion-content>
+    <div class="rk-menu">
+
+      <ion-row style="margin-top: 6px;">
+        <ion-col col-2>
+          <img src="assets/icon/profile.png" alt="Account" style="margin-left: 12%; width: 70%; margin-top: 7%;">
+        </ion-col>
+        <ion-col col-10>
+          <h5 style="line-height: 1px;color:#15488a;margin-left: 0%; ">Account</h5>
+        </ion-col>
+      </ion-row>
+      <ion-list>
+        <button class="rk-my-btn" menuClose ion-item *ngFor="let p of pages" (click)="openPage(p)">
+          {{p.title}}
+        </button>
+      </ion-list>
+    </div>
+
+    <div class="rk-menu">
+
+      <ion-row style="margin-top: 6px;">
+        <ion-col col-3>
+          <img src="assets/icon/other.png" alt="Account" style="margin-left: 12%; width: 70%; margin-top: 7%;">
+        </ion-col>
+        <ion-col col-9>
+          <h5 style="line-height: 1px;color:#15488a;margin-left: 0%;">Others</h5>
+        </ion-col>
+      </ion-row>
+      <ion-list>
+        <button class="rk-my-btn" menuClose ion-item *ngFor="let p of others" (click)="openPage(p)">
+          {{p.title}}
+        </button>
+      </ion-list>
+    </div>
+    <div class="rk-menu">
+
+     <ion-row style="margin-top: 6px;" (click)="logout()">
+       <ion-col col-3>
+         <img src="assets/icon/logout.png" alt="Account" style="margin-left: 12%; width: 40%; margin-top: 7%;">
+       </ion-col>
+       <ion-col col-9>
+         <h5 style="line-height: 1px;color:#15488a;">Logout</h5>
+       </ion-col>
+     </ion-row>
+   </div>
+  </ion-content>
+</ion-menu>
+<!-- Disable swipe-to-go-back because it's poor UX to combine STGB with side menus -->
+<ion-nav [root]="rootPage" #content swipeBackEnabled="false"></ion-nav>

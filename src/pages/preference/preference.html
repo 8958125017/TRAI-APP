@@ -5,24 +5,16 @@
   Ionic pages and navigation.
 -->
 <ion-header>
-
   <ion-navbar>
     <button ion-button menuToggle>
       <img class="trai-menu" menuToggle src="assets/icon/menu.png" alt="">
     </button>
     <!-- <ion-icon name="menu"><img menuToggle src="assets/icon/menu.png" alt=""></ion-icon> -->
-
     <ion-title>
       <img class="header-img" alt="" src="assets/icon/header-logo.png">
     </ion-title>
-
-   
   </ion-navbar>
-
 </ion-header>
-
-
-
 <ion-content padding-top>
   <!-- Header start -->
   <ion-grid class="trai-my-head">
@@ -32,30 +24,29 @@
           <img src="assets/icon/preference.png" />
         </div>
         <div class="trai-head-text">
-            <span>Preference</span>
+          <span>Preference</span>
         </div>
-        <div class="trai-line"></div>  <ion-grid>
+        <div class="trai-line"></div>
+        <ion-grid>
           <ion-row>
             <div class="scrollmenu">
-              <span style="color: #32ff7e; font-weight: 300;" *ngIf="preferenceDetail.tourism">
+              <span style="color: #32ff7e; font-weight: 300;" *ngIf="preferenceDetail.tourism.type">
                 <img style="width: 15px;" src="assets/icon/wintergreen-coin.svg" /> Tourism</span>
-              <span style="color: #18dcff; font-weight: 300;" *ngIf="preferenceDetail.banking">
+              <span style="color: #18dcff; font-weight: 300;" *ngIf="preferenceDetail.banking.type">
                 <img style="width: 15px;" src="assets/icon/neon-blue-coin.svg" /> Banking/Insurance/Financial Products/ Credit Cards</span>
-              <span style="color: #fd9644; font-weight: 300;" *ngIf="preferenceDetail.education">
+              <span style="color: #fd9644; font-weight: 300;" *ngIf="preferenceDetail.education.type">
                 <img style="width: 15px;" src="assets/icon/orange-coin.svg" /> Education</span>
-              <span style="color: #26de81; font-weight: 300;" *ngIf="preferenceDetail.health">
+              <span style="color: #26de81; font-weight: 300;" *ngIf="preferenceDetail.health.type">
                 <img style="width: 15px;" src="assets/icon/l-green-coin.svg" /> Health</span>
-              <span style="color:  #a55eea; font-weight: 300;" *ngIf="preferenceDetail.consumer">
+              <span style="color:  #a55eea; font-weight: 300;" *ngIf="preferenceDetail.consumer.type">
                 <img style="width: 15px;" src="assets/icon/purple-coin.svg" /> Consumer Goods and Automobile</span>
-              <span style="color: #0fb9b1; font-weight: 300;" *ngIf="preferenceDetail.communication">
+              <span style="color: #0fb9b1; font-weight: 300;" *ngIf="preferenceDetail.communication.type">
                 <img style="width: 15px;" src="assets/icon/bright-coin.svg" /> Communication/Broadcasting/Entertainment/IT</span>
-              <span style="color: #FC5C65; font-weight: 300;" *ngIf="preferenceDetail.dnd">
+              <span style="color: #FC5C65; font-weight: 300;" *ngIf="preferenceDetail.dnd.type">
                 <img style="width: 15px;" src="assets/icon/red-coin.svg" /> DND</span>
             </div>
           </ion-row>
-          
         </ion-grid>
-        
         <!-- <ion-grid>
           <ion-row class="trai-pref-c">
             <ion-col col-4 no-padding *ngIf="preferenceDetail.tourism">
@@ -106,160 +97,42 @@
     </ion-row>
   </ion-grid>
   <!-- Header end -->
-
   <!-- Content start -->
   <ion-grid class="trai-preference-content">
     <ion-row>
-      <ion-item class="trai-preference-c-head" (click)="preference(1)">
+      <ion-item class="trai-preference-c-head">
         <ion-label>Tourism</ion-label>
-        <ion-checkbox [(ngModel)]="preferenceDetail.tourism" color="secondary" (click)="preference(1)"></ion-checkbox>
+        <ion-checkbox [(ngModel)]="preferenceDetail.tourism.type" color="secondary" (click)="checkBoxModal(1)"></ion-checkbox>
       </ion-item>
-      <ion-item class="trai-preference-c-head" (click)="preference(2)">
+      <ion-item class="trai-preference-c-head" (click)="checkBoxModal(2)">
         <ion-label>Banking/Insurance/Financial Products/ Credit Cards</ion-label>
-        <ion-checkbox [(ngModel)]="preferenceDetail.banking" color="secondary" (click)="preference(2)"></ion-checkbox>
+        <ion-checkbox [(ngModel)]="preferenceDetail.banking.type" color="secondary" (click)="checkBoxModal(2)"></ion-checkbox>
       </ion-item>
       <ion-item class="trai-preference-c-head">
         <ion-label>Education</ion-label>
-        <ion-checkbox [(ngModel)]="preferenceDetail.education" color="secondary" (click)="preference(3)"></ion-checkbox>
+        <ion-checkbox [(ngModel)]="preferenceDetail.education.type" color="secondary" (click)="checkBoxModal(3)"></ion-checkbox>
       </ion-item>
       <ion-item class="trai-preference-c-head">
         <ion-label>Health</ion-label>
-        <ion-checkbox [(ngModel)]="preferenceDetail.health" color="secondary" (click)="preference(4)"></ion-checkbox>
+        <ion-checkbox [(ngModel)]="preferenceDetail.health.type" color="secondary" (click)="checkBoxModal(4)"></ion-checkbox>
       </ion-item>
       <ion-item class="trai-preference-c-head">
         <ion-label>Consumer Goods and Automobile</ion-label>
-        <ion-checkbox [(ngModel)]="preferenceDetail.consumer" color="secondary" (click)="preference(5)"></ion-checkbox>
+        <ion-checkbox [(ngModel)]="preferenceDetail.consumer.type" color="secondary" (click)="checkBoxModal(5)"></ion-checkbox>
       </ion-item>
       <ion-item class="trai-preference-c-head">
         <ion-label>Communication/Broadcasting/Entertainment/IT</ion-label>
-        <ion-checkbox [(ngModel)]="preferenceDetail.communication" color="secondary" (click)="preference(6)"></ion-checkbox>
+        <ion-checkbox [(ngModel)]="preferenceDetail.communication.type" color="secondary" (click)="checkBoxModal(6)"></ion-checkbox>
       </ion-item>
-      <ion-item class="trai-preference-c-head" (click)="preference(7)">
-          <ion-label>DND</ion-label>
-          <ion-checkbox [(ngModel)]="preferenceDetail.dnd" color="secondary" (click)="preference(7)"></ion-checkbox>
-        </ion-item>
-
+      <ion-item class="trai-preference-c-head" (click)="checkBoxModal(7)">
+        <ion-label>DND</ion-label>
+        <ion-checkbox [(ngModel)]="preferenceDetail.dnd.type" color="secondary" (click)="checkBoxModal(7)"></ion-checkbox>
+      </ion-item>
     </ion-row>
     <ion-row text-center>
-        <ion-col col-12 text-center>
-          <button ion-button round (click)="submit()">Submit</button>
-        </ion-col>
-      </ion-row>
+      <ion-col col-12 text-center>
+        <button ion-button round (click)="submit()">Submit</button>
+      </ion-col>
+    </ion-row>
   </ion-grid>
-
-  <!-- Content END -->
-  <!-- <ion-card (click)="turisumFun()">
-    <ion-row padding-top>
-      <ion-col col-12>
-        Tourism
-      </ion-col>
-    </ion-row>
-  </ion-card>
-  <ion-card *ngIf="tourism">
-    <ion-row padding-top text-center>
-      <ion-col col-12 text-center>
-        {{preferenceDetail.tourism}}
-      </ion-col>
-    </ion-row>
-  </ion-card> -->
-
-  <!-- Banking data -->
-  <!-- <ion-card (click)="bankingFun()">
-    <ion-row padding-top>
-      <ion-col col-12>
-        Banking/Insurance/Financial Products/ Credit Cards
-      </ion-col>
-    </ion-row>
-  </ion-card>
-
-  <ion-card *ngIf="banking">
-    <ion-row padding-top text-center>
-      <ion-col col-12 text-center>
-        {{preferenceDetail.banking}}
-      </ion-col>
-    </ion-row>
-  </ion-card> -->
-
- <!--  Real Estate -->
-  <!-- <ion-card (click)="realFun()">
-    <ion-row padding-top>
-      <ion-col col-12>
-        Real Estate
-      </ion-col>
-    </ion-row>
-  </ion-card>
-  <ion-card *ngIf="real">
-    <ion-row padding-top text-center>
-      <ion-col col-12 text-center>
-        {{preferenceDetail.real}}
-      </ion-col>
-    </ion-row>
-  </ion-card> -->
-
-<!--  Education -->
-  <!-- <ion-card (click)="educationFun()">
-    <ion-row padding-top>
-      <ion-col col-12>
-        Education
-      </ion-col>
-    </ion-row>
-  </ion-card>
-  <ion-card *ngIf="education">
-    <ion-row padding-top text-center>
-      <ion-col col-12 text-center>
-        {{preferenceDetail.education}}
-      </ion-col>
-    </ion-row>
-  </ion-card> -->
-
-  <!--  Health -->
-  <!-- <ion-card (click)="healthFun()">
-    <ion-row padding-top>
-      <ion-col col-12>
-        Health
-      </ion-col>
-    </ion-row>
-  </ion-card>
-  <ion-card *ngIf="health">
-    <ion-row padding-top text-center>
-      <ion-col col-12 text-center>
-        {{preferenceDetail.health}}
-
-      </ion-col>
-    </ion-row>
-  </ion-card> -->
-
-  <!--  Consumer Goods and automobile -->
-  <!-- <ion-card (click)="consumerFun()">
-    <ion-row padding-top>
-      <ion-col col-12>
-        Consumer Goods and automobile
-      </ion-col>
-    </ion-row>
-  </ion-card>
-  <ion-card *ngIf="consumer">
-    <ion-row padding-top text-center>
-      <ion-col col-12 text-center>
-        {{preferenceDetail.consumer}}
-      </ion-col>
-    </ion-row>
-  </ion-card> -->
-
-  <!--  Communication/Broadcasting/Entertainment/IT -->
-  <!-- <ion-card (click)="communicationFun()">
-    <ion-row padding-top>
-      <ion-col col-12>
-        Communication/Broadcasting/Entertainment/IT
-      </ion-col>
-    </ion-row>
-  </ion-card>
-  <ion-card *ngIf="communication">
-    <ion-row padding-top text-center>
-      <ion-col col-12 text-center>
-        {{preferenceDetail.communication}}
-      </ion-col>
-    </ion-row>
-  </ion-card> -->
-
-
 </ion-content>

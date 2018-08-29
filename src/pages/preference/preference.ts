@@ -1,7 +1,8 @@
 import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams ,Platform,ToastController,LoadingController} from 'ionic-angular';
+import { IonicPage, NavController, NavParams ,Platform,ToastController,LoadingController,ModalController} from 'ionic-angular';
 import { RegisterPage} from  '../../pages/register/register';
 import { SetupService } from '../../services/setup.service';
+import { PreferenceModalPage }  from '../../pages/preference-modal/preference-modal';
 /**
  * Generated class for the PreferencePage page.
  *
@@ -23,28 +24,30 @@ export class PreferencePage {
   consumer:boolean=false;
   communication:boolean=false;
   dnd:boolean=false;
+  info: any = {};
   preferenceDetailsInfo : any[]=[];
-  preferenceDetail: any = { 
-                        tourism       : false, 
-                        banking       : false,                 
-                        education     : false,
-                        health        : false,
-                        consumer      : false,
-                        communication : false,
-                        dnd           : false
+  preferenceDetail: any = {
+                        tourism       : {type:false,time:false,day:false,priority:false},
+                        banking       : {type:false,time:0,day:0,priority:0},
+                        education     : {type:false,time:0,day:0,priority:0},
+                        health        : {type:false,time:0,day:0,priority:0},
+                        consumer      : {type:false,time:0,day:0,priority:0},
+                        communication : {type:false,time:0,day:0,priority:0},
+                        dnd           : {type:false,time:0,day:0,priority:0}
                       };
+
 preferenceItem:any=[];
 userDetails:any
 contactNumber:any;
-  constructor(public navCtrl: NavController,public toastCtrl:ToastController,public platform:Platform, public navParams: NavParams,public setupservice:SetupService,public loadingCtrl: LoadingController) {
-  	 let backAction =  platform.registerBackButtonAction(() => {        
+  constructor(public navCtrl: NavController,public toastCtrl:ToastController,private modalCtrl: ModalController,public platform:Platform, public navParams: NavParams,public setupservice:SetupService,public loadingCtrl: LoadingController) {
+     let backAction =  platform.registerBackButtonAction(() => {
                     this.navCtrl.pop();
                     backAction();
                   },2)
-     this.userDetails=JSON.parse(localStorage.getItem('logindetail'));  
+     this.userDetails=JSON.parse(localStorage.getItem('logindetail'));
                if(this.userDetails){
                   this.contactNumber=this.userDetails[0].json.data.mobile;
-                  
+
               }
   }
 
@@ -55,46 +58,63 @@ contactNumber:any;
               console.log("111111111111111111111111111111111111",url,postData)
               this.setupservice.PostRequest(url,postData).subscribe((response)=>{
                 console.log("prefrences:::::::::::::::::::::::::",response = JSON.parse(response[0].json._body))
-                console.log("response:::::::::::::::::::111111111111",this.preferenceItem = response.data[response.data.length-1].preference)
-                if(response.data[response.data.length-1].preference.indexOf(1)>=0)
+                console.log("response:::::::::::::::::::111111111111",
+                  this.preferenceItem = response.data[response.data.length-1].preference
+                  // this.preferenceItem = []
+                  )
+                if((response.data[response.data.length-1].preference.find((element)=>{
+                       return  element.type==1;
+                  })))
                 {
-                  this.preferenceDetail.tourism = true
+                  this.preferenceDetail.tourism.type = true
                 }
                 else
-                  this.preferenceDetail.tourism = false
-                 if(response.data[response.data.length-1].preference.indexOf(2)>=0)
+                  this.preferenceDetail.tourism.type = false
+                  if((response.data[response.data.length-1].preference.find((element)=>{
+                         return  element.type==2;
+                    })))
                 {
-                  this.preferenceDetail.banking = true
+                  this.preferenceDetail.banking.type = true
                 }
                 else
-                   this.preferenceDetail.banking = false
-                 if(response.data[response.data.length-1].preference.indexOf(3)>=0)
+                   this.preferenceDetail.banking.type = false
+                   if((response.data[response.data.length-1].preference.find((element)=>{
+                          return  element.type==3;
+                     })))
                 {
-                  this.preferenceDetail.education = true
+                  this.preferenceDetail.education.type = true
                 }
                 else
-                  this.preferenceDetail.education = false
-                 if(response.data[response.data.length-1].preference.indexOf(4)>=0)
+                  this.preferenceDetail.education.type = false
+                  if((response.data[response.data.length-1].preference.find((element)=>{
+                         return  element.type==4;
+                    })))
                 {
-                  this.preferenceDetail.health = true
+                  this.preferenceDetail.health.type = true
                 }
-                else this.preferenceDetail.health = false
-                 if(response.data[response.data.length-1].preference.indexOf(5)>=0)
+                else this.preferenceDetail.health.type = false
+                if((response.data[response.data.length-1].preference.find((element)=>{
+                       return  element.type==5;
+                  })))
                 {
-                  this.preferenceDetail.consumer = true
+                  this.preferenceDetail.consumer.type = true
                 }
-                else this.preferenceDetail.consumer = false
-                 if(response.data[response.data.length-1].preference.indexOf(6)>=0)
+                else this.preferenceDetail.consumer.type = false
+                if((response.data[response.data.length-1].preference.find((element)=>{
+                       return  element.type==6;
+                  })))
                 {
-                  this.preferenceDetail.communication = true
+                  this.preferenceDetail.communication.type = true
                 }
-                else  this.preferenceDetail.communication = false
-                 if(response.data[response.data.length-1].preference.indexOf(7)>=0)
+                else  this.preferenceDetail.communication.type = false
+                if((response.data[response.data.length-1].preference.find((element)=>{
+                       return  element.type==7;
+                  })))
                 {
-                  this.preferenceDetail.dnd = true
+                  this.preferenceDetail.dnd.type = true
                 }
                 else
-                  this.preferenceDetail.dnd = false
+                  this.preferenceDetail.dnd.type = false
                 // preferenceDetail.tourism
               })
   }
@@ -103,48 +123,29 @@ contactNumber:any;
        this.navCtrl.setRoot(RegisterPage);
   }
 
-  
 
-       preference(item){
-         //debugger;
-      var index=this.preferenceItem.findIndex((inter)=>{
-             return  inter===item;
-        }); 
 
-         if(index===-1){
-                   if(item===7) {
-                     this.preferenceDetail.tourism=false;
-                     this.preferenceDetail.banking=false;
-                     this.preferenceDetail.education=false;
-                     this.preferenceDetail.health=false;
-                     this.preferenceDetail.consumer=false;
-                     this.preferenceDetail.communication=false;
-                     this.preferenceDetail.dnd=true;
-                     this.preferenceItem =[];
-                    this.preferenceItem.push(item);
-                   }else{
-                         if( this.preferenceDetail.dnd){
-                           this.preferenceItem =[];
-                         }
-                     this.preferenceDetail.dnd=false;
-
-                     this.preferenceItem.push(item);
-
+        checkBoxModal(data)
+        {
+          var indexed=this.preferenceItem.findIndex((element)=>{
+                        return  element.type==data;
+                   });
+                   if(indexed>=0)
+                   {
+                     this.preferenceItem.splice(indexed,1);
                    }
-         }else{
+                   else
+                   this.openModal(data);
 
-            this.preferenceItem.splice(index,1);
-         }
-         console.log(this.preferenceItem);
+                 console.log("--------------------------------checkModal",this.preferenceItem)
+        }
 
 
-       }
 
-       
 
-      
-       dndFunction(val:any){         
-         this.preferenceItem=val;         
+
+       dndFunction(val:any){
+         this.preferenceItem=val;
        }
 
        submit(){
@@ -155,12 +156,13 @@ contactNumber:any;
                      closeButtonText: 'Ok',
                      duration: 2000
                 });
-                toast.present(); 
+                toast.present();
         }else{
+
           let loading = this.loadingCtrl.create({
                   content: 'preference submiting please wait...',
                   duration:15000,
-               }); 
+               });
                 loading.present();
 
                let postData ={
@@ -169,7 +171,7 @@ contactNumber:any;
                         preference : this.preferenceItem
                    }
         }
-        
+
          const url = this.setupservice.basePath +'/userPrefrence';
          this.setupservice.PostRequest(url,postData).subscribe((response)=>{
            loading.dismiss();
@@ -200,12 +202,50 @@ contactNumber:any;
             }
          })
         }
-        
+
                console.log("this.preferenceDetailsInfo = = "+JSON.stringify(this.preferenceDetailsInfo));
-              
-        } 
+
+        }
+
+
+
+        openModal(data) {  
+          console.log("open modal::::::",data)
+              // var data = { message : 'hello world' };
+              let modal = this.modalCtrl.create('PreferenceModalPage',{type:data});
+             
+              // let modal = this.modalCtrl.create(PreferenceModalPage, { 
+              //   'prop': 'prop1', 
+              //   onFeedBack: (data) => {
+               
+              //   }
+              // }
+              // );
+
+              modal.onDidDismiss(data => {
+                 console.log("data:::::::::",data.type)
+                 var item = data.type
+                 var index=this.preferenceItem.findIndex((element)=>{
+                        return  element.type==item;
+                   });
+                   console.log("index:::",index)
+                   if(index>=0)
+                   {
+                     console.log("pop in modal")
+                     this.preferenceItem.splice(index,1);
+                   }
+                   else
+                   {
+                      console.log("push in modal")
+                   this.preferenceItem.push(data);
+                 }
+                 console.log("--------------------------------------------",JSON.stringify(this.preferenceItem));
+              });
+
+              modal.present().then(result => {
+                // console.log("result::::::",result)
+              });
+            
+          }
 
 }
-
-
- 

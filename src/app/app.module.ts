@@ -35,6 +35,7 @@ import { UserDetailPage } from '../pages/user-detail/user-detail';
 import { FrauddetailsPage } from '../pages/frauddetails/frauddetails';
 import { DatePicker } from '@ionic-native/date-picker';
 import { OtpReceivePage } from '../pages/otp-receive/otp-receive';
+import { PreferenceModalPage } from '../pages/preference-modal/preference-modal';
 @NgModule({
   declarations: [
     MyApp,
@@ -55,7 +56,8 @@ import { OtpReceivePage } from '../pages/otp-receive/otp-receive';
     DndPage,
     UserDetailPage,
     FrauddetailsPage,
-    OtpReceivePage
+    OtpReceivePage,
+    PreferenceModalPage
   ],
   imports: [
     BrowserModule,
@@ -79,6 +81,7 @@ import { OtpReceivePage } from '../pages/otp-receive/otp-receive';
         { component: UserDetailPage,name:'UserDetailPage',segment:'userdetail'},
         { component: FrauddetailsPage,name:'FrauddetailsPage',segment:'frauddetail'},
         { component: OtpReceivePage,name:'OtpReceivePage',segment:'otpreceive'},
+        { component: PreferenceModalPage, name: 'PreferenceModalPage', segment: 'preference-modal'},
       ]
     }),
     IonicStorageModule.forRoot()
@@ -102,7 +105,8 @@ import { OtpReceivePage } from '../pages/otp-receive/otp-receive';
     DndPage,
     UserDetailPage,
     FrauddetailsPage,
-    OtpReceivePage
+    OtpReceivePage,
+    PreferenceModalPage
   ],
   providers: [
     StatusBar,

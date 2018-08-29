@@ -1,0 +1,23 @@
+page-preference-modal {
+   .weekDays-selector input {
+  display: none!important;
+}
+
+.weekDays-selector input[type=checkbox] + label {
+  display: inline-block;
+    border-radius: 20px;
+    background: #dddddd;
+    height: 35px;
+    width: 30px;
+    margin-right: 8px;
+    line-height: 35px;
+    text-align: center;
+    cursor: pointer;
+}
+
+.weekDays-selector input[type=checkbox]:checked + label {
+  background: #2AD705;
+  color: #ffffff;
+}
+
+}

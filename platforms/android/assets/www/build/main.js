@@ -1,80 +1,6 @@
 webpackJsonp([0],{
 
-/***/ 144:
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return DashboardPage; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(1);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(16);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__pages_history_history__ = __webpack_require__(145);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__pages_preference_preference__ = __webpack_require__(160);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__pages_complaints_complaints__ = __webpack_require__(161);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__pages_complaintsstatus_complaintsstatus__ = __webpack_require__(91);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__pages_dnd_dnd__ = __webpack_require__(359);
-var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
-    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
-    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
-    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
-    return c > 3 && r && Object.defineProperty(target, key, r), r;
-};
-var __metadata = (this && this.__metadata) || function (k, v) {
-    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
-};
-
-
-
-
-
-
-
-/**
- * Generated class for the DashboardPage page.
- *
- * See https://ionicframework.com/docs/components/#navigation for more info on
- * Ionic pages and navigation.
- */
-var DashboardPage = (function () {
-    function DashboardPage(navCtrl, navParams, menuCtrl) {
-        this.navCtrl = navCtrl;
-        this.navParams = navParams;
-        this.menuCtrl = menuCtrl;
-    }
-    DashboardPage.prototype.history = function () {
-        this.navCtrl.push(__WEBPACK_IMPORTED_MODULE_2__pages_history_history__["a" /* HistoryPage */]);
-    };
-    DashboardPage.prototype.preference = function () {
-        this.navCtrl.push(__WEBPACK_IMPORTED_MODULE_3__pages_preference_preference__["a" /* PreferencePage */]);
-    };
-    DashboardPage.prototype.dnd = function () {
-        this.navCtrl.push(__WEBPACK_IMPORTED_MODULE_6__pages_dnd_dnd__["a" /* DndPage */]);
-    };
-    DashboardPage.prototype.complaints = function () {
-        this.navCtrl.push(__WEBPACK_IMPORTED_MODULE_4__pages_complaints_complaints__["a" /* ComplaintsPage */]);
-    };
-    DashboardPage.prototype.complaintsStatus = function () {
-        this.navCtrl.push(__WEBPACK_IMPORTED_MODULE_5__pages_complaintsstatus_complaintsstatus__["a" /* ComplaintsstatusPage */]);
-    };
-    DashboardPage.prototype.ionViewDidEnter = function () {
-        this.menuCtrl.enable(true);
-    };
-    DashboardPage.prototype.ionViewDidLoad = function () {
-        console.log('ionViewDidLoad DashboardPage');
-    };
-    DashboardPage = __decorate([
-        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
-            selector: 'page-dashboard',template:/*ion-inline-start:"/home/pankaj/Pennyproject/Ionic/traiFrontEnd/traibackup/2-13-08-2018/src/pages/dashboard/dashboard.html"*/`<!--\n  Generated template for the DashboardPage page.\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n  Ionic pages and navigation.\n-->\n<ion-header>\n\n  <ion-navbar>\n    <button ion-button menuToggle>\n      <img class="trai-menu" menuToggle src="assets/icon/menu.png" alt="">\n    </button>\n    <!-- <ion-icon name="menu"><img menuToggle src="../assets/icon/menu.png" alt=""></ion-icon> -->\n\n    <ion-title>\n      <img class="header-img" alt="" src="assets/icon/header-logo.png">\n    </ion-title>\n\n   \n  </ion-navbar>\n\n</ion-header>\n\n\n<ion-content padding>\n  <ion-grid>\n    <!-- Calls Start -->\n    <ion-row>\n      <ion-col col-6 class="trai-dash-head">Dashboard</ion-col>\n      <ion-col col-6 class="trai-dash-sim">SIM:\n        <span>1 Vodafone</span>\n      </ion-col>\n    </ion-row>\n  </ion-grid>\n\n  <ion-grid>\n    <ion-row (click)="history()">\n      <ion-col col-12 class="trai-c-a" padding-0>\n        <ion-grid class="trai-grid-c">\n          <ion-row>\n            <ion-col col-2 class="trai-img-a">\n              <div class="trai-img-ab">\n                <img src="assets/icon/calls-sms.png" />\n              </div>\n            </ion-col>\n            <ion-col col-10 class="trai-text-a">\n\n              <ion-row>\n                <ion-col col-8 style="padding: 0px;">\n                  <div class="trai-cal-h3">\n                    <span>Last 30 days</span>\n                  </div>\n                </ion-col>\n                <ion-col col-4>\n                  <div class="trai-cal-span">\n                    3\n                    <span>\n                      <ion-icon ios="ios-arrow-dropdown" md="md-arrow-dropdown"></ion-icon> 2%</span>\n                  </div>\n                </ion-col>\n              </ion-row>\n              <ion-row>\n                <ion-col col-5 no-padding>\n                  <small class="trai-cal-phone">\n                    <ion-icon class=" icon icon-md ion-ios-call-outline" name="ios-call-outline" role="img" aria-label="call outline" ng-reflect-name="ios-call-outline"></ion-icon>&nbsp;+91 7273099884</small>\n                </ion-col>\n                <ion-col col-4 no-padding>\n                  <small class="trai-cal-phone">\n                    <ion-icon class="icon-default-color icon icon-md ios-calendar-outline" name="ios-calendar-outline" role="img" aria-label="calendar outline"\n                      ng-reflect-name="ios-calendar-outline"></ion-icon>&nbsp; 10-08-2018</small>\n                </ion-col>\n                <ion-col col-3 no-padding>\n                  <small class="trai-cal-phone">\n                    <img style="width: 20%;" src="assets/icon/recive.png" alt="">&nbsp;1:30m</small>\n                </ion-col>\n              </ion-row>\n\n            </ion-col>\n          </ion-row>\n        </ion-grid>\n      </ion-col>\n    </ion-row>\n    <!-- Calls END -->\n    <!-- DND Start -->\n\n    <ion-row padding-top (click)="dnd()">\n      <ion-col col-12 class="trai-c-a" padding-0>\n        <ion-grid class="trai-grid-c">\n          <ion-row>\n            <ion-col col-2 class="trai-dnd-a">\n              <div class="trai-img-ab">\n                <img src="assets/icon/dnd.png" />\n              </div>\n            </ion-col>\n            <ion-col col-10 class="trai-text-a">\n\n              <ion-row>\n                <ion-col col-8 style="padding: 0px;">\n                  <div class="trai-cal-h3">\n                    <span>DND</span>\n                  </div>\n                </ion-col>\n                <ion-col col-4 no-padding text-right>\n                  <small class="trai-active-d">Active DND</small>\n                </ion-col>\n              </ion-row>\n              <ion-row>\n\n                <ion-col col-8 no-padding>\n                  <small class="trai-dnd-small">\n                    <ion-icon class="icon-default-color icon icon-md ion-ios-clock-outline" name="ios-clock-outline" role="img" aria-label="clock outline"\n                      ng-reflect-name="ios-clock-outline"></ion-icon>&nbsp;\n                    <b>From</b>\n                    <span>07:30PM</span>\n                    <b>To</b>\n                    <span>12:00AM</span>\n                  </small>\n                </ion-col>\n\n              </ion-row>\n\n            </ion-col>\n          </ion-row>\n        </ion-grid>\n      </ion-col>\n    </ion-row>\n    <!-- DND END -->\n\n    <!-- Complaint Start -->\n\n    <ion-row padding-top (click)="complaints()">\n      <ion-col col-12 class="trai-c-a" padding-0>\n        <ion-grid class="trai-grid-c">\n          <ion-row>\n            <ion-col col-2 class="trai-complaints-a">\n              <div class="trai-img-ab">\n                <img src="assets/icon/complaints.png" />\n              </div>\n            </ion-col>\n            <ion-col col-10 class="trai-text-a">\n\n              <ion-row>\n                <ion-col col-12 style="padding: 0px;">\n                  <div class="trai-cal-h3">\n                    <span>Complaints</span>\n                  </div>\n                </ion-col>\n              </ion-row>\n              <ion-row>\n                <ion-col col-12 no-padding>\n                  <small class="trai-comp-t">Report Call | Report SMS</small>\n                </ion-col>\n\n              </ion-row>\n\n            </ion-col>\n          </ion-row>\n        </ion-grid>\n      </ion-col>\n    </ion-row>\n    <!-- Complaint END -->\n    <!-- Complaint status Start -->\n\n    <ion-row padding-top (click)="complaintsStatus()">\n      <ion-col col-12 class="trai-c-a" padding-0>\n        <ion-grid class="trai-grid-c">\n          <ion-row>\n            <ion-col col-2 class="trai-complaints-status-a">\n              <div class="trai-img-ab">\n                <img src="assets/icon/complaints-status.png" />\n              </div>\n            </ion-col>\n            <ion-col col-10 class="trai-text-a">\n\n              <ion-row>\n                <ion-col col-12 style="padding: 0px;">\n                  <div class="trai-cal-h3">\n                    <span>Complaints Status</span>\n                  </div>\n                </ion-col>\n              </ion-row>\n              <ion-row>\n                <ion-col col-8 no-padding>\n                  <small class="trai-comp-t">\n                    <b>Last Complaint URN:</b> # - - - - -.</small>\n                </ion-col>\n                <ion-col col-4 no-padding>\n                  <small class="trai-comp-t">Pending</small>\n                </ion-col>\n              </ion-row>\n\n            </ion-col>\n          </ion-row>\n        </ion-grid>\n      </ion-col>\n    </ion-row>\n    <!-- Complaint status END -->\n\n    <!-- preference Start -->\n\n    <ion-row padding-top (click)="preference()">\n      <ion-col col-12 class="trai-c-a" padding-0>\n        <ion-grid class="trai-grid-c">\n          <ion-row>\n            <ion-col col-2 class="trai-preference-a">\n              <div class="trai-img-ab">\n                <img src="assets/icon/preference.png" />\n              </div>\n            </ion-col>\n            <ion-col col-10 class="trai-text-a">\n\n              <ion-row>\n                <ion-col col-12 style="padding: 0px;">\n                  <div class="trai-cal-h3">\n                    <span>Preference</span>\n                  </div>\n                </ion-col>\n              </ion-row>\n              <ion-row>\n                <ion-col col-12 no-padding>\n                  <small class="trai-comp-t">\n                    <b>Preference Registered:</b>\n                    <span>Tourism, Health.... view</span>\n                  </small>\n                </ion-col>\n              </ion-row>\n\n            </ion-col>\n          </ion-row>\n        </ion-grid>\n      </ion-col>\n    </ion-row>\n    <!-- preference END -->\n  </ion-grid>\n</ion-content>\n`/*ion-inline-end:"/home/pankaj/Pennyproject/Ionic/traiFrontEnd/traibackup/2-13-08-2018/src/pages/dashboard/dashboard.html"*/,
-        }),
-        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["k" /* NavController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["l" /* NavParams */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* MenuController */]])
-    ], DashboardPage);
-    return DashboardPage;
-}());
-
-//# sourceMappingURL=dashboard.js.map
-
-/***/ }),
-
-/***/ 145:
+/***/ 146:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -83,7 +9,7 @@ var DashboardPage = (function () {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(16);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__ionic_native_device__ = __webpack_require__(265);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__ionic_native_android_permissions__ = __webpack_require__(80);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__pages_user_detail_user_detail__ = __webpack_require__(81);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__pages_user_detail_user_detail__ = __webpack_require__(82);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -116,23 +42,34 @@ var HistoryPage = (function () {
         this.navParams = navParams;
         this.section = 'one';
         this.messages = [];
+        this.callLogsList = [];
         var backAction = platform.registerBackButtonAction(function () {
             _this.navCtrl.pop();
             backAction();
         }, 2);
         this.callLog();
-        this.checkPermission();
+        //this.checkPermission();
+        this.userDetails = JSON.parse(localStorage.getItem('logindetail'));
+        if (this.userDetails) {
+            this.contactNumber = this.userDetails[0].json.data.mobile;
+        }
     }
     HistoryPage.prototype.callLog = function () {
-        var loading = this.loadingCtrl.create({
-            content: 'Loading call logs please wait...',
-            duration: 15000,
-        });
-        loading.present();
-        this.mobileId = JSON.parse(this.device.uuid);
-        //  alert("this.mobileId = = "+JSON.stringify(this.mobileId));
-        loading.dismiss();
-        //alert("this.device.uuid "+JSON.stringify(this.mobileId));
+        this.callLogsList = [];
+        // let loading = this.loadingCtrl.create({
+        //   content: 'Loading call logs please wait...',
+        //   duration:15000,
+        // }); 
+        //  loading.present();
+        var time = (new Date().getTime() - 259200000);
+        var userCalls = JSON.parse(this.device.uuid);
+        if (userCalls) {
+            var index = userCalls.findIndex(function (element) {
+                return parseInt(element.date) < time;
+            });
+            this.mobileId = userCalls.slice(0, index);
+        }
+        //  loading.dismiss();
     };
     HistoryPage.prototype.ionViewDidLoad = function () {
         console.log('ionViewDidLoad HistoryPage');
@@ -156,14 +93,15 @@ var HistoryPage = (function () {
         var _this = this;
         var loading = this.loadingCtrl.create({
             content: 'Loading sms logs please wait...',
-            duration: 15000,
+            duration: 8000,
         });
         loading.present();
         this.platform.ready().then(function (readySource) {
             var filter = {
                 box: 'inbox',
+                address: _this.contactNumber,
                 indexFrom: 0,
-                maxCount: 100,
+                maxCount: 20,
             };
             if (SMS)
                 SMS.listSMS(filter, function (ListSms) {
@@ -189,9 +127,28 @@ var HistoryPage = (function () {
         this.navCtrl.push(__WEBPACK_IMPORTED_MODULE_4__pages_user_detail_user_detail__["a" /* UserDetailPage */], { objAddress: number });
         // this.navCtrl.setRoot(UserDetailPage,{'num': 'objCall.phoneNumber','date':'objCall.date','duraton':'objCall.duration','typeCall':'objCall.type'}); 
     };
+    HistoryPage.prototype.getSMS = function () {
+        var _this = this;
+        var filter = {
+            box: 'inbox',
+            address: this.contactNumber,
+            indexFrom: 0,
+            maxCount: 20,
+        };
+        if (window.SMS)
+            window.SMS.listSMS(filter, function (data) {
+                setTimeout(function () {
+                    console.log(data);
+                    _this.messages = data;
+                    alert("message = = " + JSON.stringify(_this.messages));
+                }, 0);
+            }, function (error) {
+                console.log(error);
+            });
+    };
     HistoryPage = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
-            selector: 'page-history',template:/*ion-inline-start:"/home/pankaj/Pennyproject/Ionic/traiFrontEnd/traibackup/2-13-08-2018/src/pages/history/history.html"*/`<!--\n  Generated template for the HistoryPage page.\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n  Ionic pages and navigation.\n-->\n<ion-header>\n\n  <ion-navbar>\n    <button ion-button menuToggle>\n      <img class="trai-menu" menuToggle src="assets/icon/menu.png" alt="">\n    </button>\n    <!-- <ion-icon name="menu"><img menuToggle src="assets/icon/menu.png" alt=""></ion-icon> -->\n\n    <ion-title>\n      <img class="header-img" alt="" src="assets/icon/header-logo.png">\n    </ion-title>\n\n\n  </ion-navbar>\n\n</ion-header>\n\n\n<ion-content padding-top>\n\n  <!-- Header start -->\n  <ion-grid class="trai-my-head">\n    <ion-row>\n      <ion-col col-12 class="trai-pref-head" no-padding>\n        <div class="trai-head-img">\n          <img src="assets/icon/calls-sms.png" />\n        </div>\n        <div class="trai-head-text">\n            <span>Last 30 days Calls & SMS Variation</span>\n        </div>\n        <div class="trai-line"></div>\n        <ion-grid>\n          <ion-row class="trai-pref-c">\n            <ion-col col-12>\n              <div class="call-head">\n                <span class="trai-my-head-a"> 30 days Calls</span>\n                <span class="trai-my-head-b">\n                  <ion-icon ios="ios-arrow-dropdown" md="md-arrow-dropdown"></ion-icon> 2% Spam\n                </span>\n              </div>\n            </ion-col>\n          </ion-row>\n        </ion-grid>\n      </ion-col>\n    </ion-row>\n  </ion-grid>\n  <!-- Header end -->\n\n  <ion-grid class="trai-cal-cont">\n    <ion-toolbar padding color="light" mode="md" class="tool-custom" style=" margin-top: 15px;   border-radius: 35px;\n  background: #fff; padding: 0;min-height:0;">\n      <ion-segment color="dark" mode="md" [(ngModel)]="section">\n        <ion-segment-button active value="one" (click)="callLog()">\n          Call\n        </ion-segment-button>\n        <ion-segment-button value="two" (click)="checkPermission()">\n          SMS\n        </ion-segment-button>\n      </ion-segment>\n    </ion-toolbar>\n\n\n\n  <ion-card>\n\n    <ion-card-content no-padding>\n      <!-- Add card content here! -->\n      <div [ngSwitch]="section">\n        <ion-list *ngSwitchCase="\'one\'" inset>\n          <ion-item ion-item class="trai-cal-data-a" *ngFor="let d of mobileId">\n            <ion-row>\n              <ion-col col-6>\n                <small>\n                  <ion-icon class="icon-default-color" name="ios-call-outline"></ion-icon>&nbsp;{{d.phoneNumber}}</small>\n              </ion-col>\n              <ion-col col-6 text-right>\n                <small>\n                  <ion-icon class="icon-default-color" name="ios-trending-up-outline"></ion-icon>&nbsp;{{d.callDuration}}</small>\n              </ion-col>\n            </ion-row>\n            <ion-row class="trai-cont-set">\n              <ion-col col-4>\n                <small>\n                  <img style="width: 10px; display: inline;" src="assets/icon/outgoing.svg" alt="">&nbsp;{{d.type}}</small>\n              </ion-col>\n              <ion-col col-4>\n                <small>\n                  <ion-icon class="icon-default-color" name="ios-clock-outline"></ion-icon>&nbsp;{{d.date | date:\'dd/MM/yyyy\'}}</small>\n              </ion-col>\n              <ion-col col-4  text-right (click)="reportCall(d.phoneNumber,d.date,d.callDuration,d.type)">\n                  <small>\n                    <ion-icon style=" color: #15488a;" ios="ios-paper" md="md-paper" (click)="report(d)"></ion-icon>&nbsp;Report</small>\n                </ion-col>\n\n            </ion-row>\n          </ion-item>\n          \n          \n          \n          \n\n\n\n        </ion-list>\n\n        <ion-list *ngSwitchCase="\'two\'" inset>\n          \n          <ion-item ion-item *ngFor="let x of messages">\n              <ion-row>\n                <ion-col style="font-size: 12px;">\n                  {{x.address}}\n                </ion-col>\n              </ion-row>\n\n              <ion-row style="font-size:14px;">\n                <ion-col col-6>\n                  <small>\n                    <ion-icon class="icon-default-color" ios="ios-text" md="md-text"></ion-icon>&nbsp;{{(x.body | slice:0:22)+"..."}}</small>\n                </ion-col>\n                <ion-col col-3 (click)="reportSms(x.address)">\n                  <small>\n                    <ion-icon style=" color: #15488a;" ios="ios-paper" md="md-paper"></ion-icon>&nbsp;Report</small>\n                </ion-col>\n                <ion-col col-3>\n                  <small>\n                    <ion-icon class="icon-default-color" name="ios-clock-outline"></ion-icon>&nbsp;{{x.date | date:\'dd/MM/yyyy\'}}</small>\n                </ion-col>\n\n              </ion-row>\n            </ion-item>\n            \n\n        </ion-list>\n      </div>\n    </ion-card-content>\n\n  </ion-card>\n</ion-grid>\n\n\n\n</ion-content>\n`/*ion-inline-end:"/home/pankaj/Pennyproject/Ionic/traiFrontEnd/traibackup/2-13-08-2018/src/pages/history/history.html"*/,
+            selector: 'page-history',template:/*ion-inline-start:"/home/pankaj/Pennyproject/Ionic/traiFrontEnd/traibackup/2-13-08-2018/src/pages/history/history.html"*/`<!--\n  Generated template for the HistoryPage page.\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n  Ionic pages and navigation.\n-->\n<ion-header>\n\n  <ion-navbar>\n    <button ion-button menuToggle>\n      <img class="trai-menu" menuToggle src="assets/icon/menu.png" alt="">\n    </button>\n    <!-- <ion-icon name="menu"><img menuToggle src="assets/icon/menu.png" alt=""></ion-icon> -->\n\n    <ion-title>\n      <img class="header-img" alt="" src="assets/icon/header-logo.png" (click)="checkPermission()">\n    </ion-title>\n\n\n  </ion-navbar>\n\n</ion-header>\n\n\n<ion-content padding-top>\n\n  <!-- Header start -->\n  <ion-grid class="trai-my-head">\n    <ion-row>\n      <ion-col col-12 class="trai-pref-head" no-padding>\n        <div class="trai-head-img">\n          <img src="assets/icon/calls-sms.png" />\n        </div>\n        <div class="trai-head-text">\n            <span>Last 30 days Calls & SMS Variation</span>\n        </div>\n        <div class="trai-line"></div>\n        <ion-grid>\n          <ion-row class="trai-pref-c">\n            <ion-col col-12>\n              <div class="call-head">\n                <span class="trai-my-head-a"> 30 days Calls</span>\n                <span class="trai-my-head-b">\n                  <ion-icon ios="ios-arrow-dropdown" md="md-arrow-dropdown"></ion-icon> 2% Spam\n                </span>\n              </div>\n            </ion-col>\n          </ion-row>\n        </ion-grid>\n      </ion-col>\n    </ion-row>\n  </ion-grid>\n  <!-- Header end -->\n\n  <ion-grid class="trai-cal-cont">\n    <ion-toolbar padding color="light" mode="md" class="tool-custom" style=" margin-top: 15px;   border-radius: 35px;\n  background: #fff; padding: 0;min-height:0;">\n      <ion-segment color="dark" mode="md" [(ngModel)]="section">\n        <ion-segment-button active value="one" (click)="callLog()">\n          Call\n        </ion-segment-button>\n        <ion-segment-button value="two" (click)="getSMS()">\n          SMS\n        </ion-segment-button>\n      </ion-segment>\n    </ion-toolbar>\n\n\n\n  <ion-card>\n\n    <ion-card-content no-padding>\n      <!-- Add card content here! -->\n      <div [ngSwitch]="section">\n        <ion-list *ngSwitchCase="\'one\'" inset>\n          <ion-item ion-item class="trai-cal-data-a" *ngFor="let d of mobileId">\n            <ion-row>\n              <ion-col col-6>\n                <small>\n                  <ion-icon class="icon-default-color" name="ios-call-outline"></ion-icon>&nbsp;{{d.phoneNumber}}</small>\n              </ion-col>\n              <ion-col col-6 text-right>\n                <small>\n                  <ion-icon class="icon-default-color" name="ios-trending-up-outline"></ion-icon>&nbsp;{{d.callDuration}}</small>\n              </ion-col>\n            </ion-row>\n            <ion-row class="trai-cont-set">\n              <ion-col col-4>\n                <small>\n                  <img style="width: 10px; display: inline;" src="assets/icon/outgoing.svg" alt="">&nbsp;{{d.type}}</small>\n              </ion-col>\n              <ion-col col-4>\n                <small>\n                  <ion-icon class="icon-default-color" name="ios-clock-outline"></ion-icon>&nbsp;{{d.date | date:\'dd/MM/yyyy\'}}</small>\n              </ion-col>\n              <ion-col col-4  text-right (click)="reportCall(d.phoneNumber,d.date,d.callDuration,d.type)">\n                  <small>\n                    <ion-icon style=" color: #15488a;" ios="ios-paper" md="md-paper" (click)="report(d)"></ion-icon>&nbsp;Report</small>\n                </ion-col>\n\n            </ion-row>\n          </ion-item>\n          \n          \n          \n          \n\n\n\n        </ion-list>\n\n        <ion-list *ngSwitchCase="\'two\'" inset>\n          \n          <ion-item ion-item *ngFor="let x of messages">\n              <ion-row>\n                <ion-col style="font-size: 12px;">\n                  {{x.address}}\n                </ion-col>\n              </ion-row>\n\n              <ion-row style="font-size:14px;">\n                <ion-col col-6>\n                  <small>\n                    <ion-icon class="icon-default-color" ios="ios-text" md="md-text"></ion-icon>&nbsp;{{(x.body | slice:0:22)+"..."}}</small>\n                </ion-col>\n                <ion-col col-3 (click)="reportSms(x.address)">\n                  <small>\n                    <ion-icon style=" color: #15488a;" ios="ios-paper" md="md-paper"></ion-icon>&nbsp;Report</small>\n                </ion-col>\n                <ion-col col-3>\n                  <small>\n                    <ion-icon class="icon-default-color" name="ios-clock-outline"></ion-icon>&nbsp;{{x.date | date:\'dd/MM/yyyy\'}}</small>\n                </ion-col>\n\n              </ion-row>\n            </ion-item>\n            \n\n        </ion-list>\n      </div>\n    </ion-card-content>\n\n  </ion-card>\n</ion-grid>\n\n\n\n</ion-content>\n`/*ion-inline-end:"/home/pankaj/Pennyproject/Ionic/traiFrontEnd/traibackup/2-13-08-2018/src/pages/history/history.html"*/,
             providers: [__WEBPACK_IMPORTED_MODULE_2__ionic_native_device__["a" /* Device */]]
         }),
         __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["k" /* NavController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* LoadingController */], __WEBPACK_IMPORTED_MODULE_3__ionic_native_android_permissions__["a" /* AndroidPermissions */], __WEBPACK_IMPORTED_MODULE_2__ionic_native_device__["a" /* Device */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["m" /* Platform */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["l" /* NavParams */]])
@@ -203,7 +160,7 @@ var HistoryPage = (function () {
 
 /***/ }),
 
-/***/ 160:
+/***/ 161:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -211,7 +168,8 @@ var HistoryPage = (function () {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(1);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(16);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__pages_register_register__ = __webpack_require__(45);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__services_setup_service__ = __webpack_require__(33);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__services_setup_service__ = __webpack_require__(31);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__ionic_native_sms__ = __webpack_require__(698);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -225,6 +183,7 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 
 
 
+
 /**
  * Generated class for the PreferencePage page.
  *
@@ -232,9 +191,10 @@ var __metadata = (this && this.__metadata) || function (k, v) {
  * Ionic pages and navigation.
  */
 var PreferencePage = (function () {
-    function PreferencePage(navCtrl, toastCtrl, modalCtrl, platform, navParams, setupservice, loadingCtrl) {
+    function PreferencePage(navCtrl, sms, toastCtrl, modalCtrl, platform, navParams, setupservice, loadingCtrl) {
         var _this = this;
         this.navCtrl = navCtrl;
+        this.sms = sms;
         this.toastCtrl = toastCtrl;
         this.modalCtrl = modalCtrl;
         this.platform = platform;
@@ -272,15 +232,13 @@ var PreferencePage = (function () {
     }
     PreferencePage.prototype.ionViewDidLoad = function () {
         var _this = this;
-        console.log('ionViewDidLoad PreferencePage');
         var url = this.setupservice.basePath + '/getUserPrefrence';
-        var postData = { "mobile": this.contactNumber };
-        console.log("111111111111111111111111111111111111", url, postData);
+        var postData = {
+            "mobile": this.contactNumber
+        };
         this.setupservice.PostRequest(url, postData).subscribe(function (response) {
-            console.log("prefrences:::::::::::::::::::::::::", response = JSON.parse(response[0].json._body));
-            console.log("response:::::::::::::::::::111111111111", _this.preferenceItem = response.data[response.data.length - 1].preference
-            // this.preferenceItem = []
-            );
+            var response = JSON.parse(response[0].json._body);
+            _this.preferenceItem = response.data[response.data.length - 1].preference;
             if ((response.data[response.data.length - 1].preference.find(function (element) {
                 return element.type == 1;
             }))) {
@@ -343,8 +301,9 @@ var PreferencePage = (function () {
         if (indexed >= 0) {
             this.preferenceItem.splice(indexed, 1);
         }
-        else
+        else {
             this.openModal(data);
+        }
         console.log("--------------------------------checkModal", this.preferenceItem);
     };
     PreferencePage.prototype.dndFunction = function (val) {
@@ -352,7 +311,7 @@ var PreferencePage = (function () {
     };
     PreferencePage.prototype.submit = function () {
         var _this = this;
-        if (!this.preferenceItem) {
+        if (this.preferenceItem.length <= 0) {
             var toast = this.toastCtrl.create({
                 message: 'Please select at least one preference!',
                 showCloseButton: true,
@@ -385,13 +344,13 @@ var PreferencePage = (function () {
                     });
                     toast.present();
                     _this.ionViewDidLoad();
-                    // this.preferenceDetail.tourism=false;
-                    // this.preferenceDetail.banking=false;
-                    // this.preferenceDetail.education=false;
-                    // this.preferenceDetail.health=false;
-                    // this.preferenceDetail.consumer=false;
-                    // this.preferenceDetail.communication=false;
-                    // this.preferenceDetail.dnd=false;
+                    // this.preferenceDetail.tourism.type=false;
+                    // this.preferenceDetail.banking.type=false;
+                    // this.preferenceDetail.education.type=false;
+                    // this.preferenceDetail.health.type=false;
+                    // this.preferenceDetail.consumer.type=false;
+                    // this.preferenceDetail.communication.type=false;
+                    // this.preferenceDetail.dnd.type=false;
                 }
                 else {
                     var toast = _this.toastCtrl.create({
@@ -411,38 +370,34 @@ var PreferencePage = (function () {
         console.log("open modal::::::", data);
         // var data = { message : 'hello world' };
         var modal = this.modalCtrl.create('PreferenceModalPage', { type: data });
-        // let modal = this.modalCtrl.create(PreferenceModalPage, { 
-        //   'prop': 'prop1', 
-        //   onFeedBack: (data) => {
-        //   }
-        // }
-        // );
         modal.onDidDismiss(function (data) {
-            console.log("data:::::::::", data.type);
-            var item = data.type;
-            var index = _this.preferenceItem.findIndex(function (element) {
-                return element.type == item;
-            });
-            console.log("index:::", index);
-            if (index >= 0) {
-                console.log("pop in modal");
-                _this.preferenceItem.splice(index, 1);
+            if (data) {
+                var item = data.type;
+                var index = _this.preferenceItem.findIndex(function (element) {
+                    return element.type == item;
+                });
+                console.log("index:::", index);
+                if (index >= 0) {
+                    console.log("pop in modal");
+                    _this.preferenceItem.splice(index, 1);
+                }
+                else {
+                    console.log("push in modal");
+                    _this.preferenceItem.push(data);
+                }
+                console.log("-", JSON.stringify(_this.preferenceItem));
             }
-            else {
-                console.log("push in modal");
-                _this.preferenceItem.push(data);
-            }
-            console.log("--------------------------------------------", JSON.stringify(_this.preferenceItem));
         });
         modal.present().then(function (result) {
-            // console.log("result::::::",result)
+            console.log("result::::::", result);
         });
     };
     PreferencePage = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
             selector: 'page-preference',template:/*ion-inline-start:"/home/pankaj/Pennyproject/Ionic/traiFrontEnd/traibackup/2-13-08-2018/src/pages/preference/preference.html"*/`<!--\n  Generated template for the PreferencePage page.\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n  Ionic pages and navigation.\n-->\n<ion-header>\n  <ion-navbar>\n    <button ion-button menuToggle>\n      <img class="trai-menu" menuToggle src="assets/icon/menu.png" alt="">\n    </button>\n    <!-- <ion-icon name="menu"><img menuToggle src="assets/icon/menu.png" alt=""></ion-icon> -->\n    <ion-title>\n      <img class="header-img" alt="" src="assets/icon/header-logo.png">\n    </ion-title>\n  </ion-navbar>\n</ion-header>\n<ion-content padding-top>\n  <!-- Header start -->\n  <ion-grid class="trai-my-head">\n    <ion-row>\n      <ion-col col-12 class="trai-pref-head" no-padding>\n        <div class="trai-head-img">\n          <img src="assets/icon/preference.png" />\n        </div>\n        <div class="trai-head-text">\n          <span>Preference</span>\n        </div>\n        <div class="trai-line"></div>\n        <ion-grid>\n          <ion-row>\n            <div class="scrollmenu">\n              <span style="color: #32ff7e; font-weight: 300;" *ngIf="preferenceDetail.tourism.type">\n                <img style="width: 15px;" src="assets/icon/wintergreen-coin.svg" /> Tourism</span>\n              <span style="color: #18dcff; font-weight: 300;" *ngIf="preferenceDetail.banking.type">\n                <img style="width: 15px;" src="assets/icon/neon-blue-coin.svg" /> Banking/Insurance/Financial Products/ Credit Cards</span>\n              <span style="color: #fd9644; font-weight: 300;" *ngIf="preferenceDetail.education.type">\n                <img style="width: 15px;" src="assets/icon/orange-coin.svg" /> Education</span>\n              <span style="color: #26de81; font-weight: 300;" *ngIf="preferenceDetail.health.type">\n                <img style="width: 15px;" src="assets/icon/l-green-coin.svg" /> Health</span>\n              <span style="color:  #a55eea; font-weight: 300;" *ngIf="preferenceDetail.consumer.type">\n                <img style="width: 15px;" src="assets/icon/purple-coin.svg" /> Consumer Goods and Automobile</span>\n              <span style="color: #0fb9b1; font-weight: 300;" *ngIf="preferenceDetail.communication.type">\n                <img style="width: 15px;" src="assets/icon/bright-coin.svg" /> Communication/Broadcasting/Entertainment/IT</span>\n              <span style="color: #FC5C65; font-weight: 300;" *ngIf="preferenceDetail.dnd.type">\n                <img style="width: 15px;" src="assets/icon/red-coin.svg" /> DND</span>\n            </div>\n          </ion-row>\n        </ion-grid>\n        <!-- <ion-grid>\n          <ion-row class="trai-pref-c">\n            <ion-col col-4 no-padding *ngIf="preferenceDetail.tourism">\n              <div class="coin">\n\n                <span>Tourism</span>\n              </div>\n            </ion-col>\n            <ion-col col-4 no-padding *ngIf="preferenceDetail.banking">\n              <div class="coin">\n\n                <span>Banking</span>\n              </div>\n            </ion-col>\n            <ion-col col-4 no-padding *ngIf="preferenceDetail.education">\n              <div class="coin">\n\n                <span>Education</span>\n              </div>\n            </ion-col>\n            <ion-col col-4 no-padding *ngIf="preferenceDetail.health">\n              <div class="coin">\n\n                <span>Health</span>\n              </div>\n            </ion-col>\n            <ion-col col-4 no-padding *ngIf="preferenceDetail.consumer">\n              <div class="coin">\n\n                <span>Consumer Goods</span>\n              </div>\n            </ion-col>\n            <ion-col col-4 no-padding *ngIf="preferenceDetail.communication">\n              <div class="coin">\n\n                <span>Communication</span>\n              </div>\n            </ion-col>\n            <ion-col col-4 no-padding *ngIf="preferenceDetail.dnd">\n              <div class="coin">\n\n                <span>DND</span>\n              </div>\n            </ion-col>\n          </ion-row>\n        </ion-grid> -->\n      </ion-col>\n    </ion-row>\n  </ion-grid>\n  <!-- Header end -->\n  <!-- Content start -->\n  <ion-grid class="trai-preference-content">\n    <ion-row>\n      <ion-item class="trai-preference-c-head">\n        <ion-label>Tourism</ion-label>\n        <ion-checkbox [(ngModel)]="preferenceDetail.tourism.type" color="secondary" (click)="checkBoxModal(1)"></ion-checkbox>\n      </ion-item>\n      <ion-item class="trai-preference-c-head" (click)="checkBoxModal(2)">\n        <ion-label>Banking/Insurance/Financial Products/ Credit Cards</ion-label>\n        <ion-checkbox [(ngModel)]="preferenceDetail.banking.type" color="secondary" (click)="checkBoxModal(2)"></ion-checkbox>\n      </ion-item>\n      <ion-item class="trai-preference-c-head">\n        <ion-label>Education</ion-label>\n        <ion-checkbox [(ngModel)]="preferenceDetail.education.type" color="secondary" (click)="checkBoxModal(3)"></ion-checkbox>\n      </ion-item>\n      <ion-item class="trai-preference-c-head">\n        <ion-label>Health</ion-label>\n        <ion-checkbox [(ngModel)]="preferenceDetail.health.type" color="secondary" (click)="checkBoxModal(4)"></ion-checkbox>\n      </ion-item>\n      <ion-item class="trai-preference-c-head">\n        <ion-label>Consumer Goods and Automobile</ion-label>\n        <ion-checkbox [(ngModel)]="preferenceDetail.consumer.type" color="secondary" (click)="checkBoxModal(5)"></ion-checkbox>\n      </ion-item>\n      <ion-item class="trai-preference-c-head">\n        <ion-label>Communication/Broadcasting/Entertainment/IT</ion-label>\n        <ion-checkbox [(ngModel)]="preferenceDetail.communication.type" color="secondary" (click)="checkBoxModal(6)"></ion-checkbox>\n      </ion-item>\n      <ion-item class="trai-preference-c-head" (click)="checkBoxModal(7)">\n        <ion-label>DND</ion-label>\n        <ion-checkbox [(ngModel)]="preferenceDetail.dnd.type" color="secondary" (click)="checkBoxModal(7)"></ion-checkbox>\n      </ion-item>\n    </ion-row>\n    <ion-row text-center>\n      <ion-col col-12 text-center>\n        <button ion-button round (click)="submit()">Submit</button>\n      </ion-col>\n    </ion-row>\n  </ion-grid>\n</ion-content>\n`/*ion-inline-end:"/home/pankaj/Pennyproject/Ionic/traiFrontEnd/traibackup/2-13-08-2018/src/pages/preference/preference.html"*/,
+            providers: [__WEBPACK_IMPORTED_MODULE_4__ionic_native_sms__["a" /* SMS */]]
         }),
-        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["k" /* NavController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["n" /* ToastController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["i" /* ModalController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["m" /* Platform */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["l" /* NavParams */], __WEBPACK_IMPORTED_MODULE_3__services_setup_service__["a" /* SetupService */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* LoadingController */]])
+        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["k" /* NavController */], __WEBPACK_IMPORTED_MODULE_4__ionic_native_sms__["a" /* SMS */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["n" /* ToastController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["i" /* ModalController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["m" /* Platform */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["l" /* NavParams */], __WEBPACK_IMPORTED_MODULE_3__services_setup_service__["a" /* SetupService */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* LoadingController */]])
     ], PreferencePage);
     return PreferencePage;
 }());
@@ -451,15 +406,15 @@ var PreferencePage = (function () {
 
 /***/ }),
 
-/***/ 161:
+/***/ 162:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return ComplaintsPage; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(1);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(16);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__services_setup_service__ = __webpack_require__(33);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__pages_user_detail_user_detail__ = __webpack_require__(81);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__services_setup_service__ = __webpack_require__(31);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__pages_user_detail_user_detail__ = __webpack_require__(82);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__ionic_native_device__ = __webpack_require__(265);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__ionic_native_android_permissions__ = __webpack_require__(80);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
@@ -661,7 +616,7 @@ var FrauddetailsPage = (function () {
 
 /***/ }),
 
-/***/ 33:
+/***/ 31:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -673,7 +628,7 @@ var FrauddetailsPage = (function () {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__angular_http__ = __webpack_require__(70);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_rxjs_Rx__ = __webpack_require__(419);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_rxjs_Rx___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_4_rxjs_Rx__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5_rxjs_add_operator_map__ = __webpack_require__(89);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5_rxjs_add_operator_map__ = __webpack_require__(90);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5_rxjs_add_operator_map___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_5_rxjs_add_operator_map__);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -830,10 +785,10 @@ var SetupService = (function () {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__ionic_native_android_permissions__ = __webpack_require__(80);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__providers_user_data__ = __webpack_require__(63);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__angular_http__ = __webpack_require__(70);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5_rxjs_add_operator_map__ = __webpack_require__(89);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5_rxjs_add_operator_map__ = __webpack_require__(90);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5_rxjs_add_operator_map___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_5_rxjs_add_operator_map__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__services_setup_service__ = __webpack_require__(33);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__pages_dashboard_dashboard__ = __webpack_require__(144);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__services_setup_service__ = __webpack_require__(31);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__pages_dashboard_dashboard__ = __webpack_require__(81);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__angular_forms__ = __webpack_require__(21);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -1039,7 +994,9 @@ var OtpReceivePage = (function () {
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return DndPage; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(1);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(16);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__ionic_native_date_picker__ = __webpack_require__(162);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__ionic_native_date_picker__ = __webpack_require__(93);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__services_setup_service__ = __webpack_require__(31);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__pages_dashboard_dashboard__ = __webpack_require__(81);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -1052,6 +1009,8 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 
 
 
+
+
 /**
  * Generated class for the DndPage page.
  *
@@ -1059,80 +1018,125 @@ var __metadata = (this && this.__metadata) || function (k, v) {
  * Ionic pages and navigation.
  */
 var DndPage = (function () {
-    function DndPage(navCtrl, toastCtrl, datePicker, platform, navParams) {
+    function DndPage(navCtrl, toastCtrl, datePicker, platform, navParams, setupservice, loadingCtrl) {
         var _this = this;
         this.navCtrl = navCtrl;
         this.toastCtrl = toastCtrl;
         this.datePicker = datePicker;
         this.platform = platform;
         this.navParams = navParams;
-        this.smsTrue = false;
-        this.callTrue = false;
+        this.setupservice = setupservice;
+        this.loadingCtrl = loadingCtrl;
+        this.weekItem = [];
+        this.preferenceItem = [];
         var backAction = platform.registerBackButtonAction(function () {
             _this.navCtrl.pop();
             backAction();
         }, 2);
+        this.userDetails = JSON.parse(localStorage.getItem('logindetail'));
+        if (this.userDetails) {
+            this.contactNumber = this.userDetails[0].json.data.mobile;
+        }
     }
     DndPage.prototype.ionViewDidLoad = function () {
         console.log('ionViewDidLoad DndPage');
     };
-    DndPage.prototype.showDateTimePicker = function (event) {
-        this.datePicker.show({
-            date: new Date(),
-            mode: 'datetime',
-            is24Hour: true,
-            androidTheme: this.datePicker.ANDROID_THEMES.THEME_HOLO_DARK
-        }).then(function (date) {
-            event.target.value = date;
-        }, function (err) { return console.log('Error occurred while getting date: ' + err); });
+    DndPage.prototype.weekdays = function (day) {
+        var index = this.weekItem.indexOf(day);
+        if (index >= 0) {
+            this.weekItem.splice(index, 1);
+        }
+        else {
+            this.weekItem.push(day);
+        }
     };
-    DndPage.prototype.submit = function () {
-        var toast = this.toastCtrl.create({
-            message: "submitted successfully!!",
-            showCloseButton: true,
-            closeButtonText: 'Ok',
-            duration: 3000
-        });
-        toast.present();
-    };
-    DndPage.prototype.daily = function () {
-        this.smsTrue = true;
-        this.callTrue = true;
-        var toast = this.toastCtrl.create({
-            message: "daily selected!!",
-            showCloseButton: true,
-            closeButtonText: 'Ok',
-            duration: 3000
-        });
-        toast.present();
-    };
-    DndPage.prototype.weekly = function () {
-        this.smsTrue = true;
-        this.callTrue = true;
-        var toast = this.toastCtrl.create({
-            message: "weekly  selected!!",
-            showCloseButton: true,
-            closeButtonText: 'Ok',
-            duration: 3000
-        });
-        toast.present();
-    };
-    DndPage.prototype.weekdays = function () {
-        this.smsTrue = true;
-        this.callTrue = true;
-        var toast = this.toastCtrl.create({
-            message: "wekdays selected!!",
-            showCloseButton: true,
-            closeButtonText: 'Ok',
-            duration: 3000
-        });
-        toast.present();
+    DndPage.prototype.submit = function (timeBands, priority) {
+        var _this = this;
+        if (this.weekItem.length <= 0) {
+            var toast = this.toastCtrl.create({
+                message: 'Please select at least one weekday!',
+                showCloseButton: true,
+                closeButtonText: 'Ok',
+                duration: 2000
+            });
+            toast.present();
+        }
+        else if (!timeBands) {
+            var toast = this.toastCtrl.create({
+                message: 'Please select at least one timebands!',
+                showCloseButton: true,
+                closeButtonText: 'Ok',
+                duration: 2000
+            });
+            toast.present();
+        }
+        else if (!priority) {
+            var toast = this.toastCtrl.create({
+                message: 'Please select at least one priority!',
+                showCloseButton: true,
+                closeButtonText: 'Ok',
+                duration: 2000
+            });
+            toast.present();
+        }
+        else {
+            var date = {
+                time: timeBands
+            };
+            var data = {
+                type: 7,
+                time: date,
+                priority: priority,
+                weekdays: this.weekItem
+            };
+            this.preferenceItem.push(data);
+            var loading_1 = this.loadingCtrl.create({
+                content: 'preference submiting please wait...',
+                duration: 15000,
+            });
+            loading_1.present();
+            var postData = {
+                mobile: this.contactNumber,
+                data: {
+                    preference: this.preferenceItem
+                }
+            };
+            var url = this.setupservice.basePath + '/userPrefrence';
+            this.setupservice.PostRequest(url, postData).subscribe(function (response) {
+                loading_1.dismiss();
+                if (response[0].json.status === 200) {
+                    _this.navCtrl.push(__WEBPACK_IMPORTED_MODULE_4__pages_dashboard_dashboard__["a" /* DashboardPage */]);
+                    var toast = _this.toastCtrl.create({
+                        message: "DND Activated successfully!!",
+                        showCloseButton: true,
+                        closeButtonText: 'Ok',
+                        duration: 1000
+                    });
+                    toast.present();
+                }
+                else {
+                    var toast = _this.toastCtrl.create({
+                        message: "something went wrong",
+                        showCloseButton: true,
+                        closeButtonText: 'Ok',
+                        duration: 2000
+                    });
+                    toast.present();
+                }
+            });
+        }
     };
     DndPage = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
-            selector: 'page-dnd',template:/*ion-inline-start:"/home/pankaj/Pennyproject/Ionic/traiFrontEnd/traibackup/2-13-08-2018/src/pages/dnd/dnd.html"*/`<!--\n  Generated template for the DndPage page.\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n  Ionic pages and navigation.\n-->\n<ion-header>\n\n  <ion-navbar>\n    <button ion-button menuToggle>\n      <img class="trai-menu" menuToggle src="assets/icon/menu.png" alt="">\n    </button>\n    <!-- <ion-icon name="menu"><img menuToggle src="assets/icon/menu.png" alt=""></ion-icon> -->\n\n    <ion-title>\n      <img class="header-img" alt="" src="assets/icon/header-logo.png">\n    </ion-title>\n\n   \n  </ion-navbar>\n\n</ion-header>\n<ion-col col-6 text-center>\n\n  <div class="trai-compiants" (click)="complaintsStatus()">\n    <img src="assets/icon/status.png" alt="">\n    <h4>Complaints\n      <br> Spam\n    </h4>\n  </div>\n</ion-col>\n\n<ion-content padding-top>\n  <!-- Header start -->\n  <ion-grid class="trai-my-head">\n    <ion-row>\n      <ion-col col-12 class="trai-pref-head" no-padding>\n        <div class="trai-head-img" style="background: #4de9c9;">\n          <img src="assets/icon/dnd.png" />\n        </div>\n        <div class="trai-head-text">\n          <span style="color: #4de9c9;">DND</span>\n        </div>\n        <div class="trai-line"></div>\n        <ion-grid>\n          <ion-row class="trai-pref-c">\n            <ion-col col-12>\n              <div class="dnd-head">\n                <span class="trai-my-head-a" style="color: #0bd600;"> Active DND</span>\n                <span class="trai-my-head-b">\n                  <ion-icon ios="ios-time-outline" md="md-time" style="color: #7f828c;"></ion-icon> From 07:30PM To 12:00AM\n                </span>\n              </div>\n            </ion-col>\n          </ion-row>\n        </ion-grid>\n      </ion-col>\n    </ion-row>\n  </ion-grid>\n  <!-- Header end -->\n  <ion-grid class="trai-dnd-content">\n    <ion-row>\n      <ion-col col-3 text-center>\n        <button style="border-radius: 25px; background: #72a4ff;" ion-button (click)="daily()">Daily</button>\n      </ion-col>\n      <ion-col col-4 text-center>\n        <button style="border-radius: 25px; background: #4de9c9;" ion-button (click)="weekly()">Weekend</button>\n      </ion-col>\n      <ion-col col-5 text-center>\n        <button style="border-radius: 25px; background: #4de9c9;" ion-button (click)="weekdays()">weekdays</button>\n      </ion-col>\n    </ion-row>\n\n\n\n    <ion-row>\n      <ion-col col-6>\n        <ion-item>\n          <ion-label stacked color="primary">Start</ion-label>\n          <ion-input [(ngModel)]="start_date" type="text" placeholder="Enter start date" readonly="readonly" (focus)="$event.stopPropagation(); showDateTimePicker($event)"></ion-input>\n        </ion-item>\n      </ion-col>\n\n      <ion-col col-6>\n        <ion-item>\n          <ion-label stacked color="primary">End</ion-label>\n          <ion-input [(ngModel)]="end_date" type="text" placeholder="Enter end date" readonly="readonly" (focus)="$event.stopPropagation(); showDateTimePicker($event)"></ion-input>\n        </ion-item>\n      </ion-col>\n    </ion-row>\n\n    <ion-row padding-top>\n      <ion-col class="trai-my-checkb" col-6 text-left>\n        <ion-checkbox padding-left checked={{callTrue}}></ion-checkbox>\n        call\n      </ion-col>\n      <ion-col col-6 text-left>\n        <ion-checkbox padding-left checked={{smsTrue}}></ion-checkbox>\n        sms\n      </ion-col>\n    </ion-row>\n    <ion-row padding-top text-center>\n      <ion-col class="trai-my-btn" col-12 text-center>\n        <button ion-button round (click)="submit()">Submit</button>\n      </ion-col>\n    </ion-row>\n\n\n  </ion-grid>\n\n\n\n</ion-content>\n`/*ion-inline-end:"/home/pankaj/Pennyproject/Ionic/traiFrontEnd/traibackup/2-13-08-2018/src/pages/dnd/dnd.html"*/,
+            selector: 'page-dnd',template:/*ion-inline-start:"/home/pankaj/Pennyproject/Ionic/traiFrontEnd/traibackup/2-13-08-2018/src/pages/dnd/dnd.html"*/`<!--\n  Generated template for the DndPage page.\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n  Ionic pages and navigation.\n-->\n<ion-header>\n\n  <ion-navbar>\n    <button ion-button menuToggle>\n      <img class="trai-menu" menuToggle src="assets/icon/menu.png" alt="">\n    </button>\n    <!-- <ion-icon name="menu"><img menuToggle src="assets/icon/menu.png" alt=""></ion-icon> -->\n\n    <ion-title>\n      <img class="header-img" alt="" src="assets/icon/header-logo.png">\n    </ion-title>\n\n   \n  </ion-navbar>\n\n</ion-header>\n<ion-col col-6 text-center>\n\n  <div class="trai-compiants" (click)="complaintsStatus()">\n    <img src="assets/icon/status.png" alt="">\n    <h4>Complaints\n      <br> Spam\n    </h4>\n  </div>\n</ion-col>\n\n<ion-content padding-top>\n  <!-- Header start -->\n  <ion-grid class="trai-my-head">\n    <ion-row>\n      <ion-col col-12 class="trai-pref-head" no-padding>\n        <div class="trai-head-img" style="background: #4de9c9;">\n          <img src="assets/icon/dnd.png" />\n        </div>\n        <div class="trai-head-text">\n          <span style="color: #4de9c9;">DND</span>\n        </div>\n        <div class="trai-line"></div>\n        <ion-grid>\n          <ion-row class="trai-pref-c">\n            <ion-col col-12>\n              <div class="dnd-head">\n                <span class="trai-my-head-a" style="color: #0bd600;"> Active DND</span>\n                <span class="trai-my-head-b">\n                  <ion-icon ios="ios-time-outline" md="md-time" style="color: #7f828c;"></ion-icon> From 07:30PM To 12:00AM\n                </span>\n              </div>\n            </ion-col>\n          </ion-row>\n        </ion-grid>\n      </ion-col>\n    </ion-row>\n  </ion-grid>\n  <!-- Header end -->\n  <ion-grid class="trai-dnd-content">\n    <!-- <ion-row>\n      <ion-col col-3 text-center>\n        <button style="border-radius: 25px; background: #72a4ff;" ion-button (click)="daily()">Daily</button>\n      </ion-col>\n      <ion-col col-4 text-center>\n        <button style="border-radius: 25px; background: #4de9c9;" ion-button (click)="weekly()">Weekend</button>\n      </ion-col>\n      <ion-col col-5 text-center>\n        <button style="border-radius: 25px; background: #4de9c9;" ion-button (click)="weekdays()">weekdays</button>\n      </ion-col>\n    </ion-row> -->\n <div class="weekDays-selector">  \n    <input type="checkbox" id="weekday-mon" class="weekday" (click)="weekdays(\'31\')"/> \n     <label for="weekday-mon">M</label>  \n    <input type="checkbox" id="weekday-tue" class="weekday" (click)="weekdays(\'32\')" /> \n     <label for="weekday-tue">T</label>\n    <input type="checkbox" id="weekday-wed" class="weekday" (click)="weekdays(\'33\')" />  \n     <label for="weekday-wed">W</label> \n    <input type="checkbox" id="weekday-thu" class="weekday" (click)="weekdays(\'34\')" /> \n     <label for="weekday-thu">Th</label> \n    <input type="checkbox" id="weekday-fri" class="weekday" (click)="weekdays(\'35\')" />  \n     <label for="weekday-fri">F</label> \n    <input type="checkbox" id="weekday-sat" class="weekday" (click)="weekdays(\'36\')" /> \n     <label for="weekday-sat">S</label>  \n    <input type="checkbox" id="weekday-sun" class="weekday" (click)="weekdays(\'37\')" /> \n     <label for="weekday-sun">Su</label>\n  </div>\n\n\n    <!-- <ion-row>\n      <ion-col col-6>\n        <ion-item>\n          <ion-label stacked color="primary">Start</ion-label>\n          <ion-input [(ngModel)]="start_date" type="text" placeholder="Enter start date" readonly="readonly" (focus)="$event.stopPropagation(); showDateTimePicker($event)"></ion-input>\n        </ion-item>\n      </ion-col>\n\n      <ion-col col-6>\n        <ion-item>\n          <ion-label stacked color="primary">End</ion-label>\n          <ion-input [(ngModel)]="end_date" type="text" placeholder="Enter end date" readonly="readonly" (focus)="$event.stopPropagation(); showDateTimePicker($event)"></ion-input>\n        </ion-item>\n      </ion-col>\n    </ion-row>\n -->\n\n   <ion-item>   \n       <ion-range min="0" max="100" pin="true" [(ngModel)]="contrast" color="secondary">       \n           <ion-icon range-left small name="remove"></ion-icon>    \n           <ion-icon range-right name="add"></ion-icon> \n       </ion-range>\n   </ion-item>\n\n   <ion-item>\n      <ion-label>Time</ion-label>     \n      <ion-select [(ngModel)]="timeBands" multiple="true">\n        <ion-option checked="true" value="20">All Time Bands</ion-option>\n        <ion-option value="21">00:00 Hrs to 06:00 Hrs</ion-option>\n        <ion-option value="22">06:00 Hrs to 08:00 Hrs</ion-option>\n        <ion-option value="23">08:00 Hrs to 10:00 Hrs</ion-option>\n        <ion-option value="24">10:00 Hrs to 12:00 Hrs</ion-option>\n        <ion-option value="25">12:00 Hrs to 14:00 Hrs</ion-option>\n        <ion-option value="26">14:00 Hrs to 16:00 Hrs</ion-option>\n        <ion-option value="27">16:00 Hrs to 18:00 Hrs</ion-option>\n        <ion-option value="28">18:00 Hrs to 21:00 Hrs</ion-option>\n        <ion-option value="29">21:00 Hrs to 24:00 Hrs</ion-option>        \n      </ion-select>\n    </ion-item>\n\n  \n\n    <ion-row padding-top text-center>\n      <ion-col class="trai-my-btn" col-12 text-center>\n        <button ion-button round (click)="submit(timeBands,contrast)">Submit</button>\n      </ion-col>\n    </ion-row>\n\n\n  </ion-grid>\n\n\n\n</ion-content>\n`/*ion-inline-end:"/home/pankaj/Pennyproject/Ionic/traiFrontEnd/traibackup/2-13-08-2018/src/pages/dnd/dnd.html"*/,
         }),
-        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["k" /* NavController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["n" /* ToastController */], __WEBPACK_IMPORTED_MODULE_2__ionic_native_date_picker__["a" /* DatePicker */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["m" /* Platform */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["l" /* NavParams */]])
+        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["k" /* NavController */],
+            __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["n" /* ToastController */],
+            __WEBPACK_IMPORTED_MODULE_2__ionic_native_date_picker__["a" /* DatePicker */],
+            __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["m" /* Platform */],
+            __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["l" /* NavParams */],
+            __WEBPACK_IMPORTED_MODULE_3__services_setup_service__["a" /* SetupService */],
+            __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* LoadingController */]])
     ], DndPage);
     return DndPage;
 }());
@@ -1149,7 +1153,8 @@ var DndPage = (function () {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(1);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(16);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__pages_register_register__ = __webpack_require__(45);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__services_setup_service__ = __webpack_require__(33);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__services_setup_service__ = __webpack_require__(31);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__ionic_native_date_picker__ = __webpack_require__(93);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -1163,6 +1168,7 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 
 
 
+
 /**
  * Generated class for the MyprofilePage page.
  *
@@ -1170,21 +1176,22 @@ var __metadata = (this && this.__metadata) || function (k, v) {
  * Ionic pages and navigation.
  */
 var MyprofilePage = (function () {
-    function MyprofilePage(navCtrl, setupservice, platform, navParams, toastCtrl, loadingCtrl) {
+    function MyprofilePage(navCtrl, setupservice, datePicker, platform, navParams, toastCtrl, loadingCtrl) {
         var _this = this;
         this.navCtrl = navCtrl;
         this.setupservice = setupservice;
+        this.datePicker = datePicker;
         this.platform = platform;
         this.navParams = navParams;
         this.toastCtrl = toastCtrl;
         this.loadingCtrl = loadingCtrl;
         this.name = "";
         this.email = "";
+        this.dob = "";
+        this.profession = "";
         this.nameEdit = false;
         this.emailEdit = false;
-        this.dob = "";
         this.dobEdit = false;
-        this.profession = "";
         this.professionEdit = false;
         var backAction = platform.registerBackButtonAction(function () {
             _this.navCtrl.pop();
@@ -1196,6 +1203,16 @@ var MyprofilePage = (function () {
         }
     }
     MyprofilePage.prototype.ionViewDidLoad = function () {
+    };
+    MyprofilePage.prototype.showDateTimePicker = function (event) {
+        this.datePicker.show({
+            date: new Date(),
+            mode: 'datetime',
+            is24Hour: true,
+            androidTheme: this.datePicker.ANDROID_THEMES.THEME_HOLO_DARK
+        }).then(function (date) {
+            event.target.value = date;
+        }, function (err) { return console.log('Error occurred while getting date: ' + err); });
     };
     MyprofilePage.prototype.ngOnInit = function () {
         var _this = this;
@@ -1267,8 +1284,8 @@ var MyprofilePage = (function () {
         var url = this.setupservice.basePath + '/updateUser';
         this.setupservice.PostRequest(url, postDatas).subscribe(function (responses) {
             loading.dismiss();
-            var res = JSON.parse(response[0].json._body);
-            if (res.responseCode === 200) {
+            var res = JSON.parse(responses[0].json._body);
+            if (res.statusCode === 200) {
                 _this.name = res.data.name;
                 _this.email = res.data.email;
                 _this.dob = res.data.DOB;
@@ -1282,6 +1299,10 @@ var MyprofilePage = (function () {
                     duration: 5000
                 });
                 toast.present();
+                _this.nameEdit = false;
+                _this.emailEdit = false;
+                _this.dobEdit = false;
+                _this.professionEdit = false;
             }
             else {
                 var toast = _this.toastCtrl.create({
@@ -1296,9 +1317,9 @@ var MyprofilePage = (function () {
     };
     MyprofilePage = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
-            selector: 'page-myprofile',template:/*ion-inline-start:"/home/pankaj/Pennyproject/Ionic/traiFrontEnd/traibackup/2-13-08-2018/src/pages/myprofile/myprofile.html"*/`<!--\n\n  Generated template for the MyprofilePage page.\n\n\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n\n  Ionic pages and navigation.\n\n-->\n\n<ion-header>\n\n\n\n  <ion-navbar>\n\n    <button ion-button menuToggle>\n\n      <img class="trai-menu" menuToggle src="assets/icon/menu.png" alt="">\n\n    </button>\n\n    <!-- <ion-icon name="menu"><img menuToggle src="assets/icon/menu.png" alt=""></ion-icon> -->\n\n\n\n    <ion-title>\n\n      <img class="header-img" alt="" src="assets/icon/header-logo.png">\n\n    </ion-title>\n\n\n\n\n\n  </ion-navbar>\n\n\n\n</ion-header>\n\n\n\n\n\n<ion-content padding>\n\n  <ion-list class="rk-menu">\n\n    <ion-row>\n\n      <ion-col col-2>\n\n        <img src="assets/icon/my-profile.svg" alt="Account" style=" width: 47%; margin-top: 7%;">\n\n      </ion-col>\n\n      <ion-col col-10>\n\n        <h5 style="line-height: 1px;color:#15488a; font-size: 1.8rem; margin-top: 15px;">My Profile</h5>\n\n      </ion-col>\n\n    </ion-row>\n\n  </ion-list>\n\n\n\n  <ion-card class="product-history-card font-15">\n\n    <ion-row>\n\n      <ion-col col-3>\n\n        <span>Name</span>\n\n      </ion-col>\n\n      <ion-col col-8 text-left>\n\n         <ion-input type="text" [(ngModel)]="name" readonly  *ngIf="!nameEdit"></ion-input>\n\n         <ion-input type="text" [(ngModel)]="name"  *ngIf="nameEdit"></ion-input>\n\n      </ion-col>\n\n      <ion-col col-1 text-left>\n\n        <img src="assets/icon/edit.svg" alt="" (click)="nameEditFunc()">\n\n      </ion-col>\n\n    </ion-row>\n\n  </ion-card>\n\n\n\n  <ion-card class="product-history-card font-15">\n\n    <ion-row>\n\n      <ion-col col-3>\n\n        <span>Mobile No</span>\n\n      </ion-col>\n\n      <ion-col col-8 text-left>\n\n       <ion-input type="text" [(ngModel)]="mobile" readonly></ion-input>\n\n      </ion-col>\n\n    </ion-row>\n\n  </ion-card>\n\n\n\n  <ion-card class="product-history-card font-15">\n\n    <ion-row>\n\n      <ion-col col-3>\n\n        <span>EmailId</span>\n\n      </ion-col>\n\n      <ion-col col-8 text-left>\n\n        <ion-input type="text" [(ngModel)]="email" readonly  *ngIf="!emailEdit"></ion-input>\n\n        <ion-input type="text" [(ngModel)]="email"  *ngIf="emailEdit"></ion-input>\n\n      </ion-col>\n\n      <ion-col col-1 text-left>\n\n        <img src="assets/icon/edit.svg" alt="" (click)="emailEditFunc()">\n\n      </ion-col>\n\n    </ion-row>\n\n  </ion-card>\n\n\n\n  <ion-card class="product-history-card font-15">\n\n    <ion-row>\n\n      <ion-col col-3>\n\n        <span>DOB</span>\n\n      </ion-col>\n\n      <ion-col col-8 text-left>\n\n        <ion-input type="text" [(ngModel)]="dob" readonly  *ngIf="!dobEdit"></ion-input>\n\n        <ion-input type="text" [(ngModel)]="dob"  *ngIf="dobEdit"></ion-input>\n\n      </ion-col>\n\n      <ion-col col-1 text-left>\n\n        <img src="assets/icon/edit.svg" alt="" (click)="dobEditFunc()">\n\n      </ion-col>\n\n    </ion-row>\n\n  </ion-card>\n\n\n\n  <ion-card class="product-history-card font-15">\n\n    <ion-row>\n\n      <ion-col col-3>\n\n        <span>Profession</span>\n\n      </ion-col>\n\n      <ion-col col-8 text-left>\n\n       <ion-input type="text" [(ngModel)]="profession" readonly  *ngIf="!professionEdit"></ion-input>\n\n        <ion-input type="text" [(ngModel)]="profession"  *ngIf="professionEdit"></ion-input>\n\n      </ion-col>\n\n      <ion-col col-1 text-left>\n\n        <img src="assets/icon/edit.svg" alt="" (click)="professionEditFunc()">\n\n      </ion-col>\n\n    </ion-row>\n\n  </ion-card>\n\n\n\n  <ion-card class="product-history-card font-15">\n\n    <ion-row>\n\n      <ion-col col-3>\n\n        <span>URN hash</span>\n\n      </ion-col>\n\n      <ion-col col-9 text-left>\n\n         <ion-input type="text" [(ngModel)]="ids" readonly></ion-input>\n\n        \n\n      </ion-col>\n\n    </ion-row>\n\n  </ion-card>\n\n  <ion-row text-center (click)="submit()">\n\n    <ion-col col-12 text-center>\n\n      <button ion-button round>Submit</button>\n\n    </ion-col>\n\n  </ion-row>\n\n</ion-content>\n\n`/*ion-inline-end:"/home/pankaj/Pennyproject/Ionic/traiFrontEnd/traibackup/2-13-08-2018/src/pages/myprofile/myprofile.html"*/,
+            selector: 'page-myprofile',template:/*ion-inline-start:"/home/pankaj/Pennyproject/Ionic/traiFrontEnd/traibackup/2-13-08-2018/src/pages/myprofile/myprofile.html"*/`<!--\n\n  Generated template for the MyprofilePage page.\n\n\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n\n  Ionic pages and navigation.\n\n-->\n\n<ion-header>\n\n\n\n  <ion-navbar>\n\n    <button ion-button menuToggle>\n\n      <img class="trai-menu" menuToggle src="assets/icon/menu.png" alt="">\n\n    </button>\n\n    <ion-title>\n\n      <img class="header-img" alt="" src="assets/icon/header-logo.png">\n\n    </ion-title>\n\n\n\n\n\n  </ion-navbar>\n\n\n\n</ion-header>\n\n\n\n\n\n<ion-content padding>\n\n  <ion-list class="rk-menu">\n\n    <ion-row>\n\n      <ion-col col-2>\n\n        <img src="assets/icon/my-profile.svg" alt="Account" style=" width: 47%; margin-top: 7%;">\n\n      </ion-col>\n\n      <ion-col col-10>\n\n        <h5 style="line-height: 1px;color:#15488a; font-size: 1.8rem; margin-top: 15px;">My Profile</h5>\n\n      </ion-col>\n\n    </ion-row>\n\n  </ion-list>\n\n\n\n  <ion-card class="product-history-card font-15">\n\n    <ion-row>\n\n      <ion-col col-3>\n\n        <span>Name</span>\n\n      </ion-col>\n\n      <ion-col col-8 text-left>\n\n         <ion-input style="border: 1px solid #fff;" type="text" [(ngModel)]="name" readonly  *ngIf="!nameEdit"></ion-input>\n\n         <ion-input style="border: 1px solid lightblue; border-radius: 2px;" type="text" [(ngModel)]="name"  *ngIf="nameEdit"></ion-input>\n\n      </ion-col>\n\n      <ion-col col-1 text-left>\n\n        <img src="assets/icon/edit.svg" alt="" (click)="nameEditFunc()">\n\n      </ion-col>\n\n    </ion-row>\n\n  </ion-card>\n\n\n\n  <ion-card class="product-history-card font-15">\n\n    <ion-row>\n\n      <ion-col col-3>\n\n        <span>Mobile No</span>\n\n      </ion-col>\n\n      <ion-col col-8 text-left>\n\n       <ion-input type="text" [(ngModel)]="mobile" readonly></ion-input>\n\n      </ion-col>\n\n    </ion-row>\n\n  </ion-card>\n\n\n\n  <ion-card class="product-history-card font-15">\n\n    <ion-row>\n\n      <ion-col col-3>\n\n        <span>EmailId</span>\n\n      </ion-col>\n\n      <ion-col col-8 text-left>\n\n        <ion-input style="border: 1px solid #fff;" type="text" [(ngModel)]="email" readonly  *ngIf="!emailEdit"></ion-input>\n\n        <ion-input style="border: 1px solid lightblue; border-radius: 2px;" type="text" [(ngModel)]="email"  *ngIf="emailEdit"></ion-input>\n\n      </ion-col>\n\n      <ion-col col-1 text-left>\n\n        <img src="assets/icon/edit.svg" alt="" (click)="emailEditFunc()">\n\n      </ion-col>\n\n    </ion-row>\n\n  </ion-card>\n\n\n\n  <ion-card class="product-history-card font-15">\n\n    <ion-row>\n\n      <ion-col col-3>\n\n        <span>DOB</span>\n\n      </ion-col>\n\n      <ion-col col-8 text-left>\n\n        <ion-input style="border: 1px solid #fff;" type="text" [(ngModel)]="dob" readonly  *ngIf="!dobEdit"></ion-input>\n\n        <ion-input style="border: 1px solid lightblue; border-radius: 2px;" type="text" [(ngModel)]="dob"  *ngIf="dobEdit"></ion-input>\n\n      </ion-col>\n\n      <ion-col col-1 text-left>\n\n        <img src="assets/icon/edit.svg" alt="" (click)="dobEditFunc()">\n\n      </ion-col>\n\n    </ion-row>\n\n  </ion-card>\n\n\n\n  <ion-card class="product-history-card font-15">\n\n    <ion-row>\n\n      <ion-col col-3>\n\n        <span>Profession</span>\n\n      </ion-col>\n\n      <ion-col col-8 text-left>\n\n      <ion-item *ngIf="professionEdit">\n\n       <ion-select style="border: 1px solid lightblue; border-radius: 2px;" [(ngModel)]="profession">\n\n        <ion-option value="Engineer" checked="true">Engineer</ion-option>\n\n        <ion-option value="Doctor">Doctor</ion-option>\n\n        <ion-option value="Police">Police</ion-option>\n\n        <ion-option value="IAS">IAS</ion-option>\n\n        <ion-option value="Others">Others</ion-option>        \n\n      </ion-select>\n\n      \n\n    </ion-item>\n\n         <ion-input type="text" [(ngModel)]="profession" readonly  *ngIf="!professionEdit"></ion-input>       \n\n      </ion-col>\n\n      <ion-col col-1 text-left>\n\n        <img src="assets/icon/edit.svg" alt="" (click)="professionEditFunc()">\n\n      </ion-col>\n\n    </ion-row>\n\n  </ion-card>\n\n\n\n  <ion-card class="product-history-card font-15">\n\n    <ion-row>\n\n      <ion-col col-3>\n\n        <span>URN hash</span>\n\n      </ion-col>\n\n      <ion-col col-9 text-left>\n\n         <ion-input type="text" [(ngModel)]="ids" readonly></ion-input>\n\n        \n\n      </ion-col>\n\n    </ion-row>\n\n  </ion-card>\n\n  <ion-row text-center (click)="submit()">\n\n    <ion-col col-12 text-center>\n\n      <button ion-button round>Submit</button>\n\n    </ion-col>\n\n  </ion-row>\n\n</ion-content>\n\n`/*ion-inline-end:"/home/pankaj/Pennyproject/Ionic/traiFrontEnd/traibackup/2-13-08-2018/src/pages/myprofile/myprofile.html"*/,
         }),
-        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["k" /* NavController */], __WEBPACK_IMPORTED_MODULE_3__services_setup_service__["a" /* SetupService */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["m" /* Platform */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["l" /* NavParams */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["n" /* ToastController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* LoadingController */]])
+        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["k" /* NavController */], __WEBPACK_IMPORTED_MODULE_3__services_setup_service__["a" /* SetupService */], __WEBPACK_IMPORTED_MODULE_4__ionic_native_date_picker__["a" /* DatePicker */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["m" /* Platform */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["l" /* NavParams */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["n" /* ToastController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* LoadingController */]])
     ], MyprofilePage);
     return MyprofilePage;
 }());
@@ -1432,7 +1453,7 @@ Object(__WEBPACK_IMPORTED_MODULE_0__angular_platform_browser_dynamic__["a" /* pl
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__angular_forms__ = __webpack_require__(21);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_ionic_angular__ = __webpack_require__(16);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__ionic_native_in_app_browser__ = __webpack_require__(405);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__ionic_storage__ = __webpack_require__(143);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__ionic_storage__ = __webpack_require__(145);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__ionic_native_android_permissions__ = __webpack_require__(80);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__ionic_native_status_bar__ = __webpack_require__(262);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__ionic_native_splash_screen__ = __webpack_require__(263);
@@ -1442,24 +1463,24 @@ Object(__WEBPACK_IMPORTED_MODULE_0__angular_platform_browser_dynamic__["a" /* pl
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_13__ionic_native_call_number__ = __webpack_require__(417);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_14__app_component__ = __webpack_require__(418);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_15__pages_register_register__ = __webpack_require__(45);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_16__pipe_pipe__ = __webpack_require__(698);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_16__pipe_pipe__ = __webpack_require__(699);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_17__providers_user_data__ = __webpack_require__(63);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_18__services_setup_service__ = __webpack_require__(33);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_19__providers_conference_data__ = __webpack_require__(699);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_20__pages_dashboard_dashboard__ = __webpack_require__(144);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_18__services_setup_service__ = __webpack_require__(31);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_19__providers_conference_data__ = __webpack_require__(700);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_20__pages_dashboard_dashboard__ = __webpack_require__(81);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_21__pages_myprofile_myprofile__ = __webpack_require__(360);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_22__pages_setting_setting__ = __webpack_require__(361);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_23__pages_discover_discover__ = __webpack_require__(362);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_24__pages_history_history__ = __webpack_require__(145);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_25__pages_preference_preference__ = __webpack_require__(160);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_26__pages_complaints_complaints__ = __webpack_require__(161);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_27__pages_complaintsstatus_complaintsstatus__ = __webpack_require__(91);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_24__pages_history_history__ = __webpack_require__(146);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_25__pages_preference_preference__ = __webpack_require__(161);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_26__pages_complaints_complaints__ = __webpack_require__(162);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_27__pages_complaintsstatus_complaintsstatus__ = __webpack_require__(92);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_28__pages_dnd_dnd__ = __webpack_require__(359);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_29__pages_user_detail_user_detail__ = __webpack_require__(81);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_29__pages_user_detail_user_detail__ = __webpack_require__(82);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_30__pages_frauddetails_frauddetails__ = __webpack_require__(266);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_31__ionic_native_date_picker__ = __webpack_require__(162);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_31__ionic_native_date_picker__ = __webpack_require__(93);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_32__pages_otp_receive_otp_receive__ = __webpack_require__(358);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_33__pages_preference_modal_preference_modal__ = __webpack_require__(700);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_33__pages_preference_modal_preference_modal__ = __webpack_require__(701);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -1616,15 +1637,15 @@ var AppModule = (function () {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(16);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__ionic_native_splash_screen__ = __webpack_require__(263);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__ionic_native_status_bar__ = __webpack_require__(262);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__ionic_storage__ = __webpack_require__(143);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__pages_dashboard_dashboard__ = __webpack_require__(144);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__ionic_storage__ = __webpack_require__(145);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__pages_dashboard_dashboard__ = __webpack_require__(81);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__pages_myprofile_myprofile__ = __webpack_require__(360);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__pages_setting_setting__ = __webpack_require__(361);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__pages_discover_discover__ = __webpack_require__(362);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__pages_history_history__ = __webpack_require__(145);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__pages_preference_preference__ = __webpack_require__(160);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_11__pages_complaints_complaints__ = __webpack_require__(161);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_12__pages_complaintsstatus_complaintsstatus__ = __webpack_require__(91);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__pages_history_history__ = __webpack_require__(146);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__pages_preference_preference__ = __webpack_require__(161);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_11__pages_complaints_complaints__ = __webpack_require__(162);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_12__pages_complaintsstatus_complaintsstatus__ = __webpack_require__(92);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_13__providers_user_data__ = __webpack_require__(63);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_14__pages_register_register__ = __webpack_require__(45);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
@@ -1848,7 +1869,7 @@ var MyApp = (function () {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(1);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(16);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_forms__ = __webpack_require__(21);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__services_setup_service__ = __webpack_require__(33);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__services_setup_service__ = __webpack_require__(31);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__pages_otp_receive_otp_receive__ = __webpack_require__(358);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__providers_user_data__ = __webpack_require__(63);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
@@ -1961,7 +1982,7 @@ var RegisterPage = (function () {
     };
     RegisterPage = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
-            selector: 'page-register',template:/*ion-inline-start:"/home/pankaj/Pennyproject/Ionic/traiFrontEnd/traibackup/2-13-08-2018/src/pages/register/register.html"*/`<!--\n\n  Generated template for the RegisterPage page.\n\n\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n\n  Ionic pages and navigation.\n\n-->\n\n<ion-header>\n\n  <ion-navbar>\n\n\n\n    <!-- <ion-title>Register</ion-title> -->\n\n  </ion-navbar>\n\n</ion-header>\n\n\n\n\n\n<ion-content class="r-bg" padding>\n\n\n\n  <ion-list>\n\n    <ion-item>\n\n      <img class="trai-logo" src="assets/icon/trai-logo.png">\n\n      <div class="trai-title">\n\n        <ion-title class="trai-wel">\n\n          Welcome to trai\n\n          <p>Unsolicited Commercial Communication</p>\n\n        </ion-title>\n\n      </div>\n\n\n\n    </ion-item>\n\n   <form [formGroup]="regForm">\n\n    <ion-grid class="grid trai-i">\n\n      <ion-row class="row">\n\n        <div class="trai-left-inp pull-right">\n\n          <ion-input name="username" [(ngModel)]="registerDetail.contactNo" formControlName="contactNo" type="text" spellcheck="false" autocapitalize="off" placeholder="Enter Phone Number" required >\n\n          </ion-input>\n\n        </div>\n\n        <div class="trai-right-inp" >\n\n            <img src="assets/icon/login-arrow.png" (click)="onLogin()"/>\n\n        </div>\n\n      </ion-row>\n\n       <ion-item *ngIf="!regForm.controls[\'contactNo\'].valid &&regForm.controls [\'contactNo\'].dirty">\n\n            <span *ngIf="regForm.controls[\'contactNo\'].errors[\'required\']">\n\n                <p style="color:red;">Contact Number cannot be left blank</p>\n\n            </span>\n\n            <span *ngIf="regForm.controls[\'contactNo\'].errors[\'minlength\']">\n\n                 <p style="color:red;">contact Number must be atleast 10 numbers</p>\n\n             </span>\n\n             <span *ngIf="regForm.controls[\'contactNo\'].errors[\'maxlength\']">\n\n                 <p style="color:red;">contact Number should not be greater then 10.</p>\n\n             </span>\n\n            <!-- <span *ngIf="regForm.controls[\'contactNo\'].errors[\'pattern\']">\n\n                <p style="color:red;">Contact Number not valid.</p>\n\n            </span> -->\n\n         </ion-item>\n\n    </ion-grid>\n\n</form>\n\n\n\n  </ion-list>\n\n  <ion-row responsive-sm>\n\n\n\n  </ion-row>\n\n</ion-content>\n\n`/*ion-inline-end:"/home/pankaj/Pennyproject/Ionic/traiFrontEnd/traibackup/2-13-08-2018/src/pages/register/register.html"*/,
+            selector: 'page-register',template:/*ion-inline-start:"/home/pankaj/Pennyproject/Ionic/traiFrontEnd/traibackup/2-13-08-2018/src/pages/register/register.html"*/`<!--\n\n  Generated template for the RegisterPage page.\n\n\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n\n  Ionic pages and navigation.\n\n-->\n\n<ion-header>\n\n  <ion-navbar>\n\n\n\n    <!-- <ion-title>Register</ion-title> -->\n\n  </ion-navbar>\n\n</ion-header>\n\n\n\n\n\n<ion-content class="r-bg" padding>\n\n\n\n  <ion-list>\n\n    <ion-item>\n\n      <img class="trai-logo" src="assets/icon/trai-logo.png">\n\n      <div class="trai-title">\n\n        <ion-title class="trai-wel">\n\n          Welcome to trai\n\n          <p>Unsolicited Commercial Communication</p>\n\n        </ion-title>\n\n      </div>\n\n\n\n    </ion-item>\n\n   <form [formGroup]="regForm">\n\n    <ion-grid class="grid trai-i">\n\n      <ion-row class="row">\n\n        <div class="trai-left-inp pull-right">\n\n          <ion-input name="username" [(ngModel)]="registerDetail.contactNo" formControlName="contactNo" type="number" spellcheck="false" autocapitalize="off" placeholder="Enter Phone Number" required >\n\n          </ion-input>\n\n        </div>\n\n        <div class="trai-right-inp" >\n\n            <img src="assets/icon/login-arrow.png" (click)="onLogin()"/>\n\n        </div>\n\n      </ion-row>\n\n       <ion-item *ngIf="!regForm.controls[\'contactNo\'].valid &&regForm.controls [\'contactNo\'].dirty">\n\n            <span *ngIf="regForm.controls[\'contactNo\'].errors[\'required\']">\n\n                <p style="color:red;">Contact Number cannot be left blank</p>\n\n            </span>\n\n            <span *ngIf="regForm.controls[\'contactNo\'].errors[\'minlength\']">\n\n                 <p style="color:red;">contact Number must be atleast 10 numbers</p>\n\n             </span>\n\n             <span *ngIf="regForm.controls[\'contactNo\'].errors[\'maxlength\']">\n\n                 <p style="color:red;">contact Number should not be greater then 10.</p>\n\n             </span>\n\n            <!-- <span *ngIf="regForm.controls[\'contactNo\'].errors[\'pattern\']">\n\n                <p style="color:red;">Contact Number not valid.</p>\n\n            </span> -->\n\n         </ion-item>\n\n    </ion-grid>\n\n</form>\n\n\n\n  </ion-list>\n\n  <ion-row responsive-sm>\n\n\n\n  </ion-row>\n\n</ion-content>\n\n`/*ion-inline-end:"/home/pankaj/Pennyproject/Ionic/traiFrontEnd/traibackup/2-13-08-2018/src/pages/register/register.html"*/,
         }),
         __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_5__providers_user_data__["a" /* UserData */], __WEBPACK_IMPORTED_MODULE_2__angular_forms__["a" /* FormBuilder */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["k" /* NavController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* LoadingController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["n" /* ToastController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* MenuController */], __WEBPACK_IMPORTED_MODULE_3__services_setup_service__["a" /* SetupService */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["l" /* NavParams */]])
     ], RegisterPage);
@@ -1979,7 +2000,7 @@ var RegisterPage = (function () {
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return UserData; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(1);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(16);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__ionic_storage__ = __webpack_require__(143);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__ionic_storage__ = __webpack_require__(145);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -2067,7 +2088,7 @@ var UserData = (function () {
 
 /***/ }),
 
-/***/ 698:
+/***/ 699:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -2117,7 +2138,7 @@ var FirstCapsPipe = (function () {
 
 /***/ }),
 
-/***/ 699:
+/***/ 700:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -2127,7 +2148,7 @@ var FirstCapsPipe = (function () {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__user_data__ = __webpack_require__(63);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_rxjs_Observable__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_rxjs_Observable___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_3_rxjs_Observable__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_rxjs_add_operator_map__ = __webpack_require__(89);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_rxjs_add_operator_map__ = __webpack_require__(90);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_rxjs_add_operator_map___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_4_rxjs_add_operator_map__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5_rxjs_add_observable_of__ = __webpack_require__(270);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5_rxjs_add_observable_of___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_5_rxjs_add_observable_of__);
@@ -2286,7 +2307,7 @@ var ConferenceData = (function () {
 
 /***/ }),
 
-/***/ 700:
+/***/ 701:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -2294,8 +2315,8 @@ var ConferenceData = (function () {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(1);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(16);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_forms__ = __webpack_require__(21);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__services_setup_service__ = __webpack_require__(33);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__ionic_native_date_picker__ = __webpack_require__(162);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__services_setup_service__ = __webpack_require__(31);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__ionic_native_date_picker__ = __webpack_require__(93);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -2353,18 +2374,50 @@ var PreferenceModalPage = (function () {
         if (index >= 0) {
             this.weekItem.splice(index, 1);
         }
-        else
+        else {
             this.weekItem.push(day);
+        }
     };
     PreferenceModalPage.prototype.submit = function (timeBands, priority) {
-        var info = {};
-        console.log("item::::::::", timeBands, priority);
-        var date = { time: timeBands };
-        this.viewCtrl.dismiss({ type: this.item, time: date, priority: priority, weekdays: this.weekItem });
+        console.log("this.weekItem = = = " + this.weekItem);
+        debugger;
+        if (this.weekItem.length <= 0) {
+            var toast = this.toastCtrl.create({
+                message: 'Please select at least one weekday!',
+                showCloseButton: true,
+                closeButtonText: 'Ok',
+                duration: 2000
+            });
+            toast.present();
+        }
+        else if (!timeBands) {
+            var toast = this.toastCtrl.create({
+                message: 'Please select at least one timebands!',
+                showCloseButton: true,
+                closeButtonText: 'Ok',
+                duration: 2000
+            });
+            toast.present();
+        }
+        else if (!priority) {
+            var toast = this.toastCtrl.create({
+                message: 'Please select at least one priority!',
+                showCloseButton: true,
+                closeButtonText: 'Ok',
+                duration: 2000
+            });
+            toast.present();
+        }
+        else {
+            var info = {};
+            console.log("item::::::::", timeBands, priority);
+            var date = { time: timeBands };
+            this.viewCtrl.dismiss({ type: this.item, time: date, priority: priority, weekdays: this.weekItem });
+        }
     };
     PreferenceModalPage = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
-            selector: 'page-preference-modal',template:/*ion-inline-start:"/home/pankaj/Pennyproject/Ionic/traiFrontEnd/traibackup/2-13-08-2018/src/pages/preference-modal/preference-modal.html"*/`<!--\n  Generated template for the PreferenceModalPage page.\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n  Ionic pages and navigation.\n-->\n <ion-header>\n    	<ion-navbar>\n    		<ion-buttons start>\n    			<button ion-button (click)="dismiss()">Close</button>\n    		</ion-buttons>\n    		<ion-title>Preference</ion-title>\n    	</ion-navbar>\n    </ion-header>\n\n\n<ion-content padding>\n\n\n  <div class="weekDays-selector">  \n		<input type="checkbox" id="weekday-mon" class="weekday" (click)="weekdays(\'31\')"/> \n		 <label for="weekday-mon">M</label>  \n		<input type="checkbox" id="weekday-tue" class="weekday" (click)="weekdays(\'32\')" /> \n		 <label for="weekday-tue">T</label>\n		<input type="checkbox" id="weekday-wed" class="weekday" (click)="weekdays(\'33\')" />  \n		 <label for="weekday-wed">W</label> \n		<input type="checkbox" id="weekday-thu" class="weekday" (click)="weekdays(\'34\')" /> \n		 <label for="weekday-thu">Th</label> \n		<input type="checkbox" id="weekday-fri" class="weekday" (click)="weekdays(\'35\')" />  \n		 <label for="weekday-fri">F</label> \n		<input type="checkbox" id="weekday-sat" class="weekday" (click)="weekdays(\'36\')" /> \n		 <label for="weekday-sat">S</label>  \n		<input type="checkbox" id="weekday-sun" class="weekday" (click)="weekdays(\'37\')" /> \n		 <label for="weekday-sun">Su</label>\n  </div>\n\n   <ion-item>   \n   	<ion-range min="0" max="100" pin="true" [(ngModel)]="contrast" color="secondary">       \n   	       <ion-icon range-left small name="remove"></ion-icon>    \n   	       <ion-icon range-right name="add"></ion-icon> \n   	 </ion-range>\n   </ion-item>\n\n     <!-- <ion-row>\n       <ion-col col-6>    \n        <ion-item>\n\n          <ion-label stacked color="primary">Start</ion-label>\n          <ion-input [(ngModel)]="start_date" type="text" placeholder="Enter start time" readonly="readonly" (focus)="$event.stopPropagation(); showDateTimePicker($event)"></ion-input>\n        </ion-item>\n      </ion-col>\n\n       <ion-col col-6>\n        <ion-item>\n          <ion-label stacked color="primary">End</ion-label>\n          <ion-input [(ngModel)]="end_date" type="text" placeholder="Enter end time" readonly="readonly" (focus)="$event.stopPropagation(); showDateTimePicker($event)"></ion-input>\n        </ion-item>\n      </ion-col>\n    </ion-row> -->\n   <ion-item>\n      <ion-label>Date</ion-label>     \n      <ion-select [(ngModel)]="timeBands" multiple="true">\n        <ion-option checked="true" value="20">All Time Bands</ion-option>\n        <ion-option value="21">00:00 Hrs to 06:00 Hrs</ion-option>\n        <ion-option value="22">06:00 Hrs to 08:00 Hrs</ion-option>\n        <ion-option value="23">08:00 Hrs to 10:00 Hrs</ion-option>\n        <ion-option value="24">10:00 Hrs to 12:00 Hrs</ion-option>\n        <ion-option value="25">12:00 Hrs to 14:00 Hrs</ion-option>\n        <ion-option value="26">14:00 Hrs to 16:00 Hrs</ion-option>\n        <ion-option value="27">16:00 Hrs to 18:00 Hrs</ion-option>\n        <ion-option value="28">18:00 Hrs to 21:00 Hrs</ion-option>\n        <ion-option value="29">21:00 Hrs to 24:00 Hrs</ion-option>        \n      </ion-select>\n    </ion-item>\n{{timeBands}}\n <ion-row text-center>\n      <ion-col col-12 text-center>\n        <button ion-button round (click)="submit(timeBands,contrast)">Submit</button>\n      </ion-col>\n    </ion-row>\n</ion-content>\n`/*ion-inline-end:"/home/pankaj/Pennyproject/Ionic/traiFrontEnd/traibackup/2-13-08-2018/src/pages/preference-modal/preference-modal.html"*/,
+            selector: 'page-preference-modal',template:/*ion-inline-start:"/home/pankaj/Pennyproject/Ionic/traiFrontEnd/traibackup/2-13-08-2018/src/pages/preference-modal/preference-modal.html"*/`<!--\n  Generated template for the PreferenceModalPage page.\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n  Ionic pages and navigation.\n-->\n <ion-header>\n    	<ion-navbar>\n    		<ion-buttons start>\n    			<button ion-button (click)="dismiss()">Close</button>\n    		</ion-buttons>\n    		<ion-title>Preference</ion-title>\n    	</ion-navbar>\n    </ion-header>\n\n\n<ion-content padding>\n\n\n  <div class="weekDays-selector">  \n		<input type="checkbox" id="weekday-mon" class="weekday" (click)="weekdays(\'31\')"/> \n		 <label for="weekday-mon">M</label>  \n		<input type="checkbox" id="weekday-tue" class="weekday" (click)="weekdays(\'32\')" /> \n		 <label for="weekday-tue">T</label>\n		<input type="checkbox" id="weekday-wed" class="weekday" (click)="weekdays(\'33\')" />  \n		 <label for="weekday-wed">W</label> \n		<input type="checkbox" id="weekday-thu" class="weekday" (click)="weekdays(\'34\')" /> \n		 <label for="weekday-thu">Th</label> \n		<input type="checkbox" id="weekday-fri" class="weekday" (click)="weekdays(\'35\')" />  \n		 <label for="weekday-fri">F</label> \n		<input type="checkbox" id="weekday-sat" class="weekday" (click)="weekdays(\'36\')" /> \n		 <label for="weekday-sat">S</label>  \n		<input type="checkbox" id="weekday-sun" class="weekday" (click)="weekdays(\'37\')" /> \n		 <label for="weekday-sun">Su</label>\n  </div>\n\n   <ion-item>   \n   	<ion-range min="0" max="100" pin="true" [(ngModel)]="contrast" color="secondary">       \n   	       <ion-icon range-left small name="remove"></ion-icon>    \n   	       <ion-icon range-right name="add"></ion-icon> \n   	 </ion-range>\n   </ion-item>\n\n\n   <ion-item>\n      <ion-label>Time</ion-label>     \n      <ion-select [(ngModel)]="timeBands" multiple="true">\n        <ion-option checked="true" value="20">All Time Bands</ion-option>\n        <ion-option value="21">00:00 Hrs to 06:00 Hrs</ion-option>\n        <ion-option value="22">06:00 Hrs to 08:00 Hrs</ion-option>\n        <ion-option value="23">08:00 Hrs to 10:00 Hrs</ion-option>\n        <ion-option value="24">10:00 Hrs to 12:00 Hrs</ion-option>\n        <ion-option value="25">12:00 Hrs to 14:00 Hrs</ion-option>\n        <ion-option value="26">14:00 Hrs to 16:00 Hrs</ion-option>\n        <ion-option value="27">16:00 Hrs to 18:00 Hrs</ion-option>\n        <ion-option value="28">18:00 Hrs to 21:00 Hrs</ion-option>\n        <ion-option value="29">21:00 Hrs to 24:00 Hrs</ion-option>        \n      </ion-select>\n    </ion-item>\n\n <ion-row text-center>\n      <ion-col col-12 text-center>\n        <button ion-button round (click)="submit(timeBands,contrast)">Submit</button>\n      </ion-col>\n    </ion-row>\n</ion-content>\n`/*ion-inline-end:"/home/pankaj/Pennyproject/Ionic/traiFrontEnd/traibackup/2-13-08-2018/src/pages/preference-modal/preference-modal.html"*/,
         }),
         __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["k" /* NavController */], __WEBPACK_IMPORTED_MODULE_4__ionic_native_date_picker__["a" /* DatePicker */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["o" /* ViewController */], __WEBPACK_IMPORTED_MODULE_2__angular_forms__["a" /* FormBuilder */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["n" /* ToastController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* MenuController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["l" /* NavParams */], __WEBPACK_IMPORTED_MODULE_3__services_setup_service__["a" /* SetupService */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* LoadingController */]])
     ], PreferenceModalPage);
@@ -2379,13 +2432,87 @@ var PreferenceModalPage = (function () {
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return DashboardPage; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(1);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(16);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__pages_history_history__ = __webpack_require__(146);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__pages_preference_preference__ = __webpack_require__(161);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__pages_complaints_complaints__ = __webpack_require__(162);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__pages_complaintsstatus_complaintsstatus__ = __webpack_require__(92);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__pages_dnd_dnd__ = __webpack_require__(359);
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+
+
+
+
+
+
+/**
+ * Generated class for the DashboardPage page.
+ *
+ * See https://ionicframework.com/docs/components/#navigation for more info on
+ * Ionic pages and navigation.
+ */
+var DashboardPage = (function () {
+    function DashboardPage(navCtrl, navParams, menuCtrl) {
+        this.navCtrl = navCtrl;
+        this.navParams = navParams;
+        this.menuCtrl = menuCtrl;
+    }
+    DashboardPage.prototype.history = function () {
+        this.navCtrl.push(__WEBPACK_IMPORTED_MODULE_2__pages_history_history__["a" /* HistoryPage */]);
+    };
+    DashboardPage.prototype.preference = function () {
+        this.navCtrl.push(__WEBPACK_IMPORTED_MODULE_3__pages_preference_preference__["a" /* PreferencePage */]);
+    };
+    DashboardPage.prototype.dnd = function () {
+        this.navCtrl.push(__WEBPACK_IMPORTED_MODULE_6__pages_dnd_dnd__["a" /* DndPage */]);
+    };
+    DashboardPage.prototype.complaints = function () {
+        this.navCtrl.push(__WEBPACK_IMPORTED_MODULE_4__pages_complaints_complaints__["a" /* ComplaintsPage */]);
+    };
+    DashboardPage.prototype.complaintsStatus = function () {
+        this.navCtrl.push(__WEBPACK_IMPORTED_MODULE_5__pages_complaintsstatus_complaintsstatus__["a" /* ComplaintsstatusPage */]);
+    };
+    DashboardPage.prototype.ionViewDidEnter = function () {
+        this.menuCtrl.enable(true);
+    };
+    DashboardPage.prototype.ionViewDidLoad = function () {
+        console.log('ionViewDidLoad DashboardPage');
+    };
+    DashboardPage = __decorate([
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
+            selector: 'page-dashboard',template:/*ion-inline-start:"/home/pankaj/Pennyproject/Ionic/traiFrontEnd/traibackup/2-13-08-2018/src/pages/dashboard/dashboard.html"*/`<!--\n  Generated template for the DashboardPage page.\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n  Ionic pages and navigation.\n-->\n<ion-header>\n\n  <ion-navbar>\n    <button ion-button menuToggle>\n      <img class="trai-menu" menuToggle src="assets/icon/menu.png" alt="">\n    </button>\n    <!-- <ion-icon name="menu"><img menuToggle src="../assets/icon/menu.png" alt=""></ion-icon> -->\n\n    <ion-title>\n      <img class="header-img" alt="" src="assets/icon/header-logo.png">\n    </ion-title>\n\n   \n  </ion-navbar>\n\n</ion-header>\n\n\n<ion-content padding>\n  <ion-grid>\n    <!-- Calls Start -->\n    <ion-row>\n      <ion-col col-6 class="trai-dash-head">Dashboard</ion-col>\n      <ion-col col-6 class="trai-dash-sim">SIM:\n        <span>1 Vodafone</span>\n      </ion-col>\n    </ion-row>\n  </ion-grid>\n\n  <ion-grid>\n    <ion-row (click)="history()">\n      <ion-col col-12 class="trai-c-a" padding-0>\n        <ion-grid class="trai-grid-c">\n          <ion-row>\n            <ion-col col-2 class="trai-img-a">\n              <div class="trai-img-ab">\n                <img src="assets/icon/calls-sms.png" />\n              </div>\n            </ion-col>\n            <ion-col col-10 class="trai-text-a">\n\n              <ion-row>\n                <ion-col col-8 style="padding: 0px;">\n                  <div class="trai-cal-h3">\n                    <span>Last 30 days</span>\n                  </div>\n                </ion-col>\n                <ion-col col-4>\n                  <div class="trai-cal-span">\n                    3\n                    <span>\n                      <ion-icon ios="ios-arrow-dropdown" md="md-arrow-dropdown"></ion-icon> 2%</span>\n                  </div>\n                </ion-col>\n              </ion-row>\n              <ion-row>\n                <ion-col col-5 no-padding>\n                  <small class="trai-cal-phone">\n                    <ion-icon class=" icon icon-md ion-ios-call-outline" name="ios-call-outline" role="img" aria-label="call outline" ng-reflect-name="ios-call-outline"></ion-icon>&nbsp;+91 7273099884</small>\n                </ion-col>\n                <ion-col col-4 no-padding>\n                  <small class="trai-cal-phone">\n                    <ion-icon class="icon-default-color icon icon-md ios-calendar-outline" name="ios-calendar-outline" role="img" aria-label="calendar outline"\n                      ng-reflect-name="ios-calendar-outline"></ion-icon>&nbsp; 10-08-2018</small>\n                </ion-col>\n                <ion-col col-3 no-padding>\n                  <small class="trai-cal-phone">\n                    <img style="width: 20%;" src="assets/icon/recive.png" alt="">&nbsp;1:30m</small>\n                </ion-col>\n              </ion-row>\n\n            </ion-col>\n          </ion-row>\n        </ion-grid>\n      </ion-col>\n    </ion-row>\n    <!-- Calls END -->\n    <!-- DND Start -->\n\n    <ion-row padding-top (click)="dnd()">\n      <ion-col col-12 class="trai-c-a" padding-0>\n        <ion-grid class="trai-grid-c">\n          <ion-row>\n            <ion-col col-2 class="trai-dnd-a">\n              <div class="trai-img-ab">\n                <img src="assets/icon/dnd.png" />\n              </div>\n            </ion-col>\n            <ion-col col-10 class="trai-text-a">\n\n              <ion-row>\n                <ion-col col-8 style="padding: 0px;">\n                  <div class="trai-cal-h3">\n                    <span>DND</span>\n                  </div>\n                </ion-col>\n                <ion-col col-4 no-padding text-right>\n                  <small class="trai-active-d">Active DND</small>\n                </ion-col>\n              </ion-row>\n              <ion-row>\n\n                <ion-col col-8 no-padding>\n                  <small class="trai-dnd-small">\n                    <ion-icon class="icon-default-color icon icon-md ion-ios-clock-outline" name="ios-clock-outline" role="img" aria-label="clock outline"\n                      ng-reflect-name="ios-clock-outline"></ion-icon>&nbsp;\n                    <b>From</b>\n                    <span>07:30PM</span>\n                    <b>To</b>\n                    <span>12:00AM</span>\n                  </small>\n                </ion-col>\n\n              </ion-row>\n\n            </ion-col>\n          </ion-row>\n        </ion-grid>\n      </ion-col>\n    </ion-row>\n    <!-- DND END -->\n\n    <!-- Complaint Start -->\n\n    <ion-row padding-top (click)="complaints()">\n      <ion-col col-12 class="trai-c-a" padding-0>\n        <ion-grid class="trai-grid-c">\n          <ion-row>\n            <ion-col col-2 class="trai-complaints-a">\n              <div class="trai-img-ab">\n                <img src="assets/icon/complaints.png" />\n              </div>\n            </ion-col>\n            <ion-col col-10 class="trai-text-a">\n\n              <ion-row>\n                <ion-col col-12 style="padding: 0px;">\n                  <div class="trai-cal-h3">\n                    <span>Complaints</span>\n                  </div>\n                </ion-col>\n              </ion-row>\n              <ion-row>\n                <ion-col col-12 no-padding>\n                  <small class="trai-comp-t">Report Call | Report SMS</small>\n                </ion-col>\n\n              </ion-row>\n\n            </ion-col>\n          </ion-row>\n        </ion-grid>\n      </ion-col>\n    </ion-row>\n    <!-- Complaint END -->\n    <!-- Complaint status Start -->\n\n    <ion-row padding-top (click)="complaintsStatus()">\n      <ion-col col-12 class="trai-c-a" padding-0>\n        <ion-grid class="trai-grid-c">\n          <ion-row>\n            <ion-col col-2 class="trai-complaints-status-a">\n              <div class="trai-img-ab">\n                <img src="assets/icon/complaints-status.png" />\n              </div>\n            </ion-col>\n            <ion-col col-10 class="trai-text-a">\n\n              <ion-row>\n                <ion-col col-12 style="padding: 0px;">\n                  <div class="trai-cal-h3">\n                    <span>Complaints Status</span>\n                  </div>\n                </ion-col>\n              </ion-row>\n              <ion-row>\n                <ion-col col-8 no-padding>\n                  <small class="trai-comp-t">\n                    <b>Last Complaint URN:</b> # - - - - -.</small>\n                </ion-col>\n                <ion-col col-4 no-padding>\n                  <small class="trai-comp-t">Pending</small>\n                </ion-col>\n              </ion-row>\n\n            </ion-col>\n          </ion-row>\n        </ion-grid>\n      </ion-col>\n    </ion-row>\n    <!-- Complaint status END -->\n\n    <!-- preference Start -->\n\n    <ion-row padding-top (click)="preference()">\n      <ion-col col-12 class="trai-c-a" padding-0>\n        <ion-grid class="trai-grid-c">\n          <ion-row>\n            <ion-col col-2 class="trai-preference-a">\n              <div class="trai-img-ab">\n                <img src="assets/icon/preference.png" />\n              </div>\n            </ion-col>\n            <ion-col col-10 class="trai-text-a">\n\n              <ion-row>\n                <ion-col col-12 style="padding: 0px;">\n                  <div class="trai-cal-h3">\n                    <span>Preference</span>\n                  </div>\n                </ion-col>\n              </ion-row>\n              <ion-row>\n                <ion-col col-12 no-padding>\n                  <small class="trai-comp-t">\n                    <b>Preference Registered:</b>\n                    <span>Tourism, Health.... view</span>\n                  </small>\n                </ion-col>\n              </ion-row>\n\n            </ion-col>\n          </ion-row>\n        </ion-grid>\n      </ion-col>\n    </ion-row>\n    <!-- preference END -->\n  </ion-grid>\n</ion-content>\n`/*ion-inline-end:"/home/pankaj/Pennyproject/Ionic/traiFrontEnd/traibackup/2-13-08-2018/src/pages/dashboard/dashboard.html"*/,
+        }),
+        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["k" /* NavController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["l" /* NavParams */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* MenuController */]])
+    ], DashboardPage);
+    return DashboardPage;
+}());
+
+//# sourceMappingURL=dashboard.js.map
+
+/***/ }),
+
+/***/ 82:
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return UserDetailPage; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__pages_frauddetails_frauddetails__ = __webpack_require__(266);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_core__ = __webpack_require__(1);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_ionic_angular__ = __webpack_require__(16);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__angular_forms__ = __webpack_require__(21);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__services_setup_service__ = __webpack_require__(33);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__pages_complaintsstatus_complaintsstatus__ = __webpack_require__(91);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__services_setup_service__ = __webpack_require__(31);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__pages_complaintsstatus_complaintsstatus__ = __webpack_require__(92);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -2491,7 +2618,6 @@ var UserDetailPage = (function () {
                     type: this.site
                 }
             };
-            console.log("postData = = " + JSON.stringify(postData));
             this.globalservice.PostRequestUnautorized(url, postData).subscribe(function (response) {
                 loading_1.dismiss();
                 if (response[0].json.responseCode === 200) {
@@ -2529,15 +2655,15 @@ var UserDetailPage = (function () {
 
 /***/ }),
 
-/***/ 91:
+/***/ 92:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return ComplaintsstatusPage; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(1);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(16);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__services_setup_service__ = __webpack_require__(33);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__pages_user_detail_user_detail__ = __webpack_require__(81);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__services_setup_service__ = __webpack_require__(31);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__pages_user_detail_user_detail__ = __webpack_require__(82);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__pages_register_register__ = __webpack_require__(45);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;

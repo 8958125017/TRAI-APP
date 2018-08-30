@@ -26650,6 +26650,70 @@ page-dnd .trai-my-btn button {
   border-radius: 50%;
 }
 
+page-dnd .weekDays-selector input {
+  display: none !important;
+}
+
+page-dnd .weekDays-selector input[type=checkbox] + label {
+  display: inline-block;
+  border-radius: 20px;
+  background: #dddddd;
+  height: 35px;
+  width: 30px;
+  margin-right: 8px;
+  line-height: 35px;
+  text-align: center;
+  cursor: pointer;
+}
+
+page-dnd .weekDays-selector input[type=checkbox]:checked + label {
+  background: #2AD705;
+  color: #ffffff;
+}
+
+page-dnd .trai-time-head {
+  background: red;
+}
+
+page-dnd .toolbar-title-md {
+  padding: 0 12px;
+  font-size: 1.5rem;
+  font-weight: 500;
+  color: #747577;
+}
+
+page-dnd .range-md.range-has-pin {
+  padding-top: 0px !important;
+}
+
+page-dnd .trai-head-img {
+  width: 70px;
+  height: 70px;
+  background: #72a4ff;
+  padding: 10px;
+  border-radius: 5px;
+  margin-left: auto;
+  margin-right: auto;
+  display: block;
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: -50%;
+  margin: auto;
+  -webkit-box-shadow: 0px 0px 5px lightgrey;
+  box-shadow: 0px 0px 5px lightgrey;
+}
+
+page-dnd .trai-pref-head {
+  width: 100%;
+  height: 78px;
+  background: #fff;
+  border-radius: 5px;
+  -webkit-box-shadow: 0px 0px 5px lightgrey;
+  box-shadow: 0px 0px 5px lightgrey;
+  position: relative;
+}
+
 page-history ion-content {
   background-image: url(../assets/imgs/all-bg.jpg);
   background-size: cover;
@@ -26802,6 +26866,23 @@ page-myprofile .rk-menu {
 page-myprofile .product-history-card {
   padding: 7px;
   font-weight: 300;
+}
+
+page-myprofile .product-history-card .text-input-md {
+  margin: 5px 9px;
+  padding: 0;
+  width: calc(100% - 8px - 8px);
+}
+
+page-myprofile .product-history-card span {
+  line-height: 24px;
+}
+
+page-myprofile .select-md {
+  padding: 3px 14px;
+  font-size: 12px;
+  width: 100%;
+  max-width: 100% !important;
 }
 
 page-otp-receive .trai-my-otp {
@@ -27051,6 +27132,21 @@ page-preference-modal .weekDays-selector input[type=checkbox] + label {
 page-preference-modal .weekDays-selector input[type=checkbox]:checked + label {
   background: #2AD705;
   color: #ffffff;
+}
+
+page-preference-modal .trai-time-head {
+  background: red;
+}
+
+page-preference-modal .toolbar-title-md {
+  padding: 0 12px;
+  font-size: 1.5rem;
+  font-weight: 500;
+  color: #747577;
+}
+
+page-preference-modal .range-md.range-has-pin {
+  padding-top: 0px !important;
 }
 
 page-register #rounded {

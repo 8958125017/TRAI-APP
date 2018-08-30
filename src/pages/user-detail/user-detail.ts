@@ -83,11 +83,11 @@ export class UserDetailPage {
                 });
                 toast.present(); 
             }else if(!this.msg){
-                       let toast = this.toastCtrl.create({
-                     message: 'Please enter complain!',
-                     showCloseButton: true,
-                     closeButtonText: 'Ok',
-                     duration: 2000
+                     let toast = this.toastCtrl.create({
+                                   message: 'Please enter complain!',
+                                   showCloseButton: true,
+                                   closeButtonText: 'Ok',
+                                   duration: 2000
                 });
                 toast.present(); 
             }else{
@@ -109,7 +109,7 @@ export class UserDetailPage {
                                     }
                               
                                 }
-         console.log("postData = = "+JSON.stringify(postData));
+        
       this.globalservice.PostRequestUnautorized(url,postData).subscribe((response)=>{
         loading.dismiss();
              if (response[0].json.responseCode===200){

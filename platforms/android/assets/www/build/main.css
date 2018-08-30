@@ -26650,6 +26650,27 @@ page-dnd .trai-my-btn button {
   border-radius: 50%;
 }
 
+page-dnd .weekDays-selector input {
+  display: none !important;
+}
+
+page-dnd .weekDays-selector input[type=checkbox] + label {
+  display: inline-block;
+  border-radius: 20px;
+  background: #dddddd;
+  height: 35px;
+  width: 30px;
+  margin-right: 8px;
+  line-height: 35px;
+  text-align: center;
+  cursor: pointer;
+}
+
+page-dnd .weekDays-selector input[type=checkbox]:checked + label {
+  background: #2AD705;
+  color: #ffffff;
+}
+
 page-history ion-content {
   background-image: url(../assets/imgs/all-bg.jpg);
   background-size: cover;
@@ -26802,6 +26823,23 @@ page-myprofile .rk-menu {
 page-myprofile .product-history-card {
   padding: 7px;
   font-weight: 300;
+}
+
+page-myprofile .product-history-card .text-input-md {
+  margin: 5px 9px;
+  padding: 0;
+  width: calc(100% - 8px - 8px);
+}
+
+page-myprofile .product-history-card span {
+  line-height: 24px;
+}
+
+page-myprofile .select-md {
+  padding: 3px 14px;
+  font-size: 12px;
+  width: 100%;
+  max-width: 100% !important;
 }
 
 page-otp-receive .trai-my-otp {

@@ -42,7 +42,7 @@
           <span style="color: #4de9c9;">DND</span>
         </div>
         <div class="trai-line"></div>
-        <ion-grid>
+        <!-- <ion-grid>
           <ion-row class="trai-pref-c">
             <ion-col col-12>
               <div class="dnd-head">
@@ -53,13 +53,70 @@
               </div>
             </ion-col>
           </ion-row>
-        </ion-grid>
+        </ion-grid> -->
       </ion-col>
     </ion-row>
   </ion-grid>
   <!-- Header end -->
   <ion-grid class="trai-dnd-content">
     <ion-row>
+        <ion-col col-12>
+          <ion-title style="color: #747577!important;">
+            Week Days
+          </ion-title>
+          <div class="weekDays-selector" style="width: 95%; margin: 0px auto; margin-top: 5%;">
+            <input type="checkbox" id="weekday-mon" class="weekday" (click)="weekdays('31')" />
+            <label for="weekday-mon">M</label>
+            <input type="checkbox" id="weekday-tue" class="weekday" (click)="weekdays('32')" />
+            <label for="weekday-tue">T</label>
+            <input type="checkbox" id="weekday-wed" class="weekday" (click)="weekdays('33')" />
+            <label for="weekday-wed">W</label>
+            <input type="checkbox" id="weekday-thu" class="weekday" (click)="weekdays('34')" />
+            <label for="weekday-thu">Th</label>
+            <input type="checkbox" id="weekday-fri" class="weekday" (click)="weekdays('35')" />
+            <label for="weekday-fri">F</label>
+            <input type="checkbox" id="weekday-sat" class="weekday" (click)="weekdays('36')" />
+            <label for="weekday-sat">S</label>
+            <input type="checkbox" id="weekday-sun" class="weekday" (click)="weekdays('37')" />
+            <label for="weekday-sun">Su</label>
+          </div>
+        </ion-col>
+
+        <ion-col col-12>
+           <ion-title style="color: #747577!important; margin-top: 5%;">
+              Set Priority
+            </ion-title>
+            <ion-item>
+              <ion-range min="0" max="100" pin="true" [(ngModel)]="contrast" color="secondary">
+                <ion-icon range-left small name="remove"></ion-icon>
+                <ion-icon range-right name="add"></ion-icon>
+              </ion-range>
+            </ion-item>
+        </ion-col>
+
+        <ion-col col-12>
+          <ion-title style="color: #747577!important;">
+            Time Bands For Blocks
+          </ion-title>
+          <ion-item style="border: 1px solid #a0c1ff;
+    border-radius: 5px; width: 95%; margin: 0px auto; margin-top: 5%;">
+            <ion-label>Time</ion-label>
+            <ion-select [(ngModel)]="timeBands" multiple="true">
+              <ion-option checked="true" value="20">All Time Bands</ion-option>
+              <ion-option value="21">00:00 Hrs to 06:00 Hrs</ion-option>
+              <ion-option value="22">06:00 Hrs to 08:00 Hrs</ion-option>
+              <ion-option value="23">08:00 Hrs to 10:00 Hrs</ion-option>
+              <ion-option value="24">10:00 Hrs to 12:00 Hrs</ion-option>
+              <ion-option value="25">12:00 Hrs to 14:00 Hrs</ion-option>
+              <ion-option value="26">14:00 Hrs to 16:00 Hrs</ion-option>
+              <ion-option value="27">16:00 Hrs to 18:00 Hrs</ion-option>
+              <ion-option value="28">18:00 Hrs to 21:00 Hrs</ion-option>
+              <ion-option value="29">21:00 Hrs to 24:00 Hrs</ion-option>
+            </ion-select>
+          </ion-item>
+        </ion-col>
+      </ion-row>
+    <!-- <ion-row>
       <ion-col col-3 text-center>
         <button style="border-radius: 25px; background: #72a4ff;" ion-button (click)="daily()">Daily</button>
       </ion-col>
@@ -69,11 +126,10 @@
       <ion-col col-5 text-center>
         <button style="border-radius: 25px; background: #4de9c9;" ion-button (click)="weekdays()">weekdays</button>
       </ion-col>
-    </ion-row>
+    </ion-row> -->
+ 
 
-
-
-    <ion-row>
+    <!-- <ion-row>
       <ion-col col-6>
         <ion-item>
           <ion-label stacked color="primary">Start</ion-label>
@@ -88,20 +144,15 @@
         </ion-item>
       </ion-col>
     </ion-row>
+ -->
 
-    <ion-row padding-top>
-      <ion-col class="trai-my-checkb" col-6 text-left>
-        <ion-checkbox padding-left checked={{callTrue}}></ion-checkbox>
-        call
-      </ion-col>
-      <ion-col col-6 text-left>
-        <ion-checkbox padding-left checked={{smsTrue}}></ion-checkbox>
-        sms
-      </ion-col>
-    </ion-row>
+   
+
+  
+
     <ion-row padding-top text-center>
-      <ion-col class="trai-my-btn" col-12 text-center>
-        <button ion-button round (click)="submit()">Submit</button>
+      <ion-col col-12 text-center>
+        <button ion-button round (click)="submit(timeBands,contrast)">Submit</button>
       </ion-col>
     </ion-row>
 

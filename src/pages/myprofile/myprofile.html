@@ -38,8 +38,8 @@
         <span>Name</span>
       </ion-col>
       <ion-col col-8 text-left>
-         <ion-input type="text" [(ngModel)]="name" readonly  *ngIf="!nameEdit"></ion-input>
-         <ion-input type="text" [(ngModel)]="name"  *ngIf="nameEdit"></ion-input>
+         <ion-input style="border: 1px solid #fff;" type="text" [(ngModel)]="name" readonly  *ngIf="!nameEdit"></ion-input>
+         <ion-input style="border: 1px solid lightblue; border-radius: 2px;" type="text" [(ngModel)]="name"  *ngIf="nameEdit"></ion-input>
       </ion-col>
       <ion-col col-1 text-left>
         <img src="assets/icon/edit.svg" alt="" (click)="nameEditFunc()">
@@ -64,8 +64,8 @@
         <span>EmailId</span>
       </ion-col>
       <ion-col col-8 text-left>
-        <ion-input type="text" [(ngModel)]="email" readonly  *ngIf="!emailEdit"></ion-input>
-        <ion-input type="text" [(ngModel)]="email"  *ngIf="emailEdit"></ion-input>
+        <ion-input style="border: 1px solid #fff;" type="text" [(ngModel)]="email" readonly  *ngIf="!emailEdit"></ion-input>
+        <ion-input style="border: 1px solid lightblue; border-radius: 2px;" type="text" [(ngModel)]="email"  *ngIf="emailEdit"></ion-input>
       </ion-col>
       <ion-col col-1 text-left>
         <img src="assets/icon/edit.svg" alt="" (click)="emailEditFunc()">
@@ -79,8 +79,8 @@
         <span>DOB</span>
       </ion-col>
       <ion-col col-8 text-left>
-        <ion-input type="text" [(ngModel)]="dob" readonly  *ngIf="!dobEdit"></ion-input>
-        <ion-input type="text" [(ngModel)]="dob"  *ngIf="dobEdit"></ion-input>
+        <ion-input style="border: 1px solid #fff;" type="text" [(ngModel)]="dob" readonly  *ngIf="!dobEdit"></ion-input>
+        <ion-input style="border: 1px solid lightblue; border-radius: 2px;" type="text" [(ngModel)]="dob"  *ngIf="dobEdit"></ion-input>
       </ion-col>
       <ion-col col-1 text-left>
         <img src="assets/icon/edit.svg" alt="" (click)="dobEditFunc()">
@@ -94,8 +94,17 @@
         <span>Profession</span>
       </ion-col>
       <ion-col col-8 text-left>
-       <ion-input type="text" [(ngModel)]="profession" readonly  *ngIf="!professionEdit"></ion-input>
-        <ion-input type="text" [(ngModel)]="profession"  *ngIf="professionEdit"></ion-input>
+      <ion-item *ngIf="professionEdit">
+       <ion-select style="border: 1px solid lightblue; border-radius: 2px;" [(ngModel)]="profession">
+        <ion-option value="Engineer" checked="true">Engineer</ion-option>
+        <ion-option value="Doctor">Doctor</ion-option>
+        <ion-option value="Police">Police</ion-option>
+        <ion-option value="IAS">IAS</ion-option>
+        <ion-option value="Others">Others</ion-option>        
+      </ion-select>
+      
+    </ion-item>
+         <ion-input type="text" [(ngModel)]="profession" readonly  *ngIf="!professionEdit"></ion-input>       
       </ion-col>
       <ion-col col-1 text-left>
         <img src="assets/icon/edit.svg" alt="" (click)="professionEditFunc()">

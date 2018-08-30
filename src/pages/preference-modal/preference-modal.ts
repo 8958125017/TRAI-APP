@@ -51,15 +51,45 @@ export class PreferenceModalPage {
     if(index>=0){
        this.weekItem.splice(index,1);
     }
-    else
+    else{
     	this.weekItem.push(day)
+    }
   }
 
   submit(timeBands,priority){
-  		 var info = {}
+    console.log("this.weekItem = = = "+this.weekItem);
+    debugger
+      if(this.weekItem.length<=0){
+        let toast = this.toastCtrl.create({
+                     message: 'Please select at least one weekday!',
+                     showCloseButton: true,
+                     closeButtonText: 'Ok',
+                     duration: 2000
+                });
+                toast.present();
+      }else if(!timeBands){
+         let toast = this.toastCtrl.create({
+                     message: 'Please select at least one timebands!',
+                     showCloseButton: true,
+                     closeButtonText: 'Ok',
+                     duration: 2000
+                });
+                toast.present();
+      }else if(!priority){
+         let toast = this.toastCtrl.create({
+                     message: 'Please select at least one priority!',
+                     showCloseButton: true,
+                     closeButtonText: 'Ok',
+                     duration: 2000
+                });
+                toast.present();
+      }else{
+        var info = {}
          console.log("item::::::::",timeBands,priority)
          var date = {time:timeBands}
-       	 this.viewCtrl.dismiss({type:this.item,time:date,priority:priority,weekdays:this.weekItem});
+          this.viewCtrl.dismiss({type:this.item,time:date,priority:priority,weekdays:this.weekItem});      
+      }
+  		 
   }
 
 }

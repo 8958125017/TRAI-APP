@@ -3,6 +3,7 @@ import { IonicPage, NavController, NavParams,Platform,LoadingController } from '
 import { Device } from '@ionic-native/device';
 import { AndroidPermissions } from '@ionic-native/android-permissions';
 declare var SMS:any;
+declare var window: any;
 import { UserDetailPage } from '../../pages/user-detail/user-detail';
 /**
  * Generated class for the HistoryPage page.
@@ -19,28 +20,45 @@ import { UserDetailPage } from '../../pages/user-detail/user-detail';
 })
 export class HistoryPage {
 section: string = 'one';
-public mobileId : {};
+public mobileId : any;
 messages:any=[];
+public callLogsList:any=[];
+userDetails:any;
+contactNumber:any;
   constructor(public navCtrl: NavController,public loadingCtrl:LoadingController,public androidPermissions: AndroidPermissions,public device : Device, public platform:Platform,public navParams: NavParams) {
   	 let backAction =  platform.registerBackButtonAction(() => {        
                     this.navCtrl.pop();
                     backAction();
                   },2)
      this.callLog();
-     this.checkPermission();
+     //this.checkPermission();
+     this.userDetails=JSON.parse(localStorage.getItem('logindetail'));  
+               
+              if(this.userDetails){
+                  this.contactNumber=this.userDetails[0].json.data.mobile;                 
+              }
   }
   callLog(){
-      let loading = this.loadingCtrl.create({
-        content: 'Loading call logs please wait...',
+    this.callLogsList=[];
+      // let loading = this.loadingCtrl.create({
+      //   content: 'Loading call logs please wait...',
         
-        duration:15000,
+      //   duration:15000,
        
-      }); 
-       loading.present();
-       this.mobileId = JSON.parse(this.device.uuid);
-     //  alert("this.mobileId = = "+JSON.stringify(this.mobileId));
-       loading.dismiss();
-       //alert("this.device.uuid "+JSON.stringify(this.mobileId));
+      // }); 
+      //  loading.present();
+       var time  = (new Date().getTime() - 259200000)
+       var userCalls = JSON.parse(this.device.uuid);       
+      if(userCalls){
+          var index = userCalls.findIndex(element=>{
+         return parseInt(element.date) < time
+       })     
+       this.mobileId = userCalls.slice(0,index);     
+      }
+     
+        
+     //  loading.dismiss();
+       
     }
 
   ionViewDidLoad() {
@@ -71,18 +89,17 @@ checkPermission()
     ReadSMSList()
     {
     let loading = this.loadingCtrl.create({
-        content: 'Loading sms logs please wait...',
-        
-        duration:15000,
-       
+        content: 'Loading sms logs please wait...',        
+        duration:8000,       
       }); 
        loading.present();
     this.platform.ready().then((readySource) => {
     
     let filter = {
-           box : 'inbox', // 'inbox' (default), 'sent', 'draft'
-           indexFrom : 0, // start from index 0
-           maxCount : 100, // count of SMS to return each time
+                  box : 'inbox',
+                  address :this.contactNumber, // 'inbox' (default), 'sent', 'draft'
+                  indexFrom : 0, // start from index 0
+                  maxCount : 20, // count of SMS to return each time
                 };
     
            if(SMS) SMS.listSMS(filter, (ListSms)=>{  
@@ -115,6 +132,25 @@ checkPermission()
         this.navCtrl.push(UserDetailPage,{objAddress: number});      
         // this.navCtrl.setRoot(UserDetailPage,{'num': 'objCall.phoneNumber','date':'objCall.date','duraton':'objCall.duration','typeCall':'objCall.type'}); 
     }
+
+    getSMS(){
+      let filter = {
+                  box : 'inbox', // 'inbox' (default), 'sent', 'draft'
+                  address :this.contactNumber,
+                  indexFrom : 0, // start from index 0
+                  maxCount : 20, // count of SMS to return each time
+                };
+    if(window.SMS) window.SMS.listSMS(filter,data=>{
+        setTimeout(()=>{
+            console.log(data);
+            this.messages=data;
+            alert("message = = "+JSON.stringify(this.messages));
+        },0)
+ 
+    },error=>{
+      console.log(error);
+    });
+  }
 
 
 }

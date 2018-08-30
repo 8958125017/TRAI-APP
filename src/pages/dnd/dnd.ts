@@ -1,6 +1,8 @@
 import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams ,Platform,ToastController} from 'ionic-angular';
+import { IonicPage, NavController, NavParams ,Platform,ToastController,LoadingController} from 'ionic-angular';
 import { DatePicker } from '@ionic-native/date-picker';
+import { SetupService } from '../../services/setup.service';
+import { DashboardPage } from '../../pages/dashboard/dashboard';
 
 /**
  * Generated class for the DndPage page.
@@ -15,78 +17,118 @@ import { DatePicker } from '@ionic-native/date-picker';
   templateUrl: 'dnd.html',
 })
 export class DndPage {
-  smsTrue:boolean=false;
-  callTrue:boolean=false;
-  constructor(public navCtrl: NavController,public toastCtrl:ToastController,private datePicker: DatePicker,public platform :Platform, public navParams: NavParams) {
-     let backAction =  platform.registerBackButtonAction(() => {        
-                    this.navCtrl.pop();
-                    backAction();
-                  },2)
-  }
+ 
+    item:any;
+    timeBands:any;
+    weekItem:any=[];
+    userDetails:any;
+    contrast:any;
+    contactNumber:any;
+    preferenceItem:any=[]; 
+  constructor(
+                public navCtrl: NavController,
+                public toastCtrl:ToastController,
+                private datePicker: DatePicker,
+                public platform :Platform,
+                public navParams: NavParams,
+                public setupservice:SetupService,
+                public loadingCtrl: LoadingController
+                ){
+                   let backAction =  platform.registerBackButtonAction(() => {        
+                                  this.navCtrl.pop();
+                                  backAction();
+                                },2)
+                  this.userDetails=JSON.parse(localStorage.getItem('logindetail'));
+                  if(this.userDetails){
+                    this.contactNumber=this.userDetails[0].json.data.mobile;
+                  }
+             }
 
-  ionViewDidLoad() {
-    console.log('ionViewDidLoad DndPage');
-  }
+      ionViewDidLoad() {
+        console.log('ionViewDidLoad DndPage');
+      }
 
+    weekdays(day:any){                     
+                      var index=this.weekItem.indexOf(day)
+                      if(index>=0){
+                         this.weekItem.splice(index,1);
+                      }
+                      else{
+                        this.weekItem.push(day)
+                      }
+    }
 
-      showDateTimePicker(event) {
-        this.datePicker.show({
-            date: new Date(),
-            mode: 'datetime',
-            is24Hour: true,
-            androidTheme: this.datePicker.ANDROID_THEMES.THEME_HOLO_DARK
-        }).then(
-            date => { 
-                      event.target.value = date 
-                    },
-            err => console.log('Error occurred while getting date: ' + err)
-            )
-        }
-
-        submit(){
+    submit(timeBands,priority){
+            if(this.weekItem.length<=0){
+            let toast = this.toastCtrl.create({
+                         message: 'Please select at least one weekday!',
+                         showCloseButton: true,
+                         closeButtonText: 'Ok',
+                         duration: 2000
+                    });
+                    toast.present();
+          }else if(!timeBands){
              let toast = this.toastCtrl.create({
-                                 message: "submitted successfully!!",
-                                 showCloseButton: true,
-                                 closeButtonText: 'Ok',
-                                 duration: 3000
-                            });
-                           toast.present();
-        }
-
-        daily(){
-          this.smsTrue=true;
-          this.callTrue=true;
+                         message: 'Please select at least one timebands!',
+                         showCloseButton: true,
+                         closeButtonText: 'Ok',
+                         duration: 2000
+                    });
+                    toast.present();
+          }else if(!priority){
              let toast = this.toastCtrl.create({
-                                 message: "daily selected!!",
-                                 showCloseButton: true,
-                                 closeButtonText: 'Ok',
-                                 duration: 3000
-                            });
-                           toast.present();
-        }
+                         message: 'Please select at least one priority!',
+                         showCloseButton: true,
+                         closeButtonText: 'Ok',
+                         duration: 2000
+                    });
+                    toast.present();
+          }else{
+                var date =  {
+                             time:timeBands
+                            }
+                let data =  { 
+                             type:7,
+                             time:date,
+                             priority:priority,
+                             weekdays:this.weekItem
+                           }
+                this.preferenceItem.push(data);
+                let loading = this.loadingCtrl.create({
+                      content: 'preference submiting please wait...',
+                      duration:15000,
+                 });
+                    loading.present();
 
-        weekly(){
-              this.smsTrue=true;
-              this.callTrue=true;
-              let toast = this.toastCtrl.create({
-                                 message: "weekly  selected!!",
-                                 showCloseButton: true,
-                                 closeButtonText: 'Ok',
-                                 duration: 3000
-                            });
-                           toast.present();
-        }
-
-        weekdays(){
-              this.smsTrue=true;
-              this.callTrue=true;
-               let toast = this.toastCtrl.create({
-                                 message: "wekdays selected!!",
-                                 showCloseButton: true,
-                                 closeButtonText: 'Ok',
-                                 duration: 3000
-                            });
-                           toast.present();
-        }
-
+                   let postData ={
+                                   mobile :this.contactNumber,
+                                   data   : {
+                                              preference : this.preferenceItem
+                                             }
+                                 }
+             const url = this.setupservice.basePath +'/userPrefrence';
+             this.setupservice.PostRequest(url,postData).subscribe((response)=>{
+             loading.dismiss();
+                if(response[0].json.status===200){
+                  this.navCtrl.push(DashboardPage);
+                  let toast = this.toastCtrl.create({
+                                     message: "DND Activated successfully!!",
+                                     showCloseButton: true,
+                                     closeButtonText: 'Ok',
+                                     duration: 1000
+                                });
+                               toast.present();
+                }else{
+                    let toast = this.toastCtrl.create({
+                                     message: "something went wrong",
+                                     showCloseButton: true,
+                                     closeButtonText: 'Ok',
+                                     duration: 2000
+                                });
+                               toast.present();
+                } 
+              });                
+            }
+      }
 }
+

@@ -13,7 +13,7 @@
     <!-- <ion-icon name="menu"><img menuToggle src="assets/icon/menu.png" alt=""></ion-icon> -->
 
     <ion-title>
-      <img class="header-img" alt="" src="assets/icon/header-logo.png">
+      <img class="header-img" alt="" src="assets/icon/header-logo.png" (click)="checkPermission()">
     </ion-title>
 
 
@@ -59,7 +59,7 @@
         <ion-segment-button active value="one" (click)="callLog()">
           Call
         </ion-segment-button>
-        <ion-segment-button value="two" (click)="checkPermission()">
+        <ion-segment-button value="two" (click)="getSMS()">
           SMS
         </ion-segment-button>
       </ion-segment>

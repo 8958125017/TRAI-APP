@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams,Platform ,LoadingController,ToastController} from 'ionic-angular';
 import { RegisterPage} from  '../../pages/register/register';
 import { SetupService } from '../../services/setup.service';
+import { DatePicker } from '@ionic-native/date-picker';
 
 /**
  * Generated class for the MyprofilePage page.
@@ -18,16 +19,16 @@ import { SetupService } from '../../services/setup.service';
 export class MyprofilePage {
   name:any="";
   email:any="";
-  mobile:any;
+  mobile:any;  
+  dob:any="";
+  profession:any="";
   nameEdit:boolean=false;
   emailEdit:boolean=false;
-  dob:any="";
   dobEdit:boolean=false;
-  profession:any="";
-  professionEdit:boolean=false;
+  professionEdit:boolean=false;  
   userDetails:any;
   ids:any;
-  constructor(public navCtrl: NavController,public setupservice:SetupService,public platform:Platform, public navParams: NavParams,public toastCtrl: ToastController,public loadingCtrl: LoadingController) {
+  constructor(public navCtrl: NavController,public setupservice:SetupService,private datePicker: DatePicker,public platform:Platform, public navParams: NavParams,public toastCtrl: ToastController,public loadingCtrl: LoadingController) {
      let backAction =  platform.registerBackButtonAction(() => {
                     this.navCtrl.pop();
                     backAction();
@@ -43,6 +44,20 @@ export class MyprofilePage {
   ionViewDidLoad() {   
        
   }
+
+  showDateTimePicker(event) {
+        this.datePicker.show({
+            date: new Date(),
+            mode: 'datetime',
+            is24Hour: true,
+            androidTheme: this.datePicker.ANDROID_THEMES.THEME_HOLO_DARK
+        }).then(
+            date => { 
+                      event.target.value = date 
+                    },
+            err => console.log('Error occurred while getting date: ' + err)
+            )
+        }
 
   ngOnInit(){
    let postData= {
@@ -96,8 +111,7 @@ export class MyprofilePage {
   }
   submit()
   {
-
-    let loading = this.loadingCtrl.create({
+      let loading = this.loadingCtrl.create({
            content: 'profile updating please wait...'
       }); 
         loading.present();
@@ -120,9 +134,9 @@ export class MyprofilePage {
     
     const url = this.setupservice.basePath +'/updateUser'
     this.setupservice.PostRequest(url,postDatas).subscribe((responses)=>{
-      loading.dismiss();    
-      var res = JSON.parse(response[0].json._body); 
-      if(res.responseCode===200){
+      loading.dismiss();         
+      var res = JSON.parse(responses[0].json._body); 
+      if(res.statusCode===200){
             this.name = res.data.name
             this.email = res.data.email
             this.dob = res.data.DOB
@@ -136,6 +150,10 @@ export class MyprofilePage {
                      duration: 5000
                 });
                 toast.present();
+                this.nameEdit=false;
+                this.emailEdit=false;
+                this.dobEdit=false;
+                this.professionEdit=false;
        }else{
             let toast = this.toastCtrl.create({
                      message: "something went wrong",

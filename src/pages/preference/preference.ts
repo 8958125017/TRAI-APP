@@ -3,6 +3,7 @@ import { IonicPage, NavController, NavParams ,Platform,ToastController,LoadingCo
 import { RegisterPage} from  '../../pages/register/register';
 import { SetupService } from '../../services/setup.service';
 import { PreferenceModalPage }  from '../../pages/preference-modal/preference-modal';
+import { SMS } from '@ionic-native/sms';
 /**
  * Generated class for the PreferencePage page.
  *
@@ -14,6 +15,7 @@ import { PreferenceModalPage }  from '../../pages/preference-modal/preference-mo
 @Component({
   selector: 'page-preference',
   templateUrl: 'preference.html',
+  providers: [SMS]
 })
 export class PreferencePage {
   tourism:boolean=false;
@@ -39,7 +41,7 @@ export class PreferencePage {
 preferenceItem:any=[];
 userDetails:any
 contactNumber:any;
-  constructor(public navCtrl: NavController,public toastCtrl:ToastController,private modalCtrl: ModalController,public platform:Platform, public navParams: NavParams,public setupservice:SetupService,public loadingCtrl: LoadingController) {
+  constructor(public navCtrl: NavController,private sms: SMS,public toastCtrl:ToastController,private modalCtrl: ModalController,public platform:Platform, public navParams: NavParams,public setupservice:SetupService,public loadingCtrl: LoadingController) {
      let backAction =  platform.registerBackButtonAction(() => {
                     this.navCtrl.pop();
                     backAction();
@@ -51,17 +53,14 @@ contactNumber:any;
               }
   }
 
-  ionViewDidLoad() {
-    console.log('ionViewDidLoad PreferencePage');
-                      var url = this.setupservice.basePath +'/getUserPrefrence'
-              var postData = {"mobile":this.contactNumber}
-              console.log("111111111111111111111111111111111111",url,postData)
+  ionViewDidLoad() {    
+              var url = this.setupservice.basePath +'/getUserPrefrence'
+              var postData = {
+                              "mobile":this.contactNumber
+                             }
               this.setupservice.PostRequest(url,postData).subscribe((response)=>{
-                console.log("prefrences:::::::::::::::::::::::::",response = JSON.parse(response[0].json._body))
-                console.log("response:::::::::::::::::::111111111111",
-                  this.preferenceItem = response.data[response.data.length-1].preference
-                  // this.preferenceItem = []
-                  )
+                var response = JSON.parse(response[0].json._body);
+                this.preferenceItem = response.data[response.data.length-1].preference
                 if((response.data[response.data.length-1].preference.find((element)=>{
                        return  element.type==1;
                   })))
@@ -134,9 +133,11 @@ contactNumber:any;
                    {
                      this.preferenceItem.splice(indexed,1);
                    }
-                   else
-                   this.openModal(data);
+                   else{
+                     this.openModal(data);
 
+                   }
+                   
                  console.log("--------------------------------checkModal",this.preferenceItem)
         }
 
@@ -149,7 +150,8 @@ contactNumber:any;
        }
 
        submit(){
-        if(!this.preferenceItem){
+         
+        if(this.preferenceItem.length<=0){
           let toast = this.toastCtrl.create({
                      message: 'Please select at least one preference!',
                      showCloseButton: true,
@@ -171,7 +173,6 @@ contactNumber:any;
                         preference : this.preferenceItem
                    }
         }
-
          const url = this.setupservice.basePath +'/userPrefrence';
          this.setupservice.PostRequest(url,postData).subscribe((response)=>{
            loading.dismiss();
@@ -184,13 +185,13 @@ contactNumber:any;
                               });
                              toast.present();
                              this.ionViewDidLoad();
-                     // this.preferenceDetail.tourism=false;
-                     // this.preferenceDetail.banking=false;
-                     // this.preferenceDetail.education=false;
-                     // this.preferenceDetail.health=false;
-                     // this.preferenceDetail.consumer=false;
-                     // this.preferenceDetail.communication=false;
-                     // this.preferenceDetail.dnd=false;
+                     // this.preferenceDetail.tourism.type=false;
+                     // this.preferenceDetail.banking.type=false;
+                     // this.preferenceDetail.education.type=false;
+                     // this.preferenceDetail.health.type=false;
+                     // this.preferenceDetail.consumer.type=false;
+                     // this.preferenceDetail.communication.type=false;
+                     // this.preferenceDetail.dnd.type=false;
             }else{
                  let toast = this.toastCtrl.create({
                                      message: "something went wrong!!",
@@ -199,13 +200,12 @@ contactNumber:any;
                                      duration: 5000
                               });
                              toast.present();
+                  }
+                })
             }
-         })
-        }
-
                console.log("this.preferenceDetailsInfo = = "+JSON.stringify(this.preferenceDetailsInfo));
 
-        }
+          }
 
 
 
@@ -214,16 +214,8 @@ contactNumber:any;
               // var data = { message : 'hello world' };
               let modal = this.modalCtrl.create('PreferenceModalPage',{type:data});
              
-              // let modal = this.modalCtrl.create(PreferenceModalPage, { 
-              //   'prop': 'prop1', 
-              //   onFeedBack: (data) => {
-               
-              //   }
-              // }
-              // );
-
-              modal.onDidDismiss(data => {
-                 console.log("data:::::::::",data.type)
+              modal.onDidDismiss(data => { 
+              if(data){
                  var item = data.type
                  var index=this.preferenceItem.findIndex((element)=>{
                         return  element.type==item;
@@ -239,11 +231,13 @@ contactNumber:any;
                       console.log("push in modal")
                    this.preferenceItem.push(data);
                  }
-                 console.log("--------------------------------------------",JSON.stringify(this.preferenceItem));
+                 console.log("-",JSON.stringify(this.preferenceItem));
+              }       
+                
               });
 
               modal.present().then(result => {
-                // console.log("result::::::",result)
+                console.log("result::::::",result)
               });
             
           }

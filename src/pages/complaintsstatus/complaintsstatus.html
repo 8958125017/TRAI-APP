@@ -40,7 +40,7 @@
             <ion-col col-6>
               <div class="dnd-head">
                 <span class="trai-my-head-a" text-center style="color: #747577;"> Total Complaints</span>
-                <span class="trai-my-head-b">{{complaintsLength}}</span>
+                <span class="trai-my-head-b">{{complaintsLength ? complaintsLength : 'NA'}}</span>
               </div>
             </ion-col>
             <ion-col col-6>
@@ -61,18 +61,18 @@
       <ion-row>
         <ion-col col-12>
           <small>
-            <ion-icon class="icon-default-color" name="ios-call-outline"></ion-icon>&nbsp; {{status.to}}</small>
+            <ion-icon class="icon-default-color" name="ios-call-outline"></ion-icon>&nbsp; {{status.data.to}}</small>
         </ion-col>
 
       </ion-row>
       <ion-row class="trai-cont-set">
-        <ion-col col-6>
+        <ion-col col-8>
           <small>
-            <ion-icon class="icon-default-color" name="ios-calendar-outline"></ion-icon>&nbsp;&nbsp;&nbsp;&nbsp;{{status.date | date:'dd/MM/yyyy'}}</small>
+            <ion-icon class="icon-default-color" name="ios-calendar-outline"></ion-icon>&nbsp;&nbsp;&nbsp;&nbsp;{{status.data.date | date:'dd/MM/yyyy'}}</small>
         </ion-col>
-        <ion-col col-6>
+        <ion-col col-3>
           <small>
-              Status:<span>{{status.status}}</span>
+              Status:<span>{{status.data.status}}</span>
           </small>
         </ion-col>
       </ion-row>

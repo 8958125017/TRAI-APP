@@ -13,7 +13,7 @@
     <!-- <ion-icon name="menu"><img menuToggle src="assets/icon/menu.png" alt=""></ion-icon> -->
 
     <ion-title>
-      <img class="header-img" alt="" src="assets/icon/header-logo.png" (click)="checkPermission()">
+      <img class="header-img" alt="" src="assets/icon/header-logo.png" >
     </ion-title>
 
 
@@ -32,14 +32,14 @@
           <img src="assets/icon/calls-sms.png" />
         </div>
         <div class="trai-head-text">
-            <span>Last 30 days Calls & SMS Variation</span>
+            <span>Last 3 days Calls & SMS Variation</span>
         </div>
         <div class="trai-line"></div>
         <ion-grid>
           <ion-row class="trai-pref-c">
             <ion-col col-12>
               <div class="call-head">
-                <span class="trai-my-head-a"> 30 days Calls</span>
+                <span class="trai-my-head-a"> 3 days Calls</span>
                 <span class="trai-my-head-b">
                   <ion-icon ios="ios-arrow-dropdown" md="md-arrow-dropdown"></ion-icon> 2% Spam
                 </span>
@@ -59,7 +59,7 @@
         <ion-segment-button active value="one" (click)="callLog()">
           Call
         </ion-segment-button>
-        <ion-segment-button value="two" (click)="getSMS()">
+        <ion-segment-button value="two" (click)="checkPermission()">
           SMS
         </ion-segment-button>
       </ion-segment>
@@ -87,7 +87,7 @@
             <ion-row class="trai-cont-set">
               <ion-col col-4>
                 <small>
-                  <img style="width: 10px; display: inline;" src="assets/icon/outgoing.svg" alt="">&nbsp;{{d.type}}</small>
+                  <img style="width: 10px; display: inline;" src="assets/icon/outgoing.svg" alt="">&nbsp;{{d.type ? d.type :'SPAM'}}</small>
               </ion-col>
               <ion-col col-4>
                 <small>

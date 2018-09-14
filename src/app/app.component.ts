@@ -13,7 +13,12 @@ import { ComplaintsPage} from '../pages/complaints/complaints';
 import { ComplaintsstatusPage} from '../pages/complaintsstatus/complaintsstatus';
 import { UserData } from '../providers/user-data';
 import { RegisterPage } from '../pages/register/register';
-
+import { MapPage } from '../pages/map/map';
+import { AndroidPermissions } from '@ionic-native/android-permissions';
+import { Network } from '@ionic-native/network';
+import { SetupService } from '../services/setup.service';
+import { HomePage } from '../pages/home/home';
+import { DndPage } from '../pages/dnd/dnd';
 export interface PageInterface {
   title: string;
   name: string;
@@ -39,19 +44,20 @@ export class MyApp {
   pages: PageInterface[] = [
     { title: 'Dashboard', name: 'DashboardPage', component: DashboardPage},
     { title: 'History', name: 'HistoryPage', component: HistoryPage },
+    { title: 'DND', name: 'DndPage', component: DndPage },
     { title: 'Preference', name: 'PreferencePage', component: PreferencePage},
     { title: 'Complaints', name: 'ComplaintsPage', component: ComplaintsPage},
     { title: 'Complaints Status', name: 'ComplaintsstatusPage', component: ComplaintsstatusPage},
     { title: 'My Profile', name: 'MyprofilePage', component: MyprofilePage },
-    { title: 'Setting', name: 'SettingPage', component: SettingPage },
+    { title: 'Map', name: 'MapPage', component: MapPage },
     { title: 'Discover', name: 'DiscoverPage', component: DiscoverPage }
-   
   ];
   others: PageInterface[] = [
-    { title: 'Privacy policy', name: 'DashboardPage', component: DashboardPage},
-    { title: 'Terms & condition', name: 'HistoryPage', component: HistoryPage },
-    { title: 'Help and feedback', name: 'PreferencePage', component: PreferencePage},
-    { title: 'About TRAI', name: 'ComplaintsPage', component: ComplaintsPage},
+   { title: 'Setting', name: 'SettingPage', component: '' },
+    { title: 'Privacy policy', name: 'DashboardPage', component: ''},
+    { title: 'Terms & condition', name: 'HistoryPage', component: '' },
+    { title: 'Help and feedback', name: 'PreferencePage', component: ''},
+    { title: 'About TRAI', name: 'ComplaintsPage', component: ''},
     { title: 'Version 1.0.0', name: 'ComplaintsstatusPage', component: ComplaintsstatusPage},
   ];
   rootPage: any;
@@ -61,12 +67,14 @@ export class MyApp {
     public userData: UserData,
     public menu: MenuController,
     public platform: Platform,
-
+    public androidPermissions: AndroidPermissions,
     public storage: Storage,
     public splashScreen: SplashScreen,
     public  app: App,public alertCtrl: AlertController,
     public statusBar: StatusBar,
-    public loadingCtrl: LoadingController
+    public loadingCtrl: LoadingController,
+    public network: Network,
+    public _setupService: SetupService
   ) {
    this.registerBackButtonAction();
     // Check if the user has already seen the tutorial
@@ -76,8 +84,29 @@ export class MyApp {
         } else {
           this.rootPage = RegisterPage;
         }
-        this.platformReady()
-      
+        
+      this.platform.ready().then(() => {
+          this.statusBar.overlaysWebView(false);
+          this.statusBar.backgroundColorByHexString('#0000FF');
+          this.splashScreen.hide();          
+              this._setupService.initializeNetworkEvents();
+                 // Offline event
+              this.events.subscribe('network:offline', () => {
+                localStorage.setItem('NetworkStatus',"offline");               
+                  this.nav.push(HomePage);               
+              });
+
+             // Online event
+              this.events.subscribe('network:online', () => {
+                var compName=localStorage.getItem('cmpName');            
+                  localStorage.removeItem("NetworkStatus");   
+                 if(compName == "RegisterPage"){
+                   this.nav.setRoot(RegisterPage);
+                 }else{               
+                   this.nav.setRoot(compName); 
+                }                 
+              });
+    });
 
     // load the conference data
    
@@ -100,7 +129,7 @@ export class MyApp {
     this.platform.registerBackButtonAction(() => { 
                 let nav = this.app.getActiveNavs()[0];
                 let activeView = nav.getActive();
-                if(activeView.name === "DashboardPage") { 
+                if(activeView.name === "DashboardPage" || activeView.name === "RegisterPage") { 
                     if (nav.canGoBack()){ //Can we go back?
                         nav.pop();
                     } else {
@@ -122,6 +151,8 @@ export class MyApp {
                         });
                         alert.present();
                     }
+                }else{
+                  this.nav.push(DashboardPage);
                 }
             });
 }
@@ -148,6 +179,12 @@ export class MyApp {
         console.log(`Didn't set nav root: ${err}`);
       });
     }
+    
+    // if(page.component == DashboardPage){
+    //   this.nav.setRoot(DashboardPage);
+    // } else {
+    //   this.nav.push(page.component);
+    // }
 
     if (page.logsOut === true) {
       // Give the menu time to close before changing to logged out
@@ -165,9 +202,9 @@ export class MyApp {
   }
 
   logout(){
-    localStorage.removeItem("logindetail");
-    localStorage.removeItem("hasSeenTutorial");
-    localStorage.clear();
+          localStorage.removeItem("logindetail");
+          localStorage.removeItem("hasSeenTutorial");
+          localStorage.clear();
      this.nav.setRoot(RegisterPage);
   }
    welcomeToBack(){    
@@ -198,10 +235,7 @@ export class MyApp {
 
   platformReady() {
     // Call any initial plugins when ready
-    this.platform.ready().then(() => {
-      this.statusBar.backgroundColorByHexString('#001f38');
-      this.splashScreen.hide();
-    });
+    
   }
 
   isActive(page: PageInterface) {

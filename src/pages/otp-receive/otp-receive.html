@@ -26,7 +26,7 @@
             <form [formGroup]="otpForm">
                 <ion-item>
                     <!-- <ion-label floating>Enter OTP</ion-label> -->
-                    <ion-input [(ngModel)]="otpVerifyDetail.otp" formControlName="otp" type="number" required placeholder="1   2   3   4   5   6"></ion-input>
+                    <ion-input [(ngModel)]="otpVerifyDetail.otp" formControlName="otp" type="number" required placeholder="Enter OTP"></ion-input>
                     <!-- </div> -->
                 </ion-item>
                 <ion-item *ngIf="otpForm.controls.otp.hasError('required') && otpForm.controls.otp.dirty">

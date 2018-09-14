@@ -42,7 +42,7 @@
   "cordova-plugin-android-permissions": {
     "source": {
       "type": "registry",
-      "id": "cordova-plugin-android-permissions"
+      "id": "cordova-plugin-android-permissions@^1.0.0"
     },
     "is_top_level": true,
     "variables": {}
@@ -50,7 +50,7 @@
   "cordova-plugin-sms": {
     "source": {
       "type": "registry",
-      "id": "cordova-plugin-sms"
+      "id": "cordova-plugin-sms@^1.0.5"
     },
     "is_top_level": true,
     "variables": {}
@@ -190,6 +190,14 @@
     "source": {
       "type": "registry",
       "id": "cordova-plugin-nativestorage"
+    },
+    "is_top_level": true,
+    "variables": {}
+  },
+  "cordova-plugin-sim": {
+    "source": {
+      "type": "registry",
+      "id": "cordova-plugin-sim"
     },
     "is_top_level": true,
     "variables": {}

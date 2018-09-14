@@ -45,6 +45,7 @@ export class PreferenceModalPage {
   dismiss() {
     this.viewCtrl.dismiss();
   }
+
   weekdays(day:any){
     console.log("day = = "+day);
     var index=this.weekItem.indexOf(day)
@@ -58,7 +59,7 @@ export class PreferenceModalPage {
 
   submit(timeBands,priority){
     console.log("this.weekItem = = = "+this.weekItem);
-    debugger
+    
       if(this.weekItem.length<=0){
         let toast = this.toastCtrl.create({
                      message: 'Please select at least one weekday!',

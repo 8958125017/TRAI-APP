@@ -26671,6 +26671,49 @@ page-dnd .weekDays-selector input[type=checkbox]:checked + label {
   color: #ffffff;
 }
 
+page-dnd .trai-time-head {
+  background: red;
+}
+
+page-dnd .toolbar-title-md {
+  padding: 0 12px;
+  font-size: 1.5rem;
+  font-weight: 500;
+  color: #747577;
+}
+
+page-dnd .range-md.range-has-pin {
+  padding-top: 0px !important;
+}
+
+page-dnd .trai-head-img {
+  width: 70px;
+  height: 70px;
+  background: #72a4ff;
+  padding: 10px;
+  border-radius: 5px;
+  margin-left: auto;
+  margin-right: auto;
+  display: block;
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: -50%;
+  margin: auto;
+  -webkit-box-shadow: 0px 0px 5px lightgrey;
+  box-shadow: 0px 0px 5px lightgrey;
+}
+
+page-dnd .trai-pref-head {
+  width: 100%;
+  height: 78px;
+  background: #fff;
+  border-radius: 5px;
+  -webkit-box-shadow: 0px 0px 5px lightgrey;
+  box-shadow: 0px 0px 5px lightgrey;
+  position: relative;
+}
+
 page-history ion-content {
   background-image: url(../assets/imgs/all-bg.jpg);
   background-size: cover;
@@ -27089,6 +27132,21 @@ page-preference-modal .weekDays-selector input[type=checkbox] + label {
 page-preference-modal .weekDays-selector input[type=checkbox]:checked + label {
   background: #2AD705;
   color: #ffffff;
+}
+
+page-preference-modal .trai-time-head {
+  background: red;
+}
+
+page-preference-modal .toolbar-title-md {
+  padding: 0 12px;
+  font-size: 1.5rem;
+  font-weight: 500;
+  color: #747577;
+}
+
+page-preference-modal .range-md.range-has-pin {
+  padding-top: 0px !important;
 }
 
 page-register #rounded {

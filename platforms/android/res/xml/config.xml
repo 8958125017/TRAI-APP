@@ -69,6 +69,9 @@
     <feature name="NativeStorage">
         <param name="android-package" value="NativeStorage" />
     </feature>
+    <feature name="Sim">
+        <param name="android-package" value="com.pbakondy.Sim" />
+    </feature>
     <name>TRAI</name>
     <description>TRAI App</description>
     <author email="hi@ionicframework" href="http://ionicframework.com/">Blockon Team</author>

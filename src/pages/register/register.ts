@@ -77,13 +77,11 @@ export class RegisterPage {
     let postData ={
           mobile : this.registerDetail.contactNo,
       };
-      debugger
+      
       this.globalservice.PostRequestUnautorized(url,postData).subscribe((response)=>{
        loading.dismiss(); 
-       debugger
              if (response[0].json.statusCode===200){
-                localStorage.setItem('logindetail',JSON.stringify(response));
-                
+                localStorage.setItem('logindetail',JSON.stringify(response));                
                 this.navCtrl.setRoot(OtpReceivePage);
              let toast = this.toastCtrl.create({
                          message: "otp sent successfully!!",

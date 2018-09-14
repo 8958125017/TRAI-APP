@@ -1,9 +1,10 @@
 import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams ,Platform,ToastController,LoadingController} from 'ionic-angular';
+import { IonicPage, NavController, NavParams ,AlertController,Platform,ToastController,LoadingController} from 'ionic-angular';
 import { DatePicker } from '@ionic-native/date-picker';
 import { SetupService } from '../../services/setup.service';
 import { DashboardPage } from '../../pages/dashboard/dashboard';
-
+import { SMS } from '@ionic-native/sms';
+import * as $ from 'jquery'
 /**
  * Generated class for the DndPage page.
  *
@@ -15,6 +16,7 @@ import { DashboardPage } from '../../pages/dashboard/dashboard';
 @Component({
   selector: 'page-dnd',
   templateUrl: 'dnd.html',
+  providers: [SMS]
 })
 export class DndPage {
  
@@ -32,6 +34,8 @@ export class DndPage {
                 public platform :Platform,
                 public navParams: NavParams,
                 public setupservice:SetupService,
+                private sms: SMS,
+                public alertCtrl: AlertController,
                 public loadingCtrl: LoadingController
                 ){
                    let backAction =  platform.registerBackButtonAction(() => {        
@@ -42,12 +46,10 @@ export class DndPage {
                   if(this.userDetails){
                     this.contactNumber=this.userDetails[0].json.data.mobile;
                   }
+                  this.loadUserPreference();
              }
 
-      ionViewDidLoad() {
-        console.log('ionViewDidLoad DndPage');
-      }
-
+      
     weekdays(day:any){                     
                       var index=this.weekItem.indexOf(day)
                       if(index>=0){
@@ -58,7 +60,8 @@ export class DndPage {
                       }
     }
 
-    submit(timeBands,priority){
+    confirmSubmit(timeBands,priority){
+      
             if(this.weekItem.length<=0){
             let toast = this.toastCtrl.create({
                          message: 'Please select at least one weekday!',
@@ -85,13 +88,13 @@ export class DndPage {
                     toast.present();
           }else{
                 var date =  {
-                             time:timeBands
+                               time:timeBands
                             }
                 let data =  { 
-                             type:7,
-                             time:date,
-                             priority:priority,
-                             weekdays:this.weekItem
+                               type:8,
+                               time:date,
+                               priority:priority,
+                               weekdays:this.weekItem
                            }
                 this.preferenceItem.push(data);
                 let loading = this.loadingCtrl.create({
@@ -108,9 +111,9 @@ export class DndPage {
                                  }
              const url = this.setupservice.basePath +'/userPrefrence';
              this.setupservice.PostRequest(url,postData).subscribe((response)=>{
-             loading.dismiss();
+             loading.dismiss();             
                 if(response[0].json.status===200){
-                  this.navCtrl.push(DashboardPage);
+                  this.navCtrl.setRoot(DashboardPage);
                   let toast = this.toastCtrl.create({
                                      message: "DND Activated successfully!!",
                                      showCloseButton: true,
@@ -118,6 +121,12 @@ export class DndPage {
                                      duration: 1000
                                 });
                                toast.present();
+                                var array = this.preferenceItem.map(element=>{
+                                 return element.type
+                                })
+                             
+                             this.sms.send('+918448166243', 'START - ' + array);
+                               this.loadUserPreference();
                 }else{
                     let toast = this.toastCtrl.create({
                                      message: "something went wrong",
@@ -130,5 +139,62 @@ export class DndPage {
               });                
             }
       }
+timeCheck(){
+  
+}
+      loadUserPreference() {    
+              var url = this.setupservice.basePath +'/getUserPrefrence'
+              var postData = {
+                              "mobile":this.contactNumber
+                             }
+                             this.weekItem=[];
+              this.setupservice.PostRequest(url,postData).subscribe((response)=>{
+                
+                var response = JSON.parse(response[0].json._body);
+                this.preferenceItem = response.data[response.data.length-1].preference;
+                if((response.data[response.data.length-1].preference.find((element)=>{
+                      return  element.type==8;
+                  })))
+                {
+                  console.log("this.preferenceItem DND :::::::::::",this.preferenceItem)
+                  var index = this.preferenceItem.findIndex(element=>{
+                    return element.type == 8
+                  }) 
+                  if(index>=0)
+                  {
+                 this.timeBands=this.preferenceItem[index].time.time;                 
+                 this.contrast =this.preferenceItem[index].priority;   
+                 this.weekItem =this.preferenceItem[index].weekdays;                 
+                 this.weekItem.map(id=>{
+                           $("#weekId"+id).prop("checked", true);
+                 })    
+                 }            
+                }
+                else{
+                
+                }
+                // preferenceDetail.tourism
+              })
+  }
+
+   submit(timeBands,priority){
+            const alert = this.alertCtrl.create({
+                            title: 'Submit Preferences',
+                            message: 'Do you want to submit preferences?,service charge will be applicable',
+                            buttons: [{
+                                text: 'Cancel',
+                                role: 'cancel',
+                                handler: () => {
+                                    console.log('Application exit prevented!');
+                                }
+                            },{
+                                text: 'submit',
+                                handler: () => {
+                                     this.confirmSubmit(timeBands,priority); 
+                                }
+                            }]
+                        });
+                        alert.present();
+          }
 }
 

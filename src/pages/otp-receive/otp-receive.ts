@@ -37,7 +37,7 @@ export class OtpReceivePage {
               public navCtrl:NavController,
               public navParams: NavParams) {
               this.userDetails=JSON.parse(localStorage.getItem('logindetail'));  
-              debugger 
+               
               if(this.userDetails){
                   this.otpVerifyDetail.contactNumber=this.userDetails[0].json.data.mobile;
                   this.otpVerifyDetail.otp="";
@@ -105,17 +105,17 @@ export class OtpReceivePage {
                      message: response[0].json.message,
                      showCloseButton: true,
                      closeButtonText: 'Ok',
-                     duration: 5000
+                     duration: 2000
                 });
                 toast.present(); 
        localStorage.setItem('hasSeenTutorial', "true");
        this.navCtrl.setRoot(DashboardPage);
       }else{
         let toast = this.toastCtrl.create({
-                     message: "something went wrong",
+                     message: "Invalid OTP",
                      showCloseButton: true,
                      closeButtonText: 'Ok',
-                     duration: 5000
+                     duration: 2000
                 });
                 toast.present(); 
       }

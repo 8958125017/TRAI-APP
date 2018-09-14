@@ -28,6 +28,7 @@ export class MyprofilePage {
   professionEdit:boolean=false;  
   userDetails:any;
   ids:any;
+  contactNumber:any;
   constructor(public navCtrl: NavController,public setupservice:SetupService,private datePicker: DatePicker,public platform:Platform, public navParams: NavParams,public toastCtrl: ToastController,public loadingCtrl: LoadingController) {
      let backAction =  platform.registerBackButtonAction(() => {
                     this.navCtrl.pop();
@@ -36,9 +37,9 @@ export class MyprofilePage {
 
      this.userDetails=JSON.parse(localStorage.getItem('logindetail'));  
               if(this.userDetails){
-                 this.ids=this.userDetails[0].json.data._id;
-                
+                 this.contactNumber=this.userDetails[0].json.data.mobile;                  
               }
+              
   }
 
   ionViewDidLoad() {   
@@ -61,10 +62,11 @@ export class MyprofilePage {
 
   ngOnInit(){
    let postData= {
-            _id:this.ids,
+            mobile:this.contactNumber,
        }
     const url = this.setupservice.basePath +'/viewProfile'
-    this.setupservice.PostRequest(url,postData).subscribe((response)=>{     
+    this.setupservice.PostRequest(url,postData).subscribe((response)=>{    
+     
       var res = JSON.parse(response[0].json._body); 
       if(res.responseCode===200){
             this.name = res.data.name ? res.data.name : 'NA',
@@ -117,12 +119,12 @@ export class MyprofilePage {
         loading.present();
 
     var response = {
-      name: "",
-      email: "",
-      dob: "",
-      profession: "",
-      mobile: "",
-      _id:""
+          name: "",
+          email: "",
+          dob: "",
+          profession: "",
+          mobile: "",
+          _id:""
     }
         let postDatas = {
             _id:this.ids,

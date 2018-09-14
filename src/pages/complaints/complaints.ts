@@ -41,18 +41,16 @@ export class ComplaintsPage {
      this.checkPermission();
   }
 
-   callLog(){
-      let loading = this.loadingCtrl.create({
-        content: 'Loading call logs please wait...',
-        
-        duration:15000,
-       
-      }); 
-       loading.present();
-       this.mobileId = JSON.parse(this.device.uuid);
-     //  alert("this.mobileId = = "+JSON.stringify(this.mobileId));
-       loading.dismiss();
-       //alert("this.device.uuid "+JSON.stringify(this.mobileId));
+  callLog(){
+       var time  = (new Date().getTime() - 259200000)
+       var userCalls = JSON.parse(this.device.uuid);       
+      if(userCalls){
+          var index = userCalls.findIndex(element=>{
+         return parseInt(element.date) < time
+       })     
+       this.mobileId = userCalls.slice(0,index);     
+      }
+     
     }
 
     checkPermission()
@@ -78,13 +76,7 @@ export class ComplaintsPage {
     }
     ReadSMSList()
     {
-    let loading = this.loadingCtrl.create({
-        content: 'Loading sms logs please wait...',
-        
-        duration:15000,
-       
-      }); 
-       loading.present();
+    
     this.platform.ready().then((readySource) => {
     
     let filter = {
@@ -93,10 +85,8 @@ export class ComplaintsPage {
            maxCount : 100, // count of SMS to return each time
                 };
     
-           if(SMS) SMS.listSMS(filter, (ListSms)=>{  
-           loading.dismiss();             
-               this.messages=ListSms
-            //   alert("this.messages = = "+JSON.stringify(this.messages));
+           if(SMS) SMS.listSMS({}, (ListSms)=>{ 
+            this.messages=ListSms
               },
     
               Error=>{

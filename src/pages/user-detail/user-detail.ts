@@ -82,21 +82,23 @@ export class UserDetailPage {
                      duration: 2000
                 });
                 toast.present(); 
-            }else if(!this.msg){
-                     let toast = this.toastCtrl.create({
-                                   message: 'Please enter complain!',
-                                   showCloseButton: true,
-                                   closeButtonText: 'Ok',
-                                   duration: 2000
-                });
-                toast.present(); 
-            }else{
+            }
+            // else if(!this.msg){
+            //          let toast = this.toastCtrl.create({
+            //                        message: 'Please enter complain!',
+            //                        showCloseButton: true,
+            //                        closeButtonText: 'Ok',
+            //                        duration: 2000
+            //     });
+            //     toast.present(); 
+            // }
+            else{
               let loading = this.loadingCtrl.create({
                   content: 'your complain submiting please wait...',
                   duration:15000,
                }); 
                 loading.present();
-                const url =this.globalservice.basePath +'/complaint1';
+                const url =this.globalservice.basePath +'/complaint';
                              let postData ={
                               mobile:this.fromNumber,
                               header: this.dndUserStatus.contactNo,

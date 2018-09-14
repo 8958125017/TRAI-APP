@@ -41,7 +41,7 @@
                 <p style="color:red;">Contact Number cannot be left blank</p>
             </span>
             <span *ngIf="regForm.controls['contactNo'].errors['minlength']">
-                 <p style="color:red;">contact Number must be atleast 10 numbers</p>
+                 <p style="color:red;">contact Number must be atleast 10 digits</p>
              </span>
              <span *ngIf="regForm.controls['contactNo'].errors['maxlength']">
                  <p style="color:red;">contact Number should not be greater then 10.</p>

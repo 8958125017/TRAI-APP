@@ -14,8 +14,8 @@ import { CallLog } from '@ionic-native/call-log';
 import { CallNumber } from '@ionic-native/call-number';
 import { MyApp } from './app.component';
 import { RegisterPage } from '../pages/register/register';
-// import { HomePage } from '../pages/home/home';
-// import { ListPage } from '../pages/list/list';
+import { HomePage } from '../pages/home/home';
+import { MapPage } from '../pages/map/map';
 //import { AddcontactPage } from '../pages/addcontact/addcontact';
 //import { MessagelistPage } from '../pages/messagelist/messagelist';
 import { FirstCapsPipe } from '../pipe/pipe';
@@ -36,11 +36,14 @@ import { FrauddetailsPage } from '../pages/frauddetails/frauddetails';
 import { DatePicker } from '@ionic-native/date-picker';
 import { OtpReceivePage } from '../pages/otp-receive/otp-receive';
 import { PreferenceModalPage } from '../pages/preference-modal/preference-modal';
+import { AgmCoreModule } from '@agm/core';
+import { Sim } from '@ionic-native/sim';
 @NgModule({
   declarations: [
     MyApp,
     RegisterPage,
-    // HomePage,
+    MapPage,
+    HomePage,
     // ListPage,
     // AddcontactPage,
     // MessagelistPage,
@@ -62,13 +65,16 @@ import { PreferenceModalPage } from '../pages/preference-modal/preference-modal'
   imports: [
     BrowserModule,
     HttpModule,
+    AgmCoreModule.forRoot({
+      apiKey: 'AIzaSyDgrKvQQhwKYUvgt2L-d57OnGklEk1l_i0',libraries: ["places"]
+    }),
     FormsModule,
     ReactiveFormsModule,
     IonicModule.forRoot(MyApp, {}, {
       links: [
        { component: RegisterPage, name: 'RegisterPage', segment: 'register' },
-        // { component: HomePage, name: 'HomePage', segment: 'home' },
-        // { component: ListPage, name: 'ListPage', segment: 'list' },
+         { component: HomePage, name: 'HomePage', segment: 'home' },
+        { component: MapPage, name: 'MapPage', segment: 'map' },
         { component: DashboardPage, name: 'DashboardPage', segment: 'dashboard' },
         { component: MyprofilePage, name: 'MyprofilePage', segment: 'myprofile' },
         { component: SettingPage, name: 'SettingPage', segment: 'setting' },
@@ -90,10 +96,11 @@ import { PreferenceModalPage } from '../pages/preference-modal/preference-modal'
   entryComponents: [
     MyApp,
     RegisterPage,
-    // HomePage,
+     HomePage,
     // ListPage,
     //MessagelistPage,
     //AddcontactPage,
+    MapPage,
     DashboardPage,
     MyprofilePage,
     SettingPage,
@@ -117,14 +124,15 @@ import { PreferenceModalPage } from '../pages/preference-modal/preference-modal'
     },
     InAppBrowser,
     Network,
-     CallNumber,
-       AndroidPermissions,
+    CallNumber,
+    AndroidPermissions,
     Contacts,
     CallLog,
     UserData,
     ConferenceData,
     SetupService,
-    DatePicker
+    DatePicker,
+    Sim
 
   ]
 })

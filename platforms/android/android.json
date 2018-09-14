@@ -103,6 +103,10 @@
             {
               "xml": "<feature name=\"NativeStorage\"><param name=\"android-package\" value=\"NativeStorage\" /></feature>",
               "count": 1
+            },
+            {
+              "xml": "<feature name=\"Sim\"><param name=\"android-package\" value=\"com.pbakondy.Sim\" /></feature>",
+              "count": 1
             }
           ]
         }
@@ -116,7 +120,7 @@
             },
             {
               "xml": "<uses-permission android:name=\"android.permission.READ_PHONE_STATE\" />",
-              "count": 4
+              "count": 5
             },
             {
               "xml": "<uses-permission android:name=\"android.permission.RECEIVE_SMS\" />",
@@ -274,6 +278,9 @@
       "PACKAGE_NAME": "io.ionic.starter"
     },
     "cordova-plugin-nativestorage": {
+      "PACKAGE_NAME": "io.ionic.starter"
+    },
+    "cordova-plugin-sim": {
       "PACKAGE_NAME": "io.ionic.starter"
     }
   },
@@ -553,6 +560,22 @@
       "id": "cordova-plugin-nativestorage.NativeStorageError",
       "file": "plugins/cordova-plugin-nativestorage/www/NativeStorageError.js",
       "pluginId": "cordova-plugin-nativestorage"
+    },
+    {
+      "id": "cordova-plugin-sim.Sim",
+      "file": "plugins/cordova-plugin-sim/www/sim.js",
+      "pluginId": "cordova-plugin-sim",
+      "merges": [
+        "window.plugins.sim"
+      ]
+    },
+    {
+      "id": "cordova-plugin-sim.SimAndroid",
+      "file": "plugins/cordova-plugin-sim/www/android/sim.js",
+      "pluginId": "cordova-plugin-sim",
+      "merges": [
+        "window.plugins.sim"
+      ]
     }
   ],
   "plugin_metadata": {
@@ -579,6 +602,7 @@
     "cordova-plugin-background-mode": "0.7.2",
     "io.adc.plugin.callreceiver": "0.0.1",
     "cordova-plugin-otp-auto-verification": "1.0.1",
-    "cordova-plugin-nativestorage": "2.3.2"
+    "cordova-plugin-nativestorage": "2.3.2",
+    "cordova-plugin-sim": "1.3.3"
   }
 }

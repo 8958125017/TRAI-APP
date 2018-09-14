@@ -5,6 +5,7 @@ import { AlertController, Events } from 'ionic-angular';
 import { Http, Response, RequestOptions, Headers, Request, RequestMethod } from '@angular/http';
 import { Observable } from 'rxjs/Rx';
 import 'rxjs/add/operator/map';
+
 /*
   Generated class for the ServicesProvider provider.
 
@@ -126,7 +127,7 @@ export class SetupService {
     }
 
 
-       public initializeNetworkEvents(): void {
+      public initializeNetworkEvents(): void {
         this.network.onDisconnect().subscribe(() => {
             if (this.previousStatus === ConnectionStatusEnum.Online) {
                 this.eventCtrl.publish('network:offline');
@@ -149,6 +150,8 @@ export class SetupService {
         });
 
     }
+
+     
 
 
 }

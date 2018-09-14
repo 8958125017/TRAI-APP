@@ -41,15 +41,15 @@
           <ion-row>
             <ion-col col-4>
               <small>
-                <ion-icon class="icon-default-color" name="ios-calendar-outline"></ion-icon>&nbsp;&nbsp;&nbsp;&nbsp;{{dndUserStatus.date | date:'dd/MM/yyyy' }}</small>
+                <ion-icon class="icon-default-color" name="ios-calendar-outline"></ion-icon>&nbsp;&nbsp;&nbsp;&nbsp;{{ dndUserStatus.date | date:'dd/MM/yyyy' }}</small>
             </ion-col>
-            <ion-col col-4>
+            <ion-col col-4 *ngIf="duration">
               <small>
                 Duration:
-                <span>{{dndUserStatus.duration ? dndUserStatus.duration : 'NA'}} sec</span>
+                <span>{{dndUserStatus.duration ? dndUserStatus.duration : 'NA'}}sec</span>
               </small>
             </ion-col>
-            <ion-col col-4>
+            <ion-col col-4 *ngIf="typecall">
               <small>
                 <img style="width: 10px; display: inline;" src="assets/icon/incoming.svg" alt="">&nbsp;{{dndUserStatus.callType ? dndUserStatus.callType : 'NA'}}</small>
             </ion-col>

@@ -3,7 +3,7 @@ import { IonicPage, NavController, NavParams,Platform,LoadingController } from '
 import { Device } from '@ionic-native/device';
 import { AndroidPermissions } from '@ionic-native/android-permissions';
 declare var SMS:any;
-declare var window: any;
+// declare var window: any;
 import { UserDetailPage } from '../../pages/user-detail/user-detail';
 /**
  * Generated class for the HistoryPage page.
@@ -30,23 +30,17 @@ contactNumber:any;
                     this.navCtrl.pop();
                     backAction();
                   },2)
-     this.callLog();
-     //this.checkPermission();
-     this.userDetails=JSON.parse(localStorage.getItem('logindetail'));  
-               
+     
+     this.userDetails=JSON.parse(localStorage.getItem('logindetail'));                 
               if(this.userDetails){
                   this.contactNumber=this.userDetails[0].json.data.mobile;                 
               }
+              this.callLog();
+     this.checkPermission();
   }
   callLog(){
     this.callLogsList=[];
-      // let loading = this.loadingCtrl.create({
-      //   content: 'Loading call logs please wait...',
-        
-      //   duration:15000,
-       
-      // }); 
-      //  loading.present();
+    
        var time  = (new Date().getTime() - 259200000)
        var userCalls = JSON.parse(this.device.uuid);       
       if(userCalls){
@@ -65,7 +59,7 @@ contactNumber:any;
     console.log('ionViewDidLoad HistoryPage');
   }
   
-checkPermission()
+    checkPermission()
     {
       this.androidPermissions.checkPermission(this.androidPermissions.PERMISSION.READ_SMS).then(
         success => {          
@@ -88,24 +82,17 @@ checkPermission()
     }
     ReadSMSList()
     {
-    let loading = this.loadingCtrl.create({
-        content: 'Loading sms logs please wait...',        
-        duration:8000,       
-      }); 
-       loading.present();
+    
     this.platform.ready().then((readySource) => {
     
     let filter = {
-                  box : 'inbox',
-                  address :this.contactNumber, // 'inbox' (default), 'sent', 'draft'
-                  indexFrom : 0, // start from index 0
-                  maxCount : 20, // count of SMS to return each time
+           box : 'inbox', // 'inbox' (default), 'sent', 'draft'
+           indexFrom : 0, // start from index 0
+           maxCount : 100, // count of SMS to return each time
                 };
     
-           if(SMS) SMS.listSMS(filter, (ListSms)=>{  
-           loading.dismiss();             
-               this.messages=ListSms
-            //   alert("this.messages = = "+JSON.stringify(this.messages));
+           if(SMS) SMS.listSMS({}, (ListSms)=>{ 
+            this.messages=ListSms
               },
     
               Error=>{
@@ -115,7 +102,6 @@ checkPermission()
          
         });
     }
-
     getuserInfo(num:any){
          this.navCtrl.push(UserDetailPage);
     }
@@ -133,24 +119,24 @@ checkPermission()
         // this.navCtrl.setRoot(UserDetailPage,{'num': 'objCall.phoneNumber','date':'objCall.date','duraton':'objCall.duration','typeCall':'objCall.type'}); 
     }
 
-    getSMS(){
-      let filter = {
-                  box : 'inbox', // 'inbox' (default), 'sent', 'draft'
-                  address :this.contactNumber,
-                  indexFrom : 0, // start from index 0
-                  maxCount : 20, // count of SMS to return each time
-                };
-    if(window.SMS) window.SMS.listSMS(filter,data=>{
-        setTimeout(()=>{
-            console.log(data);
-            this.messages=data;
-            alert("message = = "+JSON.stringify(this.messages));
-        },0)
+  //   getSMS(){
+  //     let filter = {
+  //                 box : 'inbox', // 'inbox' (default), 'sent', 'draft'
+  //                 address :this.contactNumber,
+  //                 indexFrom : 0, // start from index 0
+  //                 maxCount : 20, // count of SMS to return each time
+  //               };
+  //   if(window.SMS) window.SMS.listSMS(filter,data=>{
+  //       setTimeout(()=>{
+  //           console.log(data);
+  //           this.messages=data;
+  //           alert("message = = "+JSON.stringify(this.messages));
+  //       },0)
  
-    },error=>{
-      console.log(error);
-    });
-  }
+  //   },error=>{
+  //     console.log(error);
+  //   });
+  // }
 
 
 }

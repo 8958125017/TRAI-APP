@@ -274,6 +274,22 @@ module.exports = [
     "id": "cordova-plugin-nativestorage.NativeStorageError",
     "file": "plugins/cordova-plugin-nativestorage/www/NativeStorageError.js",
     "pluginId": "cordova-plugin-nativestorage"
+  },
+  {
+    "id": "cordova-plugin-sim.Sim",
+    "file": "plugins/cordova-plugin-sim/www/sim.js",
+    "pluginId": "cordova-plugin-sim",
+    "merges": [
+      "window.plugins.sim"
+    ]
+  },
+  {
+    "id": "cordova-plugin-sim.SimAndroid",
+    "file": "plugins/cordova-plugin-sim/www/android/sim.js",
+    "pluginId": "cordova-plugin-sim",
+    "merges": [
+      "window.plugins.sim"
+    ]
   }
 ];
 module.exports.metadata = 
@@ -302,7 +318,8 @@ module.exports.metadata =
   "cordova-plugin-background-mode": "0.7.2",
   "io.adc.plugin.callreceiver": "0.0.1",
   "cordova-plugin-otp-auto-verification": "1.0.1",
-  "cordova-plugin-nativestorage": "2.3.2"
+  "cordova-plugin-nativestorage": "2.3.2",
+  "cordova-plugin-sim": "1.3.3"
 };
 // BOTTOM OF METADATA
 });

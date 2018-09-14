@@ -1,0 +1,25 @@
+<ion-header>
+
+  <ion-navbar>
+    <button ion-button menuToggle>
+      <img class="trai-menu" menuToggle src="assets/icon/menu.png" alt="">
+    </button>
+    <!-- <ion-icon name="menu"><img menuToggle src="assets/icon/menu.png" alt=""></ion-icon> -->
+
+    <ion-title>
+      <img class="header-img" alt="" src="assets/icon/header-logo.png" >
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+ <agm-map #agmMap [latitude]="latitude" [longitude]="longitude" [scrollwheel]="false"  [zoom]="zoom" (mapClick)="mapClicked($event)" style="position:fixed;" >
+        <agm-marker [latitude]="latitude" [longitude]="longitude" ></agm-marker>
+       
+         <agm-marker *ngFor="let m of tradersMarker; let i = index"
+          [latitude]="m.lat" [longitude]="m.lng" [title]="m.title"
+                                            [markerDraggable]="m.draggable" (dragEnd)="markerDragEnd(m, $event)" [iconUrl]="m.icon" ></agm-marker>
+      </agm-map>
+
+
+</ion-content>

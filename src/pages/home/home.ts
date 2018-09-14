@@ -1,28 +1,35 @@
 import { Component } from '@angular/core';
-import { NavController } from 'ionic-angular';
-import { Device } from '@ionic-native/device';
-import { CallNumber } from '@ionic-native/call-number';
-
+import { NavController,ToastController,Platform} from 'ionic-angular';
 
 @Component({
   selector: 'page-home',
-  templateUrl: 'home.html',
-  providers: [Device]
+  templateUrl: 'home.html'
 })
 export class HomePage {
-public mobileId : {};
-  constructor(public navCtrl: NavController,public device : Device,private callNumber: CallNumber) {  
-    
-   }
-    home(){
-    	this.mobileId = JSON.parse(this.device.uuid);
-       // alert("this.device.uuid "+JSON.stringify(this.mobileId));
-    }
+ componentName:any;
+  constructor(public navCtrl: NavController,public platform:Platform,public toastCtrl: ToastController) {
+     let backAction =  platform.registerBackButtonAction(() => { 
+          var netStatus=localStorage.getItem('NetworkStatus'); 
+          if(netStatus=="offline")  {
+             this.navCtrl.pop();
+             backAction();
+          }             
+        },2)
+     this.componentName=this.navCtrl.getActive().name;
+     localStorage.setItem('cmpName',this.componentName);
+     this.toster();
+  }
 
- 
- call(num:string){
-        this.callNumber.callNumber(num, true)
-        .then(() => console.log('Launched dialer!'))
-        .catch(() => console.log('Error launching dialer'));
-}
+  toster(){
+    let toast = this.toastCtrl.create({
+                         message: "No internet conection!!",
+                         showCloseButton: true,
+                         closeButtonText: 'Ok',
+                         duration: 5000
+                    });
+                   toast.present();
+  }
+
+   
+
 }

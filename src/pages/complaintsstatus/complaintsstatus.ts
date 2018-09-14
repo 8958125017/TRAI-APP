@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams ,Platform} from 'ionic-angular';
+import { IonicPage, NavController, NavParams ,Platform,LoadingController} from 'ionic-angular';
 import { SetupService } from '../../services/setup.service';
 import { UserDetailPage } from '../../pages/user-detail/user-detail';
 import { RegisterPage} from  '../../pages/register/register';
@@ -23,7 +23,7 @@ userDetails:any;
 contactNumber:any;
 complaintsStatus:any;
 complaintsLength:any;
-  constructor(public navCtrl: NavController,public globalservice:SetupService, public platform:Platform,public navParams: NavParams) {
+  constructor(public navCtrl: NavController,public loadingCtrl: LoadingController,public globalservice:SetupService, public platform:Platform,public navParams: NavParams) {
      let backAction =  platform.registerBackButtonAction(() => {        
                     this.navCtrl.pop();
                     backAction();
@@ -40,18 +40,24 @@ complaintsLength:any;
   }
 pending:any=0;
   getComplaintStatus(){
-    
-    const url =this.globalservice.basePath +'/getComplaintsByKey'
+     let loading = this.loadingCtrl.create({
+           content: ' please wait...',
+           duration:10000
+      }); 
+        loading.present();
+    const url =this.globalservice.basePath +'/getComplaintStatus'
     let postData ={
             mobile : this.contactNumber
     }
-    debugger
+    
     this.globalservice.PostRequest(url,postData).subscribe((response)=>{
-      debugger
+        loading.dismiss();
+      
      if(response[0].json.status===200){
       var  result=response[0].json.json().data;
+      console.log("------------------>>>>",result)
       for (var i =0; i<result.length ; i++) {
-        if(result[i].status=="pending"){
+        if(result[i].data.status=="pending"){
             this.pending++
         }
       }
